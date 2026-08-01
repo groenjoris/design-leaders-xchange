@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Design Leaders Exchange — invitation-only mastermind voor design leaders</title>
+<title>Design Leaders Mastermind — één dag diepgang voor design leaders</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -66,12 +66,15 @@
   .btn:hover{background:#9a774d;transform:translateY(-1px);}
   .btn.light{background:#fbf8f2;color:var(--ink);}
   .btn.light:hover{background:#fff;}
+  .btn.ghost{background:transparent;color:#f3efe8;border:1px solid #4a4d57;}
+  .btn.ghost:hover{background:#2c2f39;transform:translateY(-1px);}
+  .btn-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
   .hero-note{margin-top:18px;font-size:14px;color:#a49d90;}
 
   /* SECTIONS */
   section{padding:80px 0;border-bottom:1px solid var(--line);}
   section.alt{background:var(--paper-2);}
-  section h2{font-size:clamp(26px,3.6vw,38px);margin:0 0 28px;max-width:20ch;}
+  section h2{font-size:clamp(26px,3.6vw,38px);margin:0 0 28px;max-width:22ch;}
   section p{color:var(--ink-soft);margin:0 0 20px;max-width:65ch;}
   section p strong{color:var(--ink);}
   .lead-sum{font-size:20px;color:var(--ink) !important;}
@@ -102,17 +105,29 @@
   .stack .item{padding:22px 0;border-top:1px solid var(--line);}
   .stack .item:first-child{border-top:none;}
   .stack .item h3{font-size:19px;margin:0 0 6px;}
-  .stack .item p{margin:0;font-size:16px;}
+  .stack .item p{margin:0 0 8px;font-size:16px;}
+  .stack .item p:last-child{margin-bottom:0;}
 
-  /* PRACTICAL table */
-  .facts{margin-top:10px;}
-  .facts .row{
-    display:grid;grid-template-columns:200px 1fr;gap:18px;
-    padding:18px 0;border-top:1px solid var(--line);
+  /* PROGRAMMA timeline */
+  .timeline{margin-top:28px;border-top:1px solid var(--line);}
+  .timeline .slot{
+    display:grid;grid-template-columns:150px 1fr;gap:18px;
+    padding:14px 0;border-bottom:1px solid var(--line);
   }
-  .facts .row:first-child{border-top:none;}
-  .facts .k{font-weight:600;color:var(--ink);}
-  .facts .v{color:var(--ink-soft);}
+  .timeline .t{
+    font-family:'Fraunces',serif;font-weight:600;color:var(--accent-deep);
+    font-size:16px;white-space:nowrap;
+  }
+  .timeline .d{color:var(--ink-soft);font-size:16px;}
+  .timeline .d strong{color:var(--ink);}
+
+  /* AANGEMELD chips */
+  .chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;}
+  .chip{
+    background:var(--card);border:1px solid var(--line);border-radius:999px;
+    padding:10px 20px;font-size:15px;color:var(--ink);
+  }
+  .chip .co{font-weight:600;color:var(--accent-deep);}
 
   /* FAQ */
   details{
@@ -133,6 +148,7 @@
   section.cta h2{color:#fbf8f2;margin:0 auto 22px;}
   section.cta p{color:#cfcabf;margin:0 auto 32px;max-width:58ch;}
   section.cta .eyebrow{color:#c7a878;}
+  section.cta .btn-row{justify-content:center;}
   .cta-note{margin-top:24px;font-size:14px;color:#a49d90;max-width:60ch;margin-left:auto;margin-right:auto;}
 
   footer{padding:40px 0;text-align:center;color:var(--ink-soft);font-size:14px;background:var(--paper);}
@@ -140,7 +156,7 @@
   @media(max-width:680px){
     body{font-size:16px;}
     .grid.two,.grid.three{grid-template-columns:1fr;}
-    .facts .row{grid-template-columns:1fr;gap:4px;}
+    .timeline .slot{grid-template-columns:110px 1fr;gap:12px;}
     section{padding:60px 0;}
     header.hero{padding:80px 0 70px;}
   }
@@ -150,22 +166,18 @@
 
 <header class="hero">
   <div class="wrap">
-    <div class="eyebrow">Invitation-only mastermind</div>
-    <h1>Design Leaders Exchange</h1>
-    <p class="lead">Een besloten mastermind voor UX-, CX- en product design leaders die de richting bepalen. Een zorgvuldig samengestelde groep van maximaal twintig peers die elkaar over een heel jaar echt leren kennen, en samen de vraagstukken doorgronden waar je in je eentje op blijft hangen.</p>
-    <a class="btn light" href="#aanmelden">Reserveer je plek voor de kick-off</a>
-    <div class="hero-note">Eerste Nederlandstalige cohort · Maximaal 20 plaatsen · Gratis kick-off in augustus/september 2026</div>
+    <div class="eyebrow">Eén dag · Landgoed Duin en Kruidberg</div>
+    <h1>Design Leaders Mastermind</h1>
+    <p class="lead">Eén dag inspiratie, reflectie en netwerken met design leaders op jouw niveau. Aan kleine tafels, in strak begeleide werkvormen, praat je door over de vraagstukken waar je in je eentje op blijft hangen — met peers die er middenin zitten of er al doorheen zijn. Volledig vertrouwelijk. Je gaat naar huis met herkenning, frisse ideeën en concrete oplossingen.</p>
+    <!-- TODO: CTA-links nog uitwerken -->
+    <div class="btn-row">
+      <a class="btn light" href="#aanmelden">Aanmelden</a>
+      <a class="btn ghost" href="#aanmelden">Gratis online voorlichtingsbijeenkomst</a>
+    </div>
+    <!-- PLACEHOLDER: datum nog niet bekend -->
+    <div class="hero-note">Doordeweekse dag, najaar 2026 · 10:00–16:00 · Beperkt aantal plaatsen</div>
   </div>
 </header>
-
-<section>
-  <div class="wrap">
-    <div class="eyebrow">In het kort</div>
-    <h2>Vier ontmoetingen, één cohort, een heel jaar diepgang</h2>
-    <p class="lead-sum">Je sluit aan op uitnodiging, in een vast cohort, en komt vier keer samen: twee volledige dagen op een bijzondere locatie en twee avonden in Amsterdam. Alles vertrouwelijk en off the record.</p>
-    <p>Wij cureren de groep, koppelen je aan de juiste mensen en zorgen dat elke bijeenkomst je verder brengt. Het resultaat: een bredere blik, veel herkenning, en vraagstukken die je sneller oplost omdat je hoort hoe je peers ze al hebben aangepakt.</p>
-  </div>
-</section>
 
 <section class="alt">
   <div class="wrap">
@@ -180,79 +192,71 @@
 <section>
   <div class="wrap">
     <div class="eyebrow">Ons inzicht</div>
-    <h2>Echte uitwisseling vraagt om vertrouwen en tijd</h2>
+    <h2>De beste inzichten komen van peers — als je ze de juiste setting geeft</h2>
     <p>De meest relevante inzichten komen van peers op jouw niveau die hetzelfde vraagstuk al hebben opgelost, of er net als jij middenin zitten.</p>
-    <p>Dat soort uitwisseling vraagt om twee dingen: vertrouwen en tijd. Vertrouwen, zodat je alles op tafel kunt leggen zonder rem. En tijd, zodat je kunt terugkomen op een vraagstuk, het opnieuw bespreekt, het aan iemand anders voorlegt en echt tot de kern komt.</p>
-    <p>Daarvoor heb je een hechte, besloten groep nodig die elkaar over langere tijd leert kennen. Dat is precies wat wij bouwen.</p>
+    <p>Maar dat gesprek ontstaat niet vanzelf. Het vraagt om de juiste mensen aan één tafel, rond het thema waar jij nú mee zit, in een setting waar je vrijuit kunt spreken. Precies dat organiseren wij: een gecureerd gezelschap, doordachte matching en werkvormen die elk gesprek de diepte in sturen.</p>
+    <p>Wij pretenderen uitdrukkelijk niet de wijsheid in pacht te hebben — veel is daarvoor te nieuw. De wijsheid zit aan tafel, bij jou en je peers. Wij zorgen dat die loskomt.</p>
+    <p><strong>Wat je eruit haalt:</strong> relevantie (precies de onderwerpen waar je nú mee zit), herkenning (je bent niet de enige, en dat lucht op), inspiratie (je gaat opgeladen naar huis met een verbrede blik) en oplossingen (je hoort hoe peers jouw vraagstuk al hebben aangepakt).</p>
   </div>
 </section>
 
 <section class="alt">
   <div class="wrap">
-    <div class="eyebrow">De oplossing</div>
-    <h2>Hoe Design Leaders Exchange werkt</h2>
-    <p>We werken in cohorten van maximaal 20 leaders (we mikken op 15 tot 20). Per cohort komen we vier keer samen:</p>
-    <div class="grid two">
-      <div class="card">
-        <span class="num">Twee hele dagen</span>
-        <p>Op een bijzondere locatie — bijvoorbeeld een landhuis of kasteel, met ruimte voor een boswandeling en afwisselende werkvormen. Van 's ochtends tot eind van de middag, lunch en eten inbegrepen.</p>
-      </div>
-      <div class="card">
-        <span class="num">Twee avondborrels</span>
-        <p>Korter en informeler, in Amsterdam, na werktijd (circa 17:00–20:00). Om de banden uit het cohort warm te houden.</p>
-      </div>
-    </div>
+    <div class="eyebrow">Hoe ziet de dag eruit</div>
+    <h2>Eén dag, zorgvuldig geregisseerd</h2>
 
     <div class="stack">
       <div class="item">
-        <h3>We cureren de groep</h3>
-        <p>We selecteren op niveau en stellen het cohort zorgvuldig samen, zodat je tussen echte peers zit: leaders bij grote multinationals, sterke merken en internationale agencies.</p>
+        <h3>Het publiek</h3>
+        <p>Design leaders en design managers (UX, CX, product design) met serieuze projecten en verantwoordelijkheid — bij grote multinationals, sterke merken en internationale agencies. We stellen het gezelschap zorgvuldig samen, zodat je de hele dag tussen echte peers zit.</p>
       </div>
       <div class="item">
         <h3>We koppelen je aan de juiste mensen</h3>
-        <p>Binnen de bijeenkomsten werken we in kleinere groepjes die intensiever met elkaar aan de slag gaan. We kijken bewust wie we bij wie zetten, zodat je gematcht wordt met de juiste lotgenoten en soortgenoten.</p>
+        <p>Kleine tafels van maximaal vier personen, gematcht op thema en niveau. Je kiest zelf het thema dat jou raakt, en schuift aan bij de mensen die met hetzelfde worstelen — de juiste lotgenoten en soortgenoten.</p>
       </div>
       <div class="item">
-        <h3>We verzorgen de werkvormen</h3>
-        <p>Begeleide sessies die ervoor zorgen dat je met concrete inzichten naar huis gaat.</p>
+        <h3>De werkvormen — onze kracht</h3>
+        <p>Geen sprekers, geen panels, geen podium. De hele dag draait om beproefde, strak begeleide werkvormen: duo-breakouts, hop-on-hop-off thematafels en custom tafels rond jouw eigen vraagstuk. Werkvormen ontwerpen en begeleiden is het vak van Anne en Joris — zij bewaken dat elk gesprek voorbij de beleefdheden komt, de diepte in gaat en oplevert. Zo ga je naar huis met concrete inzichten in plaats van visitekaartjes.</p>
       </div>
       <div class="item">
-        <h3>We doen follow-ups</h3>
-        <p>Na elke bijeenkomst hebben we met iedereen een persoonlijk gesprek over de learnings. Die delen we met de groep, maar alleen wat jij echt wilt delen. Zo bouwt het cohort gaandeweg een waardevol naslagwerk op.</p>
+        <h3>Het programma</h3>
+        <p>Van ontvangst tot borrel, in een ritme dat afwisselt tussen intensieve gesprekken en ademruimte:</p>
+        <div class="timeline">
+          <div class="slot"><div class="t">9:30</div><div class="d">Ontvangst</div></div>
+          <div class="slot"><div class="t">10:00</div><div class="d"><strong>Introductie</strong> — kennismaken in duo's</div></div>
+          <div class="slot"><div class="t">10:30</div><div class="d"><strong>Breakout in duo's</strong> — wat is jouw uitdaging als leader?</div></div>
+          <div class="slot"><div class="t">11:00</div><div class="d"><strong>Tafelsessie 1: hop-on-hop-off thematafels</strong> — vier tafels, elk rond één thema, maximaal vier personen per tafel. Kies je thema en schuif aan. Wil je switchen? Dan hop je naar een andere tafel.</div></div>
+          <div class="slot"><div class="t">12:00</div><div class="d">Lunch</div></div>
+          <div class="slot"><div class="t">13:00</div><div class="d"><strong>20 minuten voor jezelf</strong> — even wandelen, nadenken of bijkomen</div></div>
+          <div class="slot"><div class="t">13:30</div><div class="d"><strong>Tafelsessie 2: custom tafels</strong> — vorm een twee- of drietal rond een eigen thema. Na twintig minuten kun je wisselen en ergens anders aanschuiven.</div></div>
+          <div class="slot"><div class="t">14:30</div><div class="d">Koffie</div></div>
+          <div class="slot"><div class="t">14:45</div><div class="d"><strong>Roundup</strong> — de belangrijkste inzichten van de dag</div></div>
+          <div class="slot"><div class="t">15:15</div><div class="d">Borrel</div></div>
+          <div class="slot"><div class="t">16:00</div><div class="d">Einde</div></div>
+        </div>
       </div>
       <div class="item">
-        <h3>Vertrouwelijk en off the record</h3>
-        <p>We maken geen opnames en houden geen notulen. Voor de zekerheid tekent iedereen een non-disclosure, zodat iedereen vrijuit kan spreken.</p>
+        <h3>De locatie</h3>
+        <p>Landgoed Duin en Kruidberg in Santpoort: een prachtig kasteel aan de rand van Nationaal Park Zuid-Kennemerland, met ruimte voor een boswandeling tussen de sessies door. Een omgeving die uitnodigt om afstand te nemen van de waan van de dag.</p>
+      </div>
+      <div class="item">
+        <h3>Vertrouwelijk</h3>
+        <p>Volledig off the record. We maken geen opnames en houden geen notulen. Voor de zekerheid tekent iedereen een non-disclosure, zodat iedereen vrijuit kan spreken.</p>
       </div>
     </div>
-
-    <blockquote>We hebben uitdrukkelijk niet de pretentie dat wij de wijsheid in pacht hebben. Veel is te nieuw voor een eenduidig antwoord. Ons doel is je in een omgeving te brengen waar je optimaal geïnspireerd wordt door peers, zodat jij het voor je eigen organisatie ontdekt.</blockquote>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="eyebrow">Wat je eruit haalt</div>
-    <h2>Relevantie, herkenning, inspiratie en oplossingen</h2>
-    <div class="grid two">
-      <div class="card"><h3>Relevantie</h3><p>Precies de onderwerpen waar je nú mee zit.</p></div>
-      <div class="card"><h3>Herkenning</h3><p>Je merkt dat je niet de enige bent, en dat lucht op.</p></div>
-      <div class="card"><h3>Inspiratie</h3><p>Je gaat naar huis vol ideeën, opgeladen, met een verbrede blik.</p></div>
-      <div class="card"><h3>Oplossingen</h3><p>Je lost je vraagstukken sneller op door de input van peers die er al doorheen zijn.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="alt">
-  <div class="wrap">
-    <div class="eyebrow">Onderwerpen die nu spelen</div>
-    <h2>Drie thema's waar leaders mee worstelen</h2>
-    <p>De thema's komen uit de groep, maar dit speelt op dit moment volop:</p>
+    <div class="eyebrow">Voorbeelden van thema's</div>
+    <h2>Thema's die we horen van design managers</h2>
+    <p>Dit zijn voorbeelden van thema's die design managers ons de afgelopen tijd aandroegen. De échte thema's bepalen we samen aan het begin van de dag — het gaat om wat er bij jou en je peers nú speelt.</p>
     <div class="grid three">
       <div class="card">
         <span class="num">01</span>
         <h3>AI in het designproces</h3>
-        <p>Hoe verandert AI je proces, en hoe doen anderen dat? Hoe ga je om met weerstand of met collega's die te ver voorlopen — en met praktische beperkingen zoals legal en compliance, bijvoorbeeld als je team alleen op een co-pilot mag werken?</p>
+        <p>Hoe verandert AI je proces, en hoe doen anderen dat? Hoe ga je om met weerstand, met voorlopers, en met beperkingen vanuit legal en compliance?</p>
       </div>
       <div class="card">
         <span class="num">02</span>
@@ -261,8 +265,41 @@
       </div>
       <div class="card">
         <span class="num">03</span>
-        <h3>Stakeholder management</h3>
-        <p>Hoe krijg je mensen mee in vernieuwing, en hoe krijg je bij je leiding budget los voor de stappen die je wilt zetten?</p>
+        <h3>Career framework</h3>
+        <p>Hoe bouw je een career framework dat designers laat groeien en houvast geeft — en dat ook standhoudt in gesprekken met HR en management?</p>
+      </div>
+      <div class="card">
+        <span class="num">04</span>
+        <h3>Leiderschap</h3>
+        <p>Wat voor leader wil je zijn? Hoe geef je richting aan je team en claim je je plek aan tafel, zonder jezelf te verliezen?</p>
+      </div>
+      <div class="card">
+        <span class="num">05</span>
+        <h3>Morele ambitie</h3>
+        <p>Hoe zet je design in voor dingen die er echt toe doen — en hoe verhoud je je tot keuzes van je organisatie waar je moeite mee hebt?</p>
+      </div>
+      <div class="card">
+        <span class="num">06</span>
+        <h3>Change management</h3>
+        <p>Hoe krijg je je organisatie mee in verandering — nieuwe werkwijzen, nieuwe structuren, een andere rol voor design?</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="eyebrow">Wie zijn we</div>
+    <h2>Anne en Joris</h2>
+    <!-- CONCEPT-BIO: aanscherpen — beide bio's zijn een eerste opzet, graag checken/aanvullen -->
+    <div class="grid two">
+      <div class="card">
+        <h3>Anne Vroegop</h3>
+        <p>Anne is designleider en facilitator met jarenlange ervaring in het begeleiden van teams en leiders in de designwereld. Ze is op haar best als ze een groep professionals in korte tijd tot de kern laat komen — met werkvormen die scherpte en openheid combineren.</p>
+      </div>
+      <div class="card">
+        <h3>Joris Groen</h3>
+        <p>Joris is UX-veteraan, auteur en oprichter van meerdere designpraktijken. Hij ontwerpt al decennia digitale producten én de sessies waarin mensen daarover de goede gesprekken voeren. Zijn specialiteit: werkvormen die diepgang afdwingen zonder dat het geforceerd voelt.</p>
       </div>
     </div>
   </div>
@@ -270,16 +307,15 @@
 
 <section>
   <div class="wrap">
-    <div class="eyebrow">Praktisch</div>
-    <h2>Hoe ziet het eruit</h2>
-    <div class="facts">
-      <div class="row"><div class="k">Voor wie</div><div class="v">Design leaders en design managers (UX, CX, product design) met serieuze projecten en verantwoordelijkheid — bij grote multinationals, sterke merken of internationale agencies. Alleen op uitnodiging.</div></div>
-      <div class="row"><div class="k">Cohort</div><div class="v">Maximaal 20 deelnemers (15–20). We starten met een Nederlandstalig cohort; daarna volgen een internationaal cohort en een cohort in Azië, na een geslaagde eerdere expert-meeting in Bangkok.</div></div>
-      <div class="row"><div class="k">Programma</div><div class="v">Vier bijeenkomsten over het hele jaar: twee hele dagen op locatie en twee avondborrels in Amsterdam. De data van de dagen plannen we ruim van tevoren, zodat je ze tijdig kunt vrijhouden.</div></div>
-      <div class="row"><div class="k">Investering</div><div class="v">€2.000 voor het volledige programma van vier bijeenkomsten — inclusief locatie, lunch en diner op de dagen. Geen sponsors, geen verkooppraatjes, geen verborgen agenda's.</div></div>
-      <div class="row"><div class="k">Vertrouwelijkheid</div><div class="v">Volledig off the record. Geen opnames of notulen. Iedereen tekent een NDA.</div></div>
-      <div class="row"><div class="k">Cross-pollination</div><div class="v">Op termijn organiseren we ook gezamenlijke momenten tussen cohorten — denk aan een bijeenkomst op een mooie locatie zoals Sardinië, Ibiza, Koh Samui of Singapore.</div></div>
-      <div class="row"><div class="k">Tijdlijn</div><div class="v">Gratis kick-off in augustus/september 2026. Eerste bijeenkomsten vanaf oktober.</div></div>
+    <div class="eyebrow">Wie hebben zich al aangemeld?</div>
+    <h2>Je zit in goed gezelschap</h2>
+    <!-- PLACEHOLDER: chips vervangen door echte functietitels/bedrijven (of logo's) zodra bekend -->
+    <div class="chips">
+      <div class="chip">UX Manager — <span class="co">ING</span></div>
+      <div class="chip">VP of Design — <span class="co">Eneco</span></div>
+      <div class="chip">Head of Design — <span class="co">…</span></div>
+      <div class="chip">Design Director — <span class="co">…</span></div>
+      <div class="chip">Product Design Lead — <span class="co">…</span></div>
     </div>
   </div>
 </section>
@@ -291,7 +327,7 @@
 
     <details>
       <summary>Is dit weer een conferentie of netwerkevent?</summary>
-      <div class="body">Het is een vaste, besloten groep peers die elkaar over een jaar echt leert kennen. Geen podium en geen willekeurige talks.</div>
+      <div class="body">Nee. Geen sprekers, geen podium, geen willekeurige talks. Eén dag intensief in gesprek met een klein, gecureerd gezelschap van peers, aan tafels van maximaal vier personen.</div>
     </details>
     <details>
       <summary>Word ik benaderd door recruiters of leveranciers?</summary>
@@ -302,20 +338,20 @@
       <div class="body">Volledig off the record. We maken geen opnames en houden geen notulen. Iedereen tekent een NDA, zodat iedereen vrijuit kan spreken.</div>
     </details>
     <details>
-      <summary>Wat als ik niet bij alle bijeenkomsten kan?</summary>
-      <div class="body">We plannen de dagen ruim van tevoren, juist zodat je ze kunt vrijhouden. De waarde zit in de continuïteit, dus we raden sterk aan om bij alle vier te zijn.</div>
+      <summary>Wat als geen enkel thema bij mij past?</summary>
+      <div class="body">De thema's bepalen we aan het begin van de dag, op basis van wat er bij de deelnemers speelt. En in de middag vormen we custom tafels rond je eigen vraagstuk — jouw thema komt dus altijd aan bod.</div>
     </details>
     <details>
       <summary>Hoe word ik gekoppeld aan andere deelnemers?</summary>
-      <div class="body">Wij cureren de groep en de subgroepjes met de hand, op niveau en op vraagstuk, zodat je terechtkomt bij peers die echt bij je passen.</div>
+      <div class="body">Je kiest zelf de tafel met het thema dat jou raakt, en wij bewaken de samenstelling: klein, op niveau, en met de juiste mix. Wil je wisselen, dan hop je gewoon naar een andere tafel.</div>
     </details>
     <details>
       <summary>Wat kost het en wat zit erin?</summary>
-      <div class="body">€2.000 voor vier bijeenkomsten, inclusief locatie, lunch en diner op de hele dagen. Geen verborgen kosten.</div>
+      <div class="body">De prijs volgt binnenkort. Inbegrepen zijn in elk geval de locatie, lunch en borrel. Geen verborgen kosten, geen sponsors.</div>
     </details>
     <details>
-      <summary>Hoe kom ik erin?</summary>
-      <div class="body">Het is invitation-only. Begin bij de gratis kick-off — daar maken we kennis, beantwoorden we je vragen en kun je je direct aanmelden. Ken je iemand die hier thuishoort? Je kunt ook peers bij ons voordragen.</div>
+      <summary>Hoe meld ik me aan?</summary>
+      <div class="body">Meld je aan via de knop bovenaan of onderaan deze pagina. Wil je eerst meer weten? Meld je dan aan voor de gratis online voorlichtingsbijeenkomst — daar vertellen we over de opzet en beantwoorden we al je vragen.</div>
     </details>
   </div>
 </section>
@@ -323,15 +359,19 @@
 <section class="cta" id="aanmelden">
   <div class="wrap">
     <div class="eyebrow">Doe mee</div>
-    <h2>Het eerste Nederlandstalige cohort vult zich nu</h2>
-    <p>De eerste stap is vrijblijvend: kom naar de gratis kick-off in augustus/september 2026. Daar maak je kennis met ons en met de aanpak, krijg je antwoord op al je vragen, en kun je je meteen aanmelden als het je aanspreekt.</p>
-    <a class="btn" href="mailto:hello@designleadersexchange.com?subject=Kick-off%20Design%20Leaders%20Exchange">Reserveer je plek voor de kick-off</a>
-    <div class="cta-note">Maximaal 20 plaatsen per cohort. Daarna start het programma met de eerste bijeenkomst in oktober.</div>
+    <h2>Eén dag die je maanden verder brengt</h2>
+    <p>Meld je aan voor de Design Leaders Mastermind. Twijfel je nog, of wil je eerst meer weten? Kom dan naar de gratis online voorlichtingsbijeenkomst — daar maak je kennis met ons en met de aanpak, en krijg je antwoord op al je vragen.</p>
+    <!-- TODO: CTA-links nog uitwerken -->
+    <div class="btn-row">
+      <a class="btn" href="#">Aanmelden</a>
+      <a class="btn ghost" href="#">Gratis online voorlichtingsbijeenkomst</a>
+    </div>
+    <div class="cta-note">Doordeweekse dag, najaar 2026 · 10:00–16:00 · Landgoed Duin en Kruidberg · Beperkt aantal plaatsen</div>
   </div>
 </section>
 
 <footer>
-  <div class="wrap">Design Leaders Exchange — georganiseerd door Anne en Joris.</div>
+  <div class="wrap">Design Leaders Mastermind — georganiseerd door Anne Vroegop en Joris Groen.</div>
 </footer>
 
 </body>
