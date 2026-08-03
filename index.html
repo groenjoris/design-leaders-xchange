@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Design Leaders Mastermind — één dag diepgang voor design leaders</title>
+<link rel="alternate" hreflang="nl" href="https://design-leaders-xchange.vercel.app/">
+<link rel="alternate" hreflang="en" href="https://design-leaders-xchange.vercel.app/en/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -45,6 +47,7 @@
     color:#f3efe8;
     padding:108px 0 96px;
     border-bottom:1px solid #2c2f39;
+    position:relative;
   }
   header.hero .eyebrow{color:#c7a878;}
   header.hero h1{
@@ -70,6 +73,18 @@
   .btn.ghost:hover{background:#2c2f39;transform:translateY(-1px);}
   .btn-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
   .hero-note{margin-top:18px;font-size:14px;color:#a49d90;}
+
+  /* LANGUAGE SWITCH */
+  .lang-switch{
+    position:absolute;top:28px;right:28px;
+    display:flex;gap:0;border:1px solid #4a4d57;border-radius:999px;
+    overflow:hidden;font-size:13px;font-weight:600;letter-spacing:.06em;
+  }
+  .lang-switch a,.lang-switch span{
+    padding:7px 14px;text-decoration:none;color:#a49d90;
+  }
+  .lang-switch a:hover{color:#f3efe8;background:#2c2f39;}
+  .lang-switch span{background:#f3efe8;color:var(--ink);}
 
   /* SECTIONS */
   section{padding:80px 0;border-bottom:1px solid var(--line);}
@@ -159,12 +174,17 @@
     .timeline .slot{grid-template-columns:110px 1fr;gap:12px;}
     section{padding:60px 0;}
     header.hero{padding:80px 0 70px;}
+    .lang-switch{top:18px;right:18px;}
   }
 </style>
 </head>
 <body>
 
 <header class="hero">
+  <nav class="lang-switch" aria-label="Taal">
+    <span aria-current="true">NL</span>
+    <a href="/en/" lang="en" hreflang="en">EN</a>
+  </nav>
   <div class="wrap">
     <div class="eyebrow">Eén dag · Landgoed Duin en Kruidberg</div>
     <h1>Design Leaders Mastermind</h1>
