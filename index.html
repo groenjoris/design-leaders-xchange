@@ -6,6 +6,7 @@
 <title>Design Leaders Mastermind — één dag diepgang voor design leaders</title>
 <link rel="alternate" hreflang="nl" href="https://design-leaders-xchange.vercel.app/">
 <link rel="alternate" hreflang="en" href="https://design-leaders-xchange.vercel.app/en/">
+<link rel="alternate" hreflang="x-default" href="https://design-leaders-xchange.vercel.app/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -45,11 +46,10 @@
   header.hero{
     background:linear-gradient(180deg,#1a1c22 0%,#23262f 100%);
     color:#f3efe8;
-    padding:108px 0 96px;
+    padding:120px 0 104px;
     border-bottom:1px solid #2c2f39;
     position:relative;
   }
-  header.hero .eyebrow{color:#c7a878;}
   header.hero h1{
     font-size:clamp(34px,5.2vw,58px);
     margin:0 0 24px;
@@ -72,19 +72,16 @@
   .btn.ghost{background:transparent;color:#f3efe8;border:1px solid #4a4d57;}
   .btn.ghost:hover{background:#2c2f39;transform:translateY(-1px);}
   .btn-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
-  .hero-note{margin-top:18px;font-size:14px;color:#a49d90;}
 
   /* LANGUAGE SWITCH */
   .lang-switch{
-    position:absolute;top:28px;right:28px;
-    display:flex;gap:0;border:1px solid #4a4d57;border-radius:999px;
-    overflow:hidden;font-size:13px;font-weight:600;letter-spacing:.06em;
+    position:absolute;top:28px;right:28px;display:flex;
+    border:1px solid #4a4d57;border-radius:999px;overflow:hidden;
+    font-size:13px;font-weight:600;letter-spacing:.06em;
   }
-  .lang-switch a,.lang-switch span{
-    padding:7px 14px;text-decoration:none;color:#a49d90;
-  }
+  .lang-switch a,.lang-switch span{padding:7px 14px;text-decoration:none;color:#a49d90;}
   .lang-switch a:hover{color:#f3efe8;background:#2c2f39;}
-  .lang-switch span{background:#f3efe8;color:var(--ink);}
+  .lang-switch span[aria-current]{background:#f3efe8;color:var(--ink);}
 
   /* SECTIONS */
   section{padding:80px 0;border-bottom:1px solid var(--line);}
@@ -92,13 +89,35 @@
   section h2{font-size:clamp(26px,3.6vw,38px);margin:0 0 28px;max-width:22ch;}
   section p{color:var(--ink-soft);margin:0 0 20px;max-width:65ch;}
   section p strong{color:var(--ink);}
-  .lead-sum{font-size:20px;color:var(--ink) !important;}
 
-  blockquote{
-    margin:36px 0 0;padding:22px 26px;background:var(--card);
-    border-left:3px solid var(--accent);border-radius:0 10px 10px 0;
-    font-family:'Fraunces',serif;font-size:20px;color:var(--ink);
+  /* VENUE band */
+  section.venue{padding:0;background:var(--paper-2);}
+  .venue-inner{
+    display:grid;grid-template-columns:1.1fr 1fr;gap:44px;align-items:center;
+    padding:64px 0;
   }
+  .venue-inner img{
+    width:100%;height:auto;display:block;
+    border-radius:var(--radius);border:1px solid var(--line);
+  }
+  .venue-name{
+    font-size:13px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--accent-deep);font-weight:600;margin:0 0 14px;
+  }
+  .venue-place{
+    font-family:'Fraunces',Georgia,serif;font-size:clamp(24px,3vw,32px);
+    line-height:1.2;margin:0 0 18px;color:var(--ink);
+  }
+  .venue-meta{font-size:17px;color:var(--ink-soft);margin:0;}
+  .venue-meta strong{color:var(--ink);font-weight:600;}
+
+  /* AUDIENCE callout */
+  .audience{
+    margin-top:32px;padding:24px 28px;background:var(--card);
+    border:1px solid var(--line);border-left:3px solid var(--accent);
+    border-radius:0 var(--radius) var(--radius) 0;
+  }
+  .audience p{margin:0;color:var(--ink);}
 
   /* CARDS */
   .grid{display:grid;gap:18px;margin-top:14px;}
@@ -114,8 +133,14 @@
     font-family:'Fraunces',serif;font-size:15px;color:var(--accent-deep);
     font-weight:600;display:block;margin-bottom:10px;letter-spacing:.04em;
   }
+  .card .byline{font-family:'Inter',sans-serif;font-size:14px;font-weight:400;color:var(--ink-soft);}
+  .card .profile-link{
+    display:inline-block;margin-top:14px;font-size:15px;font-weight:600;
+    text-decoration:none;border-bottom:1px solid var(--line);
+  }
+  .card .profile-link:hover{border-bottom-color:var(--accent);}
 
-  /* WHAT WE DO list */
+  /* STACK list */
   .stack{margin-top:8px;}
   .stack .item{padding:22px 0;border-top:1px solid var(--line);}
   .stack .item:first-child{border-top:none;}
@@ -135,6 +160,13 @@
   }
   .timeline .d{color:var(--ink-soft);font-size:16px;}
   .timeline .d strong{color:var(--ink);}
+
+  /* PRAKTISCH figure */
+  figure.photo{margin:0 0 32px;}
+  figure.photo img{
+    width:100%;height:280px;object-fit:cover;object-position:center 60%;
+    display:block;border-radius:var(--radius);border:1px solid var(--line);
+  }
 
   /* AANGEMELD chips */
   .chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;}
@@ -166,14 +198,14 @@
   section.cta .btn-row{justify-content:center;}
   .cta-note{margin-top:24px;font-size:14px;color:#a49d90;max-width:60ch;margin-left:auto;margin-right:auto;}
 
-  footer{padding:40px 0;text-align:center;color:var(--ink-soft);font-size:14px;background:var(--paper);}
-
   @media(max-width:680px){
     body{font-size:16px;}
     .grid.two,.grid.three{grid-template-columns:1fr;}
     .timeline .slot{grid-template-columns:110px 1fr;gap:12px;}
+    .venue-inner{grid-template-columns:1fr;gap:28px;padding:48px 0;}
+    figure.photo img{height:200px;}
     section{padding:60px 0;}
-    header.hero{padding:80px 0 70px;}
+    header.hero{padding:88px 0 76px;}
     .lang-switch{top:18px;right:18px;}
   }
 </style>
@@ -186,66 +218,70 @@
     <a href="/en/" lang="en" hreflang="en">EN</a>
   </nav>
   <div class="wrap">
-    <div class="eyebrow">Eén dag · Landgoed Duin en Kruidberg</div>
     <h1>Design Leaders Mastermind</h1>
-    <p class="lead">Eén dag inspiratie, reflectie en netwerken met design leaders op jouw niveau. Aan kleine tafels, in strak begeleide werkvormen, praat je door over de vraagstukken waar je in je eentje op blijft hangen — met peers die er middenin zitten of er al doorheen zijn. Volledig vertrouwelijk. Je gaat naar huis met herkenning, frisse ideeën en concrete oplossingen.</p>
-    <!-- TODO: CTA-links nog uitwerken -->
+    <p class="lead">Eén dag inspiratie en netwerken met design leaders op jouw niveau. Aan kleine tafels praat je door over de vraagstukken waar je alleen op vastloopt, met peers die er middenin zitten of al doorheen zijn. Vertrouwelijk, met concrete oplossingen als resultaat.</p>
+    <!-- TODO: datum voorlichtingsbijeenkomst invullen + link naar aanmeldformulier -->
     <div class="btn-row">
-      <a class="btn light" href="#aanmelden">Aanmelden</a>
-      <a class="btn ghost" href="#aanmelden">Gratis online voorlichtingsbijeenkomst</a>
+      <a class="btn light" href="#aanmelden">Gratis online voorlichtingsbijeenkomst op …</a>
     </div>
-    <!-- PLACEHOLDER: datum nog niet bekend -->
-    <div class="hero-note">Doordeweekse dag, najaar 2026 · 10:00–16:00 · Beperkt aantal plaatsen</div>
   </div>
 </header>
 
-<section class="alt">
+<section class="venue">
   <div class="wrap">
-    <div class="eyebrow">Het probleem</div>
-    <h2>De vragen die er echt toe doen, bespreek je nergens goed</h2>
-    <p>Je bent verantwoordelijk voor design op niveau. De vraagstukken op je bord zijn zelden eenduidig, en zelden iets waar je collega's of je team je echt mee kunnen helpen — daarvoor zitten ze te dichtbij, of te ver eronder.</p>
-    <p>De plekken waar je normaal terecht zou kunnen, schieten tekort. Conferenties zijn willekeurig: veel talks raken je werk niet, en in de wandelgangen word je aangeschoten door iemand die een baan zoekt of een tool wil verkopen. Design-communities en fora blijven aan de oppervlakte — losse meningen, weinig diepgang. En overal ben je voorzichtig met wat je deelt, want je weet nooit precies wie er meeluistert.</p>
-    <p>Dus blijf je vaak alleen met de vragen die er echt toe doen. Je twijfelt of je voorloopt of juist achterloopt. Je baseert keuzes op een vermoeden van hoe anderen het aanpakken. En de waardevolle gesprekken — diep, eerlijk, tussen gelijken — komen er zelden van.</p>
+    <div class="venue-inner">
+      <img src="images/duin-en-kruidberg.jpg" width="515" height="388"
+           alt="Landgoed Duin en Kruidberg: een monumentaal kasteel aan de rand van het bos in Santpoort-Noord">
+      <div>
+        <p class="venue-name">Landgoed Duin en Kruidberg</p>
+        <p class="venue-place">Santpoort-Noord</p>
+        <p class="venue-meta"><strong>27 november 2026</strong><br>10:00–16:00 · Beperkt aantal plaatsen</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="eyebrow">Ons inzicht</div>
-    <h2>De beste inzichten komen van peers — als je ze de juiste setting geeft</h2>
-    <p>De meest relevante inzichten komen van peers op jouw niveau die hetzelfde vraagstuk al hebben opgelost, of er net als jij middenin zitten.</p>
-    <p>Maar dat gesprek ontstaat niet vanzelf. Het vraagt om de juiste mensen aan één tafel, rond het thema waar jij nú mee zit, in een setting waar je vrijuit kunt spreken. Precies dat organiseren wij: een gecureerd gezelschap, doordachte matching en werkvormen die elk gesprek de diepte in sturen.</p>
-    <p>Wij pretenderen uitdrukkelijk niet de wijsheid in pacht te hebben — veel is daarvoor te nieuw. De wijsheid zit aan tafel, bij jou en je peers. Wij zorgen dat die loskomt.</p>
-    <p><strong>Wat je eruit haalt:</strong> relevantie (precies de onderwerpen waar je nú mee zit), herkenning (je bent niet de enige, en dat lucht op), inspiratie (je gaat opgeladen naar huis met een verbrede blik) en oplossingen (je hoort hoe peers jouw vraagstuk al hebben aangepakt).</p>
+    <div class="eyebrow">Voor wie</div>
+    <h2>De vragen die er echt toe doen, bespreek je nergens goed</h2>
+    <p>Je bent verantwoordelijk voor design op niveau. Maar de vraagstukken waar je mee zit zijn zelden simpel, en je collega's of team kunnen je er meestal niet echt bij helpen. Die zitten er te dichtbij, of missen de ervaring.</p>
+    <p>De plekken waar je normaal zou kijken, vallen tegen. Conferenties raken lang niet altijd je eigen werk, en in de wandelgangen praat je zomaar met iemand die een baan zoekt of iets wil verkopen. Design-communities blijven hangen in losse meningen.</p>
+    <div class="audience">
+      <p>Voor design leaders en design managers (UX, CX, product design) met serieuze projecten en verantwoordelijkheid bij grote multinationals, sterke merken en internationale agencies.</p>
+    </div>
   </div>
 </section>
 
 <section class="alt">
   <div class="wrap">
-    <div class="eyebrow">Hoe ziet de dag eruit</div>
+    <div class="eyebrow">De oplossing</div>
+    <h2>De beste inzichten komen van peers</h2>
+    <p>De beste inzichten komen van peers op jouw niveau: mensen die hetzelfde vraagstuk al hebben opgelost, of er net als jij middenin zitten.</p>
+    <p>Dat gesprek ontstaat niet vanzelf. Het vraagt de juiste mensen aan tafel, rond precies jouw thema, in een setting waar je vrijuit kunt spreken. We stellen het gezelschap zorgvuldig samen, matchen op vraagstuk en niveau, en kiezen werkvormen die het gesprek de diepte in sturen.</p>
+    <p>De wijsheid zelf zit niet bij ons, die zit aan tafel, bij jou en je peers. Onze rol is die op te halen: de juiste mensen samenbrengen en het gesprek zo vormgeven dat het ook echt ergens komt.</p>
+    <p>Het resultaat: relevantie, herkenning, inspiratie en concrete oplossingen; precies waar jij nu mee zit, van mensen die dat al hebben meegemaakt.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Programma</div>
     <h2>Eén dag, zorgvuldig geregisseerd</h2>
 
     <div class="stack">
-      <div class="item">
-        <h3>Het publiek</h3>
-        <p>Design leaders en design managers (UX, CX, product design) met serieuze projecten en verantwoordelijkheid — bij grote multinationals, sterke merken en internationale agencies. We stellen het gezelschap zorgvuldig samen, zodat je de hele dag tussen echte peers zit.</p>
-      </div>
-      <div class="item">
-        <h3>We koppelen je aan de juiste mensen</h3>
-        <p>Kleine tafels van maximaal vier personen, gematcht op thema en niveau. Je kiest zelf het thema dat jou raakt, en schuift aan bij de mensen die met hetzelfde worstelen — de juiste lotgenoten en soortgenoten.</p>
-      </div>
       <div class="item">
         <h3>De werkvormen — onze kracht</h3>
         <p>Geen sprekers, geen panels, geen podium. De hele dag draait om beproefde, strak begeleide werkvormen: duo-breakouts, hop-on-hop-off thematafels en custom tafels rond jouw eigen vraagstuk. Werkvormen ontwerpen en begeleiden is het vak van Anne en Joris — zij bewaken dat elk gesprek voorbij de beleefdheden komt, de diepte in gaat en oplevert. Zo ga je naar huis met concrete inzichten in plaats van visitekaartjes.</p>
       </div>
       <div class="item">
-        <h3>Het programma</h3>
-        <p>Van ontvangst tot borrel, in een ritme dat afwisselt tussen intensieve gesprekken en ademruimte:</p>
+        <h3>Het dagprogramma</h3>
+        <p>Je werkt de hele dag aan kleine tafels van maximaal vier personen, gematcht op vraagstuk en niveau: je kiest zelf het thema dat jou raakt en schuift aan bij de mensen die met hetzelfde worstelen. Het ritme wisselt af tussen intensieve gesprekken en ademruimte.</p>
         <div class="timeline">
           <div class="slot"><div class="t">9:30</div><div class="d">Ontvangst</div></div>
           <div class="slot"><div class="t">10:00</div><div class="d"><strong>Introductie</strong> — kennismaken in duo's</div></div>
           <div class="slot"><div class="t">10:30</div><div class="d"><strong>Breakout in duo's</strong> — wat is jouw uitdaging als leader?</div></div>
-          <div class="slot"><div class="t">11:00</div><div class="d"><strong>Tafelsessie 1: hop-on-hop-off thematafels</strong> — vier tafels, elk rond één thema, maximaal vier personen per tafel. Kies je thema en schuif aan. Wil je switchen? Dan hop je naar een andere tafel.</div></div>
+          <div class="slot"><div class="t">11:00</div><div class="d"><strong>Tafelsessie 1: hop-on-hop-off thematafels</strong> — vier tafels, elk rond één thema, maximaal vier personen per tafel. Kies het thema dat jou raakt en schuif aan bij je lotgenoten. Wil je switchen? Dan hop je naar een andere tafel.</div></div>
           <div class="slot"><div class="t">12:00</div><div class="d">Lunch</div></div>
           <div class="slot"><div class="t">13:00</div><div class="d"><strong>20 minuten voor jezelf</strong> — even wandelen, nadenken of bijkomen</div></div>
           <div class="slot"><div class="t">13:30</div><div class="d"><strong>Tafelsessie 2: custom tafels</strong> — vorm een twee- of drietal rond een eigen thema. Na twintig minuten kun je wisselen en ergens anders aanschuiven.</div></div>
@@ -255,9 +291,24 @@
           <div class="slot"><div class="t">16:00</div><div class="d">Einde</div></div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="eyebrow">Praktisch</div>
+    <h2>Locatie en vertrouwelijkheid</h2>
+    <figure class="photo">
+      <img src="images/duin-en-kruidberg-lounge.jpg" width="1000" height="1000" loading="lazy"
+           alt="De lounge van Landgoed Duin en Kruidberg met houten schouw, chesterfields en kroonluchter">
+    </figure>
+    <div class="stack">
       <div class="item">
         <h3>De locatie</h3>
         <p>Landgoed Duin en Kruidberg in Santpoort: een prachtig kasteel aan de rand van Nationaal Park Zuid-Kennemerland, met ruimte voor een boswandeling tussen de sessies door. Een omgeving die uitnodigt om afstand te nemen van de waan van de dag.</p>
+        <!-- TODO: adres invullen en routebeschrijving-PDF koppelen -->
+        <p>Adres: … · <a href="#">Route (PDF)</a></p>
       </div>
       <div class="item">
         <h3>Vertrouwelijk</h3>
@@ -270,8 +321,7 @@
 <section>
   <div class="wrap">
     <div class="eyebrow">Voorbeelden van thema's</div>
-    <h2>Thema's die we horen van design managers</h2>
-    <p>Dit zijn voorbeelden van thema's die design managers ons de afgelopen tijd aandroegen. De échte thema's bepalen we samen aan het begin van de dag — het gaat om wat er bij jou en je peers nú speelt.</p>
+    <h2>Thema's waar we blij van worden</h2>
     <div class="grid three">
       <div class="card">
         <span class="num">01</span>
@@ -285,8 +335,8 @@
       </div>
       <div class="card">
         <span class="num">03</span>
-        <h3>Career framework</h3>
-        <p>Hoe bouw je een career framework dat designers laat groeien en houvast geeft — en dat ook standhoudt in gesprekken met HR en management?</p>
+        <h3>Toekomst van het vak en jouw rol daarin</h3>
+        <p>Waar beweegt het designvak naartoe, en wat betekent dat voor jouw rol? Hoe laat je je mensen daarin meegroeien, en jezelf?</p>
       </div>
       <div class="card">
         <span class="num">04</span>
@@ -311,15 +361,17 @@
   <div class="wrap">
     <div class="eyebrow">Wie zijn we</div>
     <h2>Anne en Joris</h2>
-    <!-- CONCEPT-BIO: aanscherpen — beide bio's zijn een eerste opzet, graag checken/aanvullen -->
     <div class="grid two">
       <div class="card">
-        <h3>Anne Vroegop</h3>
-        <p>Anne is designleider en facilitator met jarenlange ervaring in het begeleiden van teams en leiders in de designwereld. Ze is op haar best als ze een groep professionals in korte tijd tot de kern laat komen — met werkvormen die scherpte en openheid combineren.</p>
+        <h3>Anne Vroegop <span class="byline">(1980)</span></h3>
+        <p>Anne is designleider en facilitator met jarenlange ervaring in het begeleiden van teams en leiders in de designwereld vanuit haar UX Academy en Human AI Academy. Ze is op haar best als ze een groep professionals in korte tijd tot de kern laat komen, met werkvormen die scherpte en openheid combineren.</p>
+        <a class="profile-link" href="https://www.linkedin.com/in/annevroegop/" target="_blank" rel="noopener">LinkedIn →</a>
       </div>
       <div class="card">
+        <!-- CONCEPT-BIO: aanscherpen — Joris' tekst, geboortejaar en LinkedIn-URL nog invullen -->
         <h3>Joris Groen</h3>
         <p>Joris is UX-veteraan, auteur en oprichter van meerdere designpraktijken. Hij ontwerpt al decennia digitale producten én de sessies waarin mensen daarover de goede gesprekken voeren. Zijn specialiteit: werkvormen die diepgang afdwingen zonder dat het geforceerd voelt.</p>
+        <a class="profile-link" href="#">LinkedIn →</a>
       </div>
     </div>
   </div>
@@ -371,7 +423,7 @@
     </details>
     <details>
       <summary>Hoe meld ik me aan?</summary>
-      <div class="body">Meld je aan via de knop bovenaan of onderaan deze pagina. Wil je eerst meer weten? Meld je dan aan voor de gratis online voorlichtingsbijeenkomst — daar vertellen we over de opzet en beantwoorden we al je vragen.</div>
+      <div class="body">Begin bij de gratis online voorlichtingsbijeenkomst — daar vertellen we over de opzet, beantwoorden we al je vragen en kun je je meteen aanmelden voor 27 november.</div>
     </details>
   </div>
 </section>
@@ -380,19 +432,14 @@
   <div class="wrap">
     <div class="eyebrow">Doe mee</div>
     <h2>Eén dag die je maanden verder brengt</h2>
-    <p>Meld je aan voor de Design Leaders Mastermind. Twijfel je nog, of wil je eerst meer weten? Kom dan naar de gratis online voorlichtingsbijeenkomst — daar maak je kennis met ons en met de aanpak, en krijg je antwoord op al je vragen.</p>
-    <!-- TODO: CTA-links nog uitwerken -->
+    <p>Wil je erbij zijn, of eerst meer weten? Kom naar de gratis online voorlichtingsbijeenkomst — daar maak je kennis met ons en met de aanpak, krijg je antwoord op al je vragen en kun je je direct aanmelden.</p>
+    <!-- TODO: datum voorlichtingsbijeenkomst invullen + link naar aanmeldformulier -->
     <div class="btn-row">
-      <a class="btn" href="#">Aanmelden</a>
-      <a class="btn ghost" href="#">Gratis online voorlichtingsbijeenkomst</a>
+      <a class="btn" href="#">Gratis online voorlichtingsbijeenkomst op …</a>
     </div>
-    <div class="cta-note">Doordeweekse dag, najaar 2026 · 10:00–16:00 · Landgoed Duin en Kruidberg · Beperkt aantal plaatsen</div>
+    <div class="cta-note">27 november 2026 · 10:00–16:00 · Landgoed Duin en Kruidberg, Santpoort-Noord · Beperkt aantal plaatsen</div>
   </div>
 </section>
-
-<footer>
-  <div class="wrap">Design Leaders Mastermind — georganiseerd door Anne Vroegop en Joris Groen.</div>
-</footer>
 
 </body>
 </html>

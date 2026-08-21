@@ -6,6 +6,7 @@
 <title>Design Leaders Mastermind — one day of depth for design leaders</title>
 <link rel="alternate" hreflang="nl" href="https://design-leaders-xchange.vercel.app/">
 <link rel="alternate" hreflang="en" href="https://design-leaders-xchange.vercel.app/en/">
+<link rel="alternate" hreflang="x-default" href="https://design-leaders-xchange.vercel.app/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -45,11 +46,10 @@
   header.hero{
     background:linear-gradient(180deg,#1a1c22 0%,#23262f 100%);
     color:#f3efe8;
-    padding:108px 0 96px;
+    padding:120px 0 104px;
     border-bottom:1px solid #2c2f39;
     position:relative;
   }
-  header.hero .eyebrow{color:#c7a878;}
   header.hero h1{
     font-size:clamp(34px,5.2vw,58px);
     margin:0 0 24px;
@@ -72,19 +72,16 @@
   .btn.ghost{background:transparent;color:#f3efe8;border:1px solid #4a4d57;}
   .btn.ghost:hover{background:#2c2f39;transform:translateY(-1px);}
   .btn-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
-  .hero-note{margin-top:18px;font-size:14px;color:#a49d90;}
 
   /* LANGUAGE SWITCH */
   .lang-switch{
-    position:absolute;top:28px;right:28px;
-    display:flex;gap:0;border:1px solid #4a4d57;border-radius:999px;
-    overflow:hidden;font-size:13px;font-weight:600;letter-spacing:.06em;
+    position:absolute;top:28px;right:28px;display:flex;
+    border:1px solid #4a4d57;border-radius:999px;overflow:hidden;
+    font-size:13px;font-weight:600;letter-spacing:.06em;
   }
-  .lang-switch a,.lang-switch span{
-    padding:7px 14px;text-decoration:none;color:#a49d90;
-  }
+  .lang-switch a,.lang-switch span{padding:7px 14px;text-decoration:none;color:#a49d90;}
   .lang-switch a:hover{color:#f3efe8;background:#2c2f39;}
-  .lang-switch span{background:#f3efe8;color:var(--ink);}
+  .lang-switch span[aria-current]{background:#f3efe8;color:var(--ink);}
 
   /* SECTIONS */
   section{padding:80px 0;border-bottom:1px solid var(--line);}
@@ -92,13 +89,35 @@
   section h2{font-size:clamp(26px,3.6vw,38px);margin:0 0 28px;max-width:22ch;}
   section p{color:var(--ink-soft);margin:0 0 20px;max-width:65ch;}
   section p strong{color:var(--ink);}
-  .lead-sum{font-size:20px;color:var(--ink) !important;}
 
-  blockquote{
-    margin:36px 0 0;padding:22px 26px;background:var(--card);
-    border-left:3px solid var(--accent);border-radius:0 10px 10px 0;
-    font-family:'Fraunces',serif;font-size:20px;color:var(--ink);
+  /* VENUE band */
+  section.venue{padding:0;background:var(--paper-2);}
+  .venue-inner{
+    display:grid;grid-template-columns:1.1fr 1fr;gap:44px;align-items:center;
+    padding:64px 0;
   }
+  .venue-inner img{
+    width:100%;height:auto;display:block;
+    border-radius:var(--radius);border:1px solid var(--line);
+  }
+  .venue-name{
+    font-size:13px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--accent-deep);font-weight:600;margin:0 0 14px;
+  }
+  .venue-place{
+    font-family:'Fraunces',Georgia,serif;font-size:clamp(24px,3vw,32px);
+    line-height:1.2;margin:0 0 18px;color:var(--ink);
+  }
+  .venue-meta{font-size:17px;color:var(--ink-soft);margin:0;}
+  .venue-meta strong{color:var(--ink);font-weight:600;}
+
+  /* AUDIENCE callout */
+  .audience{
+    margin-top:32px;padding:24px 28px;background:var(--card);
+    border:1px solid var(--line);border-left:3px solid var(--accent);
+    border-radius:0 var(--radius) var(--radius) 0;
+  }
+  .audience p{margin:0;color:var(--ink);}
 
   /* CARDS */
   .grid{display:grid;gap:18px;margin-top:14px;}
@@ -114,8 +133,14 @@
     font-family:'Fraunces',serif;font-size:15px;color:var(--accent-deep);
     font-weight:600;display:block;margin-bottom:10px;letter-spacing:.04em;
   }
+  .card .byline{font-family:'Inter',sans-serif;font-size:14px;font-weight:400;color:var(--ink-soft);}
+  .card .profile-link{
+    display:inline-block;margin-top:14px;font-size:15px;font-weight:600;
+    text-decoration:none;border-bottom:1px solid var(--line);
+  }
+  .card .profile-link:hover{border-bottom-color:var(--accent);}
 
-  /* WHAT WE DO list */
+  /* STACK list */
   .stack{margin-top:8px;}
   .stack .item{padding:22px 0;border-top:1px solid var(--line);}
   .stack .item:first-child{border-top:none;}
@@ -135,6 +160,13 @@
   }
   .timeline .d{color:var(--ink-soft);font-size:16px;}
   .timeline .d strong{color:var(--ink);}
+
+  /* PRAKTISCH figure */
+  figure.photo{margin:0 0 32px;}
+  figure.photo img{
+    width:100%;height:280px;object-fit:cover;object-position:center 60%;
+    display:block;border-radius:var(--radius);border:1px solid var(--line);
+  }
 
   /* AANGEMELD chips */
   .chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;}
@@ -166,14 +198,14 @@
   section.cta .btn-row{justify-content:center;}
   .cta-note{margin-top:24px;font-size:14px;color:#a49d90;max-width:60ch;margin-left:auto;margin-right:auto;}
 
-  footer{padding:40px 0;text-align:center;color:var(--ink-soft);font-size:14px;background:var(--paper);}
-
   @media(max-width:680px){
     body{font-size:16px;}
     .grid.two,.grid.three{grid-template-columns:1fr;}
     .timeline .slot{grid-template-columns:110px 1fr;gap:12px;}
+    .venue-inner{grid-template-columns:1fr;gap:28px;padding:48px 0;}
+    figure.photo img{height:200px;}
     section{padding:60px 0;}
-    header.hero{padding:80px 0 70px;}
+    header.hero{padding:88px 0 76px;}
     .lang-switch{top:18px;right:18px;}
   }
 </style>
@@ -186,82 +218,101 @@
     <span aria-current="true">EN</span>
   </nav>
   <div class="wrap">
-    <div class="eyebrow">One day · Duin en Kruidberg Estate</div>
     <h1>Design Leaders Mastermind</h1>
-    <p class="lead">One day of inspiration, reflection and networking with design leaders at your level. At small tables, in tightly facilitated formats, you dig into the questions you keep circling on your own — with peers who are in the thick of them, or already came out the other side. Fully confidential. You go home with recognition, fresh ideas and concrete solutions.</p>
-    <!-- TODO: CTA links still to be set up -->
+    <p class="lead">One day of inspiration and networking with design leaders at your level. At small tables you talk through the challenges you get stuck on alone, with peers who are in the middle of them or have already been through them. Confidential, with concrete solutions as the result.</p>
+    <!-- TODO: datum voorlichtingsbijeenkomst invullen + link naar aanmeldformulier -->
     <div class="btn-row">
-      <a class="btn light" href="#signup">Sign up</a>
-      <a class="btn ghost" href="#signup">Free online info session</a>
+      <a class="btn light" href="#signup">Free online info session on …</a>
     </div>
-    <!-- PLACEHOLDER: date not yet known -->
-    <div class="hero-note">Weekday, autumn 2026 · 10:00–16:00 · Limited number of seats</div>
   </div>
 </header>
 
-<section class="alt">
+<section class="venue">
   <div class="wrap">
-    <div class="eyebrow">The problem</div>
-    <h2>The questions that really matter have nowhere good to go</h2>
-    <p>You're responsible for design at a senior level. The questions on your plate are rarely clear-cut, and rarely something your colleagues or your team can truly help you with — they're too close to it, or too far below it.</p>
-    <p>The places you'd normally turn to fall short. Conferences are hit-and-miss: most talks don't touch your work, and in the hallways you get cornered by someone looking for a job or selling a tool. Design communities and forums stay at the surface — loose opinions, little depth. And everywhere you're careful about what you share, because you never quite know who's listening in.</p>
-    <p>So you're often left alone with the questions that really matter. You wonder whether you're ahead of the curve or behind it. You base decisions on a hunch of how others are handling it. And the valuable conversations — deep, honest, between equals — rarely happen.</p>
+    <div class="venue-inner">
+      <img src="../images/duin-en-kruidberg.jpg" width="515" height="388"
+           alt="Landgoed Duin en Kruidberg: a monumental castle on the edge of the woods in Santpoort-Noord">
+      <div>
+        <p class="venue-name">Landgoed Duin en Kruidberg</p>
+        <p class="venue-place">Santpoort-Noord</p>
+        <p class="venue-meta"><strong>27 November 2026</strong><br>10:00–16:00 · Limited number of places</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <div class="eyebrow">Our insight</div>
-    <h2>The best insights come from peers — given the right setting</h2>
-    <p>The most relevant insights come from peers at your level who have already solved the exact question you're facing, or are right in the middle of it, just like you.</p>
-    <p>But that conversation doesn't happen by itself. It takes the right people at one table, around the theme you're dealing with right now, in a setting where you can speak freely. That is precisely what we organise: a curated group, thoughtful matching and formats that push every conversation towards depth.</p>
-    <p>We emphatically don't claim to have all the answers — much of this is too new for that. The wisdom is at the table, with you and your peers. We make sure it comes out.</p>
-    <p><strong>What you take home:</strong> relevance (exactly the topics you're dealing with right now), recognition (you're not the only one, and that's a relief), inspiration (you go home energised, with a broadened perspective) and solutions (you hear how peers have already tackled your challenge).</p>
+    <div class="eyebrow">Who it’s for</div>
+    <h2>The questions that really matter have nowhere to go</h2>
+    <p>You are responsible for design at a senior level. But the challenges on your plate are rarely simple, and your colleagues or your team usually cannot really help you with them. They are too close to it, or they lack the experience.</p>
+    <p>The places you would normally turn to disappoint. Conferences often do not touch your actual work, and in the hallways you find yourself talking to someone looking for a job or trying to sell you something. Design communities stay stuck in scattered opinions.</p>
+    <div class="audience">
+      <p>For design leaders and design managers (UX, CX, product design) with serious projects and responsibility at large multinationals, strong brands and international agencies.</p>
+    </div>
   </div>
 </section>
 
 <section class="alt">
   <div class="wrap">
-    <div class="eyebrow">What the day looks like</div>
-    <h2>One day, carefully orchestrated</h2>
+    <div class="eyebrow">The solution</div>
+    <h2>The best insights come from peers</h2>
+    <p>The best insights come from peers at your level: people who have already solved the same challenge, or who are right in the middle of it just like you.</p>
+    <p>That conversation does not happen by itself. It takes the right people at the table, around exactly your theme, in a setting where you can speak freely. We put the group together with care, match on challenge and seniority, and choose formats that steer the conversation towards depth.</p>
+    <p>The wisdom itself is not ours. It sits at the table, with you and your peers. Our role is to draw it out: bring the right people together and shape the conversation so that it actually gets somewhere.</p>
+    <p>The result: relevance, recognition, inspiration and concrete solutions — exactly what you are dealing with now, from people who have already been there.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Programme</div>
+    <h2>One day, carefully directed</h2>
 
     <div class="stack">
       <div class="item">
-        <h3>The people in the room</h3>
-        <p>Design leaders and design managers (UX, CX, product design) with serious projects and real responsibility — at large multinationals, strong brands and international agencies. We curate the group carefully, so you spend the whole day among true peers.</p>
-      </div>
-      <div class="item">
-        <h3>We match you with the right people</h3>
-        <p>Small tables of at most four people, matched on theme and level. You pick the theme that speaks to you and join the people wrestling with the same thing — the right fellow travellers.</p>
-      </div>
-      <div class="item">
         <h3>The formats — our strength</h3>
-        <p>No speakers, no panels, no stage. The whole day is built on proven, tightly facilitated formats: pair breakouts, hop-on-hop-off theme tables and custom tables around your own challenge. Designing and facilitating these formats is Anne and Joris's craft — they make sure every conversation gets past the pleasantries, goes deep and delivers. So you go home with concrete insights instead of business cards.</p>
+        <p>No speakers, no panels, no stage. The whole day runs on proven, tightly facilitated formats: breakouts in pairs, hop-on-hop-off theme tables and custom tables around your own challenge. Designing and facilitating formats is what Anne and Joris do for a living — they make sure every conversation gets past the pleasantries, goes deep and delivers. So you go home with concrete insights instead of business cards.</p>
       </div>
       <div class="item">
-        <h3>The programme</h3>
-        <p>From arrival to drinks, in a rhythm that alternates between intensive conversations and room to breathe:</p>
+        <h3>The day’s programme</h3>
+        <p>You spend the whole day at small tables of no more than four people, matched on challenge and seniority: you pick the theme that speaks to you and join the people wrestling with the same thing. The rhythm alternates between intense conversation and room to breathe.</p>
         <div class="timeline">
-          <div class="slot"><div class="t">9:30</div><div class="d">Arrival</div></div>
+          <div class="slot"><div class="t">9:30</div><div class="d">Welcome</div></div>
           <div class="slot"><div class="t">10:00</div><div class="d"><strong>Introduction</strong> — getting to know each other in pairs</div></div>
-          <div class="slot"><div class="t">10:30</div><div class="d"><strong>Pair breakout</strong> — what is your challenge as a leader?</div></div>
-          <div class="slot"><div class="t">11:00</div><div class="d"><strong>Table session 1: hop-on-hop-off theme tables</strong> — four tables, each around one theme, at most four people per table. Pick your theme and join. Want to switch? Hop to another table.</div></div>
+          <div class="slot"><div class="t">10:30</div><div class="d"><strong>Breakout in pairs</strong> — what is your challenge as a leader?</div></div>
+          <div class="slot"><div class="t">11:00</div><div class="d"><strong>Table session 1: hop-on-hop-off theme tables</strong> — four tables, each around one theme, no more than four people per table. Pick the theme that speaks to you and join your peers. Want to switch? Then you hop to another table.</div></div>
           <div class="slot"><div class="t">12:00</div><div class="d">Lunch</div></div>
-          <div class="slot"><div class="t">13:00</div><div class="d"><strong>20 minutes to yourself</strong> — take a walk, reflect or recharge</div></div>
-          <div class="slot"><div class="t">13:30</div><div class="d"><strong>Table session 2: custom tables</strong> — form a pair or trio around a theme of your own. After twenty minutes you can switch and join another table.</div></div>
+          <div class="slot"><div class="t">13:00</div><div class="d"><strong>20 minutes to yourself</strong> — take a walk, think, or recharge</div></div>
+          <div class="slot"><div class="t">13:30</div><div class="d"><strong>Table session 2: custom tables</strong> — form a pair or a trio around a theme of your own. After twenty minutes you can switch and join somewhere else.</div></div>
           <div class="slot"><div class="t">14:30</div><div class="d">Coffee</div></div>
-          <div class="slot"><div class="t">14:45</div><div class="d"><strong>Roundup</strong> — the key insights of the day</div></div>
+          <div class="slot"><div class="t">14:45</div><div class="d"><strong>Round-up</strong> — the key insights of the day</div></div>
           <div class="slot"><div class="t">15:15</div><div class="d">Drinks</div></div>
           <div class="slot"><div class="t">16:00</div><div class="d">End</div></div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="eyebrow">Practical</div>
+    <h2>Venue and confidentiality</h2>
+    <figure class="photo">
+      <img src="../images/duin-en-kruidberg-lounge.jpg" width="1000" height="1000" loading="lazy"
+           alt="The lounge at Landgoed Duin en Kruidberg with a carved wooden fireplace, chesterfields and a chandelier">
+    </figure>
+    <div class="stack">
       <div class="item">
         <h3>The venue</h3>
-        <p>Duin en Kruidberg Estate in Santpoort, near Amsterdam: a beautiful country house on the edge of the Zuid-Kennemerland National Park, with room for a walk in the woods between sessions. Surroundings that invite you to step away from the daily grind.</p>
+        <p>Landgoed Duin en Kruidberg in Santpoort: a beautiful castle on the edge of Zuid-Kennemerland National Park, with room for a walk in the woods between sessions. A setting that invites you to step away from the day-to-day.</p>
+        <!-- TODO: adres invullen en routebeschrijving-PDF koppelen -->
+        <p>Address: … · <a href="#">Directions (PDF)</a></p>
       </div>
       <div class="item">
         <h3>Confidential</h3>
-        <p>Completely off the record. We make no recordings and take no minutes. To be safe, everyone signs a non-disclosure agreement, so everyone can speak freely.</p>
+        <p>Completely off the record. We make no recordings and keep no minutes. To be safe, everyone signs a non-disclosure agreement, so everyone can speak freely.</p>
       </div>
     </div>
   </div>
@@ -270,13 +321,12 @@
 <section>
   <div class="wrap">
     <div class="eyebrow">Example themes</div>
-    <h2>Themes we hear from design managers</h2>
-    <p>These are examples of themes design managers have brought to us recently. The actual themes are decided together at the start of the day — it's about what's on your mind, and your peers', right now.</p>
+    <h2>Themes we get excited about</h2>
     <div class="grid three">
       <div class="card">
         <span class="num">01</span>
         <h3>AI in the design process</h3>
-        <p>How is AI changing your process, and how are others handling it? How do you deal with resistance, with frontrunners, and with constraints from legal and compliance?</p>
+        <p>How is AI changing your process, and how are others doing it? How do you deal with resistance, with front-runners, and with constraints from legal and compliance?</p>
       </div>
       <div class="card">
         <span class="num">02</span>
@@ -285,8 +335,8 @@
       </div>
       <div class="card">
         <span class="num">03</span>
-        <h3>Career framework</h3>
-        <p>How do you build a career framework that helps designers grow and gives them footing — and that also holds up in conversations with HR and management?</p>
+        <h3>The future of the profession and your role in it</h3>
+        <p>Where is the design profession heading, and what does that mean for your role? How do you help your people grow with it — and yourself?</p>
       </div>
       <div class="card">
         <span class="num">04</span>
@@ -296,7 +346,7 @@
       <div class="card">
         <span class="num">05</span>
         <h3>Moral ambition</h3>
-        <p>How do you put design to work for things that truly matter — and how do you relate to choices your organisation makes that you struggle with?</p>
+        <p>How do you put design to work on things that genuinely matter — and how do you relate to choices your organisation makes that you struggle with?</p>
       </div>
       <div class="card">
         <span class="num">06</span>
@@ -311,15 +361,17 @@
   <div class="wrap">
     <div class="eyebrow">Who we are</div>
     <h2>Anne and Joris</h2>
-    <!-- CONCEPT BIOS: to be sharpened — both bios are a first draft, please check/expand -->
     <div class="grid two">
       <div class="card">
-        <h3>Anne Vroegop</h3>
-        <p>Anne is a design leader and facilitator with years of experience guiding teams and leaders in the design world. She is at her best when getting a group of professionals to the heart of the matter in a short time — with formats that combine sharpness and openness.</p>
+        <h3>Anne Vroegop <span class="byline">(1980)</span></h3>
+        <p>Anne is a design leader and facilitator with years of experience guiding teams and leaders in the design world through her UX Academy and Human AI Academy. She is at her best when she gets a group of professionals to the heart of the matter in a short space of time, with formats that combine sharpness and openness.</p>
+        <a class="profile-link" href="https://www.linkedin.com/in/annevroegop/" target="_blank" rel="noopener">LinkedIn →</a>
       </div>
       <div class="card">
+        <!-- CONCEPT-BIO: aanscherpen — Joris’ tekst, geboortejaar en LinkedIn-URL nog invullen -->
         <h3>Joris Groen</h3>
-        <p>Joris is a UX veteran, author and founder of several design practices. He has spent decades designing digital products — and the sessions in which people have the right conversations about them. His specialty: formats that force depth without ever feeling forced.</p>
+        <p>Joris is a UX veteran, author and founder of several design practices. He has spent decades designing digital products as well as the sessions where people have the right conversations about them. His speciality: formats that force depth without ever feeling forced.</p>
+        <a class="profile-link" href="#">LinkedIn →</a>
       </div>
     </div>
   </div>
@@ -328,8 +380,8 @@
 <section>
   <div class="wrap">
     <div class="eyebrow">Who has already signed up?</div>
-    <h2>You're in good company</h2>
-    <!-- PLACEHOLDER: replace chips with real job titles/companies (or logos) once known -->
+    <h2>You are in good company</h2>
+    <!-- PLACEHOLDER: chips vervangen door echte functietitels/bedrijven (of logo’s) zodra bekend -->
     <div class="chips">
       <div class="chip">UX Manager — <span class="co">ING</span></div>
       <div class="chip">VP of Design — <span class="co">Eneco</span></div>
@@ -346,32 +398,32 @@
     <h2>Good to know</h2>
 
     <details>
-      <summary>Is this yet another conference or networking event?</summary>
-      <div class="body">No. No speakers, no stage, no random talks. One day of intensive conversation with a small, curated group of peers, at tables of at most four people.</div>
+      <summary>Is this another conference or networking event?</summary>
+      <div class="body">No. No speakers, no stage, no random talks. One day of intensive conversation with a small, curated group of peers, at tables of no more than four people.</div>
     </details>
     <details>
-      <summary>Will I be approached by recruiters or vendors?</summary>
-      <div class="body">No. That's exactly what we rule out. No sponsors, no selling, no job offers — a safe environment among equals.</div>
+      <summary>Will recruiters or vendors approach me?</summary>
+      <div class="body">No. That is exactly what we rule out. No sponsors, no selling, no job offers — a safe environment among equals.</div>
     </details>
     <details>
-      <summary>How confidential is it, really?</summary>
-      <div class="body">Completely off the record. We make no recordings and take no minutes. Everyone signs an NDA, so everyone can speak freely.</div>
+      <summary>How confidential is it really?</summary>
+      <div class="body">Completely off the record. We make no recordings and keep no minutes. Everyone signs an NDA, so everyone can speak freely.</div>
     </details>
     <details>
       <summary>What if none of the themes fit me?</summary>
-      <div class="body">The themes are decided at the start of the day, based on what's on the participants' minds. And in the afternoon we form custom tables around your own challenge — so your theme always gets its turn.</div>
+      <div class="body">We set the themes at the start of the day, based on what is live for the participants. And in the afternoon we form custom tables around your own challenge — so your theme always gets its turn.</div>
     </details>
     <details>
-      <summary>How am I matched with other participants?</summary>
-      <div class="body">You pick the table with the theme that speaks to you, and we guard the composition: small, at the right level, with the right mix. Want to switch? Just hop to another table.</div>
+      <summary>How am I matched with the other participants?</summary>
+      <div class="body">You pick the table with the theme that speaks to you, and we watch over the composition: small, at level, and with the right mix. Want to switch? Just hop to another table.</div>
     </details>
     <details>
-      <summary>What does it cost and what's included?</summary>
-      <div class="body">Pricing will follow shortly. In any case, the venue, lunch and drinks are included. No hidden costs, no sponsors.</div>
+      <summary>What does it cost and what is included?</summary>
+      <div class="body">The price will follow shortly. The venue, lunch and drinks are included in any case. No hidden costs, no sponsors.</div>
     </details>
     <details>
       <summary>How do I sign up?</summary>
-      <div class="body">Sign up via the button at the top or bottom of this page. Want to know more first? Join the free online info session — we'll walk you through the setup and answer all your questions.</div>
+      <div class="body">Start with the free online info session — there we walk you through the set-up, answer all your questions, and you can sign up for 27 November right away.</div>
     </details>
   </div>
 </section>
@@ -379,20 +431,15 @@
 <section class="cta" id="signup">
   <div class="wrap">
     <div class="eyebrow">Join us</div>
-    <h2>One day that moves you months ahead</h2>
-    <p>Sign up for the Design Leaders Mastermind. Still on the fence, or want to know more first? Join the free online info session — meet us, get to know the approach, and get answers to all your questions.</p>
-    <!-- TODO: CTA links still to be set up -->
+    <h2>One day that moves you months forward</h2>
+    <p>Want to be there, or find out more first? Come to the free online info session — you will get to know us and the approach, get answers to all your questions, and can sign up straight away.</p>
+    <!-- TODO: datum voorlichtingsbijeenkomst invullen + link naar aanmeldformulier -->
     <div class="btn-row">
-      <a class="btn" href="#">Sign up</a>
-      <a class="btn ghost" href="#">Free online info session</a>
+      <a class="btn" href="#">Free online info session on …</a>
     </div>
-    <div class="cta-note">Weekday, autumn 2026 · 10:00–16:00 · Duin en Kruidberg Estate · Limited number of seats</div>
+    <div class="cta-note">27 November 2026 · 10:00–16:00 · Landgoed Duin en Kruidberg, Santpoort-Noord · Limited number of places</div>
   </div>
 </section>
-
-<footer>
-  <div class="wrap">Design Leaders Mastermind — organised by Anne Vroegop and Joris Groen.</div>
-</footer>
 
 </body>
 </html>
