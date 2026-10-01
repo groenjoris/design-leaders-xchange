@@ -91,25 +91,30 @@
   section p strong{color:var(--ink);}
 
   /* VENUE band */
-  section.venue{padding:0;background:var(--paper-2);}
-  .venue-inner{
-    display:grid;grid-template-columns:1.1fr 1fr;gap:44px;align-items:center;
-    padding:64px 0;
+  section.venue{
+    position:relative;padding:0;overflow:hidden;
+    min-height:clamp(420px,52vw,600px);display:flex;align-items:flex-end;
+    background:#1a1c22;
   }
-  .venue-inner img{
-    width:100%;height:auto;display:block;
-    border-radius:var(--radius);border:1px solid var(--line);
+  section.venue > img{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;object-position:center 35%;display:block;
   }
+  section.venue::after{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(26,28,34,.15) 0%,rgba(26,28,34,.35) 45%,rgba(26,28,34,.85) 100%);
+  }
+  section.venue .wrap{position:relative;z-index:1;width:100%;padding-bottom:56px;}
   .venue-place{
     font-size:13px;letter-spacing:.18em;text-transform:uppercase;
-    color:var(--accent-deep);font-weight:600;margin:0 0 14px;
+    color:#e3c99c;font-weight:600;margin:0 0 12px;
   }
   .venue-name{
-    font-family:'Fraunces',Georgia,serif;font-size:clamp(26px,3.4vw,36px);
-    line-height:1.15;margin:0 0 18px;color:var(--ink);
+    font-family:'Fraunces',Georgia,serif;font-size:clamp(32px,5vw,54px);
+    line-height:1.1;margin:0 0 18px;color:#fbf8f2;max-width:16ch;
   }
-  .venue-meta{font-size:17px;color:var(--ink-soft);margin:0;}
-  .venue-meta strong{color:var(--ink);font-weight:600;}
+  .venue-meta{font-size:17px;color:#e6e0d5;margin:0;}
+  .venue-meta strong{color:#fbf8f2;font-weight:600;}
 
   /* AUDIENCE callout */
   .audience{
@@ -203,11 +208,34 @@
   section.cta .btn-row{justify-content:center;}
   .cta-note{margin-top:24px;font-size:14px;color:#a49d90;max-width:60ch;margin-left:auto;margin-right:auto;}
 
+  /* SIGNUP form */
+  .signup{max-width:460px;margin:0 auto;text-align:left;display:grid;gap:16px;}
+  .signup[hidden]{display:none;}
+  .signup-done:focus{outline:none;}
+  .signup label{display:block;font-size:14px;font-weight:600;color:#e6e0d5;margin-bottom:6px;}
+  .signup input{
+    width:100%;font:inherit;font-size:16px;color:var(--ink);
+    background:#fbf8f2;border:1px solid #4a4d57;border-radius:10px;padding:13px 16px;
+  }
+  .signup input:focus{outline:2px solid #c7a878;outline-offset:2px;}
+  .signup .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
+  .signup .btn{width:100%;margin-top:6px;}
+  .signup .btn[disabled]{opacity:.6;cursor:wait;transform:none;}
+  .signup-msg{margin:0;font-size:15px;min-height:1.4em;text-align:center;}
+  .signup-msg.error{color:#f0a99a;}
+  .signup-done{
+    max-width:460px;margin:0 auto;padding:24px 26px;border:1px solid #4a4d57;
+    border-radius:var(--radius);background:#23262f;
+  }
+  .signup-done h3{margin:0 0 8px;color:#fbf8f2;font-size:22px;}
+  section.cta .signup-done p{margin:0;max-width:none;}
+  .privacy-note{font-size:13px;color:#a49d90;margin:4px 0 0;text-align:center;}
+
   @media(max-width:680px){
     body{font-size:16px;}
     .grid.two,.grid.three{grid-template-columns:1fr;}
     .timeline .slot{grid-template-columns:110px 1fr;gap:12px;}
-    .venue-inner{grid-template-columns:1fr;gap:28px;padding:48px 0;}
+    section.venue .wrap{padding-bottom:40px;}
     figure.photo img{height:200px;}
     section{padding:60px 0;}
     header.hero{padding:88px 0 76px;}
@@ -225,7 +253,6 @@
   <div class="wrap">
     <h1>Design Managers Mastermind</h1>
     <p class="lead">Eén dag met een kleine groep design managers. Aan tafels van maximaal vier personen bespreek je de vraagstukken waar je in je eentje op vastloopt, met vakgenoten die er middenin zitten of er al doorheen zijn. Vertrouwelijk, en gericht op concrete oplossingen.</p>
-    <!-- TODO: link naar aanmeldformulier voorlichtingsbijeenkomst -->
     <div class="btn-row">
       <a class="btn light" href="#aanmelden">Gratis online voorlichting op 1&nbsp;december</a>
     </div>
@@ -233,16 +260,12 @@
 </header>
 
 <section class="venue">
+  <img src="images/duin-en-kruidberg.jpg" width="515" height="388"
+       alt="Landgoed Duin en Kruidberg: een monumentaal kasteel aan de rand van het bos in Santpoort-Noord">
   <div class="wrap">
-    <div class="venue-inner">
-      <img src="images/duin-en-kruidberg.jpg" width="515" height="388"
-           alt="Landgoed Duin en Kruidberg: een monumentaal kasteel aan de rand van het bos in Santpoort-Noord">
-      <div>
-        <p class="venue-place">Santpoort-Noord</p>
-        <p class="venue-name">Landgoed Duin en Kruidberg</p>
-        <p class="venue-meta"><strong>Vrijdag 29&nbsp;januari 2027</strong><br>9:30–16:00 · €880 · Beperkt aantal plaatsen</p>
-      </div>
-    </div>
+    <p class="venue-place">Santpoort-Noord</p>
+    <p class="venue-name">Landgoed Duin en Kruidberg</p>
+    <p class="venue-meta"><strong>Vrijdag 29&nbsp;januari 2027</strong> · 9:30–16:00 · Beperkt aantal plaatsen</p>
   </div>
 </section>
 
@@ -263,7 +286,7 @@
       <p>Voor design managers (UX, CX, product design) met serieuze projecten en verantwoordelijkheid, bij grote organisaties, sterke merken en internationale agencies.</p>
     </div>
     <p>Niet iedereen die zich aanmeldt, schuift aan. We kijken bij elke aanmelding wie er al bij is, zodat er een groep ontstaat die iets met elkaar gemeen heeft: vergelijkbare verantwoordelijkheid, herkenbare vraagstukken en genoeg verschil om van elkaar te leren.</p>
-    <p>Daar draait de dag uiteindelijk om. Je betaalt niet voor een programma, maar voor goed gezelschap: mensen met wie je iets deelt en bij wie het klikt.</p>
+    <p>Want wat er op zo'n dag echt toe doet, is het gezelschap: mensen met wie je iets deelt en bij wie het klikt.</p>
   </div>
 </section>
 
@@ -456,15 +479,95 @@
   <div class="wrap">
     <div class="eyebrow">Gratis voorlichting</div>
     <h2>Online voorlichting op 1&nbsp;december</h2>
-    <!-- TODO: tijdstip voorlichting op 1&nbsp;december toevoegen -->
-    <p>Op dinsdag 1 december houden we een gratis online voorlichtingsbijeenkomst. Anne en Joris vertellen hoe de dag in elkaar zit en voor wie hij bedoeld is, en iedereen kan vragen stellen.</p>
-    <!-- TODO: link naar aanmeldformulier voorlichtingsbijeenkomst -->
-    <div class="btn-row">
-      <a class="btn" href="#">Schrijf je gratis in</a>
+    <!-- TODO: tijdstip voorlichting op 1 december toevoegen -->
+    <p>Op dinsdag 1&nbsp;december houden we een gratis online voorlichtingsbijeenkomst. Anne en Joris vertellen hoe de dag in elkaar zit en voor wie hij bedoeld is, en iedereen kan vragen stellen.</p>
+
+    <form class="signup" id="signup" novalidate>
+      <div>
+        <label for="su-naam">Naam</label>
+        <input id="su-naam" name="naam" type="text" autocomplete="name" maxlength="200" required>
+      </div>
+      <div>
+        <label for="su-organisatie">Organisatie</label>
+        <input id="su-organisatie" name="organisatie" type="text" autocomplete="organization" maxlength="200" required>
+      </div>
+      <div>
+        <label for="su-email">E-mailadres</label>
+        <input id="su-email" name="email" type="email" autocomplete="email" maxlength="200" required>
+      </div>
+      <div class="hp" aria-hidden="true">
+        <label for="su-website">Website</label>
+        <input id="su-website" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <button class="btn" type="submit">Schrijf je gratis in</button>
+      <p class="signup-msg" role="status" aria-live="polite"></p>
+      <p class="privacy-note">We gebruiken je gegevens alleen voor de voorlichting en de Mastermind.</p>
+    </form>
+
+    <div class="signup-done" id="signup-done" hidden tabindex="-1">
+      <h3>Je staat ingeschreven</h3>
+      <p>Dank je wel. Vóór 1&nbsp;december ontvang je van ons de link naar de online bijeenkomst.</p>
     </div>
+
     <div class="cta-note">De Mastermind zelf: vrijdag 29&nbsp;januari 2027 · 9:30–16:00 · Landgoed Duin en Kruidberg, Santpoort-Noord · €880</div>
   </div>
 </section>
+
+<script>
+  (function () {
+    var form = document.getElementById('signup');
+    var done = document.getElementById('signup-done');
+    var msg = form.querySelector('.signup-msg');
+    var button = form.querySelector('button');
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      msg.textContent = '';
+      msg.className = 'signup-msg';
+
+      if (!form.checkValidity()) {
+        var invalid = form.querySelector(':invalid');
+        msg.textContent = invalid.type === 'email' && invalid.value
+          ? 'Vul een geldig e-mailadres in.'
+          : 'Vul je naam, organisatie en e-mailadres in.';
+        msg.classList.add('error');
+        invalid.focus();
+        return;
+      }
+
+      var data = Object.fromEntries(new FormData(form));
+      data.taal = 'nl';
+      button.disabled = true;
+      button.textContent = 'Bezig met inschrijven…';
+
+      fetch('/api/inschrijven', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      })
+        .then(function (res) {
+          return res.json().catch(function () { return {}; }).then(function (body) {
+            if (!res.ok) throw new Error(body.error || 'Inschrijven is niet gelukt.');
+          });
+        }, function () {
+          throw new Error('Inschrijven is niet gelukt.');
+        })
+        .then(function () {
+          form.hidden = true;
+          done.hidden = false;
+          done.focus();
+        })
+        .catch(function (err) {
+          msg.textContent = err.message === 'Inschrijven is niet gelukt.'
+            ? 'Inschrijven is niet gelukt. Probeer het nog eens.'
+            : err.message;
+          msg.classList.add('error');
+          button.disabled = false;
+          button.textContent = 'Schrijf je gratis in';
+        });
+    });
+  })();
+</script>
 
 </body>
 </html>
