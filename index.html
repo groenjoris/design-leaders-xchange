@@ -214,6 +214,15 @@
   .signup[hidden]{display:none;}
   .signup-done:focus{outline:none;}
   .signup label{display:block;font-size:14px;font-weight:600;color:#e6e0d5;margin-bottom:6px;}
+  .signup .slots{border:0;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px;}
+  .signup .slots legend{font-size:14px;font-weight:600;color:#e6e0d5;margin-bottom:6px;padding:0;}
+  .signup .slot-option{
+    flex:1 1 140px;display:flex;align-items:center;gap:10px;margin:0;cursor:pointer;
+    font-size:16px;font-weight:500;color:#fbf8f2;
+    border:1px solid #4a4d57;border-radius:10px;padding:12px 16px;
+  }
+  .signup .slot-option:has(input:checked){border-color:#c7a878;background:#2c2f39;}
+  .signup .slot-option input{width:auto;margin:0;padding:0;accent-color:#c7a878;}
   .signup input{
     width:100%;font:inherit;font-size:16px;color:var(--ink);
     background:#fbf8f2;border:1px solid #4a4d57;border-radius:10px;padding:13px 16px;
@@ -481,8 +490,7 @@
   <div class="wrap">
     <div class="eyebrow">Gratis voorlichting</div>
     <h2>Online voorlichting op 1&nbsp;december</h2>
-    <!-- TODO: tijdstip voorlichting op 1 december toevoegen -->
-    <p>Op dinsdag 1&nbsp;december houden we een gratis online voorlichtingsbijeenkomst. Anne en Joris vertellen hoe de dag in elkaar zit en voor wie hij bedoeld is, en iedereen kan vragen stellen.</p>
+    <p>Op dinsdag 1&nbsp;december houden we twee keer een gratis online voorlichtingsbijeenkomst: van 12:00 tot 13:00 en van 17:00 tot 18:00. Anne en Joris vertellen hoe de dag in elkaar zit en voor wie hij bedoeld is, en iedereen kan vragen stellen.</p>
 
     <form class="signup" id="signup" novalidate>
       <div>
@@ -497,6 +505,11 @@
         <label for="su-email">E-mailadres</label>
         <input id="su-email" name="email" type="email" autocomplete="email" maxlength="200" required>
       </div>
+      <fieldset class="slots">
+        <legend>Tijdstip op 1&nbsp;december</legend>
+        <label class="slot-option"><input type="radio" name="tijdstip" value="12:00–13:00" required> 12:00–13:00</label>
+        <label class="slot-option"><input type="radio" name="tijdstip" value="17:00–18:00"> 17:00–18:00</label>
+      </fieldset>
       <div class="hp" aria-hidden="true">
         <label for="su-website">Website</label>
         <input id="su-website" name="website" type="text" tabindex="-1" autocomplete="off">
@@ -508,7 +521,7 @@
 
     <div class="signup-done" id="signup-done" hidden tabindex="-1">
       <h3>Je staat ingeschreven</h3>
-      <p>Dank je wel. Vóór 1&nbsp;december ontvang je van ons de link naar de online bijeenkomst.</p>
+      <p>Dank je wel. Je bent welkom op dinsdag 1&nbsp;december, <span id="signup-slot"></span>. Vóór die dag ontvang je van ons de link naar de online bijeenkomst.</p>
     </div>
 
     <div class="cta-note">De Mastermind zelf: vrijdag 29&nbsp;januari 2027 · 9:30–16:00 · Landgoed Duin en Kruidberg, Santpoort-Noord · €880</div>
@@ -528,10 +541,12 @@
       msg.className = 'signup-msg';
 
       if (!form.checkValidity()) {
-        var invalid = form.querySelector(':invalid');
-        msg.textContent = invalid.type === 'email' && invalid.value
-          ? 'Vul een geldig e-mailadres in.'
-          : 'Vul je naam, organisatie en e-mailadres in.';
+        var invalid = form.querySelector('input:invalid');
+        msg.textContent = invalid.type === 'radio'
+          ? 'Kies een tijdstip.'
+          : invalid.type === 'email' && invalid.value
+            ? 'Vul een geldig e-mailadres in.'
+            : 'Vul je naam, organisatie en e-mailadres in.';
         msg.classList.add('error');
         invalid.focus();
         return;
@@ -555,6 +570,7 @@
           throw new Error('Inschrijven is niet gelukt.');
         })
         .then(function () {
+          document.getElementById('signup-slot').textContent = data.tijdstip;
           form.hidden = true;
           done.hidden = false;
           done.focus();

@@ -3,6 +3,7 @@ import { createHash } from 'node:crypto';
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const MAX = 200;
+const TIJDSTIPPEN = ['12:00–13:00', '17:00–18:00'];
 
 function json(status, body) {
   return Response.json(body, { status });
@@ -26,6 +27,10 @@ export async function POST(request) {
   if (!naam || !organisatie || !EMAIL.test(email)) {
     return json(400, { error: 'Vul je naam, organisatie en een geldig e-mailadres in.' });
   }
+  const tijdstip = String(data.tijdstip ?? '');
+  if (!TIJDSTIPPEN.includes(tijdstip)) {
+    return json(400, { error: 'Kies een tijdstip.' });
+  }
   if (email.length > MAX || naam.length > MAX || organisatie.length > MAX) {
     return json(400, { error: 'Een van de velden is te lang.' });
   }
@@ -34,7 +39,7 @@ export async function POST(request) {
   const id = createHash('sha256').update(email).digest('hex').slice(0, 32);
   await put(
     `inschrijvingen/${id}.json`,
-    JSON.stringify({ email, naam, organisatie, aangemeld: new Date().toISOString(), taal: data.taal === 'en' ? 'en' : 'nl' }),
+    JSON.stringify({ email, naam, organisatie, tijdstip, aangemeld: new Date().toISOString(), taal: data.taal === 'en' ? 'en' : 'nl' }),
     { access: 'private', contentType: 'application/json', addRandomSuffix: false, allowOverwrite: true },
   );
 

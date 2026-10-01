@@ -41,10 +41,10 @@ export async function GET(request) {
     cursor = page.cursor;
   } while (cursor);
 
-  rows.sort((a, b) => a.aangemeld.localeCompare(b.aangemeld));
+  rows.sort((a, b) => (a.tijdstip ?? '').localeCompare(b.tijdstip ?? '') || a.aangemeld.localeCompare(b.aangemeld));
   const lines = [
-    ['Aangemeld', 'Naam', 'Organisatie', 'E-mail', 'Taal'],
-    ...rows.map((r) => [r.aangemeld, r.naam, r.organisatie, r.email, r.taal]),
+    ['Aangemeld', 'Tijdstip', 'Naam', 'Organisatie', 'E-mail', 'Taal'],
+    ...rows.map((r) => [r.aangemeld, r.tijdstip, r.naam, r.organisatie, r.email, r.taal]),
   ].map((cells) => cells.map(csvCell).join(';'));
 
   return new Response('﻿' + lines.join('\r\n'), {
