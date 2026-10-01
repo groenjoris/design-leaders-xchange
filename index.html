@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Design Leaders Mastermind — één dag diepgang voor design leaders</title>
+<title>Design Managers Mastermind — één dag in gesprek met vakgenoten</title>
 <link rel="alternate" hreflang="nl" href="https://design-leaders-xchange.vercel.app/">
 <link rel="alternate" hreflang="en" href="https://design-leaders-xchange.vercel.app/en/">
 <link rel="alternate" hreflang="x-default" href="https://design-leaders-xchange.vercel.app/">
@@ -100,13 +100,13 @@
     width:100%;height:auto;display:block;
     border-radius:var(--radius);border:1px solid var(--line);
   }
-  .venue-name{
+  .venue-place{
     font-size:13px;letter-spacing:.18em;text-transform:uppercase;
     color:var(--accent-deep);font-weight:600;margin:0 0 14px;
   }
-  .venue-place{
-    font-family:'Fraunces',Georgia,serif;font-size:clamp(24px,3vw,32px);
-    line-height:1.2;margin:0 0 18px;color:var(--ink);
+  .venue-name{
+    font-family:'Fraunces',Georgia,serif;font-size:clamp(26px,3.4vw,36px);
+    line-height:1.15;margin:0 0 18px;color:var(--ink);
   }
   .venue-meta{font-size:17px;color:var(--ink-soft);margin:0;}
   .venue-meta strong{color:var(--ink);font-weight:600;}
@@ -118,6 +118,11 @@
     border-radius:0 var(--radius) var(--radius) 0;
   }
   .audience p{margin:0;color:var(--ink);}
+  h2 + .audience{margin-top:0;}
+  .audience + p{margin-top:28px;}
+
+  /* OUTCOMES */
+  .outcomes .card h3{font-size:19px;margin-bottom:6px;}
 
   /* CARDS */
   .grid{display:grid;gap:18px;margin-top:14px;}
@@ -218,11 +223,11 @@
     <a href="/en/" lang="en" hreflang="en">EN</a>
   </nav>
   <div class="wrap">
-    <h1>Design Leaders Mastermind</h1>
-    <p class="lead">Eén dag inspiratie en netwerken met design leaders op jouw niveau. Aan kleine tafels praat je door over de vraagstukken waar je alleen op vastloopt, met peers die er middenin zitten of al doorheen zijn. Vertrouwelijk, met concrete oplossingen als resultaat.</p>
-    <!-- TODO: datum voorlichtingsbijeenkomst invullen + link naar aanmeldformulier -->
+    <h1>Design Managers Mastermind</h1>
+    <p class="lead">Eén dag met een kleine groep design managers. Aan tafels van maximaal vier personen bespreek je de vraagstukken waar je in je eentje op vastloopt, met vakgenoten die er middenin zitten of er al doorheen zijn. Vertrouwelijk, en gericht op concrete oplossingen.</p>
+    <!-- TODO: link naar aanmeldformulier voorlichtingsbijeenkomst -->
     <div class="btn-row">
-      <a class="btn light" href="#aanmelden">Gratis online voorlichtingsbijeenkomst op …</a>
+      <a class="btn light" href="#aanmelden">Gratis online voorlichting op 1&nbsp;december</a>
     </div>
   </div>
 </header>
@@ -233,9 +238,9 @@
       <img src="images/duin-en-kruidberg.jpg" width="515" height="388"
            alt="Landgoed Duin en Kruidberg: een monumentaal kasteel aan de rand van het bos in Santpoort-Noord">
       <div>
-        <p class="venue-name">Landgoed Duin en Kruidberg</p>
         <p class="venue-place">Santpoort-Noord</p>
-        <p class="venue-meta"><strong>27 november 2026</strong><br>10:00–16:00 · Beperkt aantal plaatsen</p>
+        <p class="venue-name">Landgoed Duin en Kruidberg</p>
+        <p class="venue-meta"><strong>Vrijdag 29&nbsp;januari 2027</strong><br>9:30–16:00 · €880 · Beperkt aantal plaatsen</p>
       </div>
     </div>
   </div>
@@ -243,50 +248,69 @@
 
 <section>
   <div class="wrap">
-    <div class="eyebrow">Voor wie</div>
+    <div class="eyebrow">Herkenbaar?</div>
     <h2>De vragen die er echt toe doen, bespreek je nergens goed</h2>
-    <p>Je bent verantwoordelijk voor design op niveau. Maar de vraagstukken waar je mee zit zijn zelden simpel, en je collega's of team kunnen je er meestal niet echt bij helpen. Die zitten er te dichtbij, of missen de ervaring.</p>
-    <p>De plekken waar je normaal zou kijken, vallen tegen. Conferenties raken lang niet altijd je eigen werk, en in de wandelgangen praat je zomaar met iemand die een baan zoekt of iets wil verkopen. Design-communities blijven hangen in losse meningen.</p>
+    <p>Je bent verantwoordelijk voor design in een grote organisatie. De vraagstukken op je bord zijn zelden eenduidig, en je collega's of team kunnen je er meestal niet echt bij helpen: ze zitten er te dichtbij, of missen de ervaring.</p>
+    <p>Ook elders vind je dat gesprek zelden. Conferenties raken lang niet altijd je eigen werk, en in de wandelgangen spreek je net zo goed iemand die een baan zoekt of iets wil verkopen. Design-communities blijven vaak hangen in losse meningen.</p>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="eyebrow">Voor wie</div>
+    <h2>Wij stellen het gezelschap samen</h2>
     <div class="audience">
-      <p>Voor design leaders en design managers (UX, CX, product design) met serieuze projecten en verantwoordelijkheid bij grote multinationals, sterke merken en internationale agencies.</p>
+      <p>Voor design managers (UX, CX, product design) met serieuze projecten en verantwoordelijkheid, bij grote organisaties, sterke merken en internationale agencies.</p>
+    </div>
+    <p>Niet iedereen die zich aanmeldt, schuift aan. We kijken bij elke aanmelding wie er al bij is, zodat er een groep ontstaat die iets met elkaar gemeen heeft: vergelijkbare verantwoordelijkheid, herkenbare vraagstukken en genoeg verschil om van elkaar te leren.</p>
+    <p>Daar draait de dag uiteindelijk om. Je betaalt niet voor een programma, maar voor goed gezelschap: mensen met wie je iets deelt en bij wie het klikt.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Wat levert het op</div>
+    <h2>Wat je mee naar huis neemt</h2>
+    <div class="grid two outcomes">
+      <div class="card">
+        <h3>Relevantie</h3>
+        <p>Je praat over de onderwerpen waar je nu zelf mee bezig bent, niet over die van een spreker.</p>
+      </div>
+      <div class="card">
+        <h3>Herkenning</h3>
+        <p>Je merkt dat anderen met dezelfde vragen worstelen. Dat alleen al geeft lucht.</p>
+      </div>
+      <div class="card">
+        <h3>Inspiratie</h3>
+        <p>Je ziet hoe het er in andere organisaties aan toegaat, en kijkt met een frissere blik naar je eigen situatie.</p>
+      </div>
+      <div class="card">
+        <h3>Oplossingen</h3>
+        <p>Je hoort hoe peers jouw vraagstuk al hebben aangepakt, en neemt concrete ideeën mee terug.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="alt">
   <div class="wrap">
-    <div class="eyebrow">De oplossing</div>
-    <h2>De beste inzichten komen van peers</h2>
-    <p>De beste inzichten komen van peers op jouw niveau: mensen die hetzelfde vraagstuk al hebben opgelost, of er net als jij middenin zitten.</p>
-    <p>Dat gesprek ontstaat niet vanzelf. Het vraagt de juiste mensen aan tafel, rond precies jouw thema, in een setting waar je vrijuit kunt spreken. We stellen het gezelschap zorgvuldig samen, matchen op vraagstuk en niveau, en kiezen werkvormen die het gesprek de diepte in sturen.</p>
-    <p>De wijsheid zelf zit niet bij ons, die zit aan tafel, bij jou en je peers. Onze rol is die op te halen: de juiste mensen samenbrengen en het gesprek zo vormgeven dat het ook echt ergens komt.</p>
-    <p>Het resultaat: relevantie, herkenning, inspiratie en concrete oplossingen; precies waar jij nu mee zit, van mensen die dat al hebben meegemaakt.</p>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
     <div class="eyebrow">Programma</div>
     <h2>Eén dag, zorgvuldig geregisseerd</h2>
 
     <div class="stack">
       <div class="item">
-        <h3>De werkvormen — onze kracht</h3>
-        <p>Geen sprekers, geen panels, geen podium. De hele dag draait om beproefde, strak begeleide werkvormen: duo-breakouts, hop-on-hop-off thematafels en custom tafels rond jouw eigen vraagstuk. Werkvormen ontwerpen en begeleiden is het vak van Anne en Joris — zij bewaken dat elk gesprek voorbij de beleefdheden komt, de diepte in gaat en oplevert. Zo ga je naar huis met concrete inzichten in plaats van visitekaartjes.</p>
+        <h3>De werkvormen</h3>
+        <p>Geen sprekers, geen panels, geen podium. De dag draait om slimme werkvormen die Anne en Joris speciaal voor dit soort gesprekken hebben ontwikkeld en in de praktijk hebben beproefd. Ze zorgen dat een gesprek snel voorbij de beleefdheden komt en echt iets oplevert. Hoe ze precies werken, ervaar je op de dag zelf.</p>
       </div>
       <div class="item">
-        <h3>Het dagprogramma</h3>
-        <p>Je werkt de hele dag aan kleine tafels van maximaal vier personen, gematcht op vraagstuk en niveau: je kiest zelf het thema dat jou raakt en schuift aan bij de mensen die met hetzelfde worstelen. Het ritme wisselt af tussen intensieve gesprekken en ademruimte.</p>
+        <h3>Het verloop van de dag</h3>
+        <p>Je zit aan kleine tafels van maximaal vier personen, rond thema's die je zelf kiest. Intensieve gesprekken wisselen af met momenten om even naar buiten te gaan.</p>
         <div class="timeline">
           <div class="slot"><div class="t">9:30</div><div class="d">Ontvangst</div></div>
-          <div class="slot"><div class="t">10:00</div><div class="d"><strong>Introductie</strong> — kennismaken in duo's</div></div>
-          <div class="slot"><div class="t">10:30</div><div class="d"><strong>Breakout in duo's</strong> — wat is jouw uitdaging als leader?</div></div>
-          <div class="slot"><div class="t">11:00</div><div class="d"><strong>Tafelsessie 1: hop-on-hop-off thematafels</strong> — vier tafels, elk rond één thema, maximaal vier personen per tafel. Kies het thema dat jou raakt en schuif aan bij je lotgenoten. Wil je switchen? Dan hop je naar een andere tafel.</div></div>
-          <div class="slot"><div class="t">12:00</div><div class="d">Lunch</div></div>
-          <div class="slot"><div class="t">13:00</div><div class="d"><strong>20 minuten voor jezelf</strong> — even wandelen, nadenken of bijkomen</div></div>
-          <div class="slot"><div class="t">13:30</div><div class="d"><strong>Tafelsessie 2: custom tafels</strong> — vorm een twee- of drietal rond een eigen thema. Na twintig minuten kun je wisselen en ergens anders aanschuiven.</div></div>
-          <div class="slot"><div class="t">14:30</div><div class="d">Koffie</div></div>
-          <div class="slot"><div class="t">14:45</div><div class="d"><strong>Roundup</strong> — de belangrijkste inzichten van de dag</div></div>
+          <div class="slot"><div class="t">10:00</div><div class="d"><strong>Ochtend</strong> — kennismaken en scherp krijgen waar je zelf mee zit</div></div>
+          <div class="slot"><div class="t">12:00</div><div class="d">Lunch, met tijd voor een wandeling over het landgoed</div></div>
+          <div class="slot"><div class="t">13:30</div><div class="d"><strong>Middag</strong> — de diepte in, rond de vraagstukken van de groep</div></div>
+          <div class="slot"><div class="t">14:45</div><div class="d"><strong>Afronding</strong> — wat neem je mee?</div></div>
           <div class="slot"><div class="t">15:15</div><div class="d">Borrel</div></div>
           <div class="slot"><div class="t">16:00</div><div class="d">Einde</div></div>
         </div>
@@ -295,7 +319,7 @@
   </div>
 </section>
 
-<section class="alt">
+<section>
   <div class="wrap">
     <div class="eyebrow">Praktisch</div>
     <h2>Locatie en vertrouwelijkheid</h2>
@@ -306,7 +330,7 @@
     <div class="stack">
       <div class="item">
         <h3>De locatie</h3>
-        <p>Landgoed Duin en Kruidberg in Santpoort: een prachtig kasteel aan de rand van Nationaal Park Zuid-Kennemerland, met ruimte voor een boswandeling tussen de sessies door. Een omgeving die uitnodigt om afstand te nemen van de waan van de dag.</p>
+        <p>Landgoed Duin en Kruidberg in Santpoort-Noord: een kasteel aan de rand van Nationaal Park Zuid-Kennemerland, met ruimte voor een wandeling tussen de sessies door. Een plek om even afstand te nemen van de dagelijkse drukte.</p>
         <!-- TODO: adres invullen en routebeschrijving-PDF koppelen -->
         <p>Adres: … · <a href="#">Route (PDF)</a></p>
       </div>
@@ -318,7 +342,7 @@
   </div>
 </section>
 
-<section>
+<section class="alt">
   <div class="wrap">
     <div class="eyebrow">Voorbeelden van thema's</div>
     <h2>Thema's waar we blij van worden</h2>
@@ -341,12 +365,12 @@
       <div class="card">
         <span class="num">04</span>
         <h3>Leiderschap</h3>
-        <p>Wat voor leader wil je zijn? Hoe geef je richting aan je team en claim je je plek aan tafel, zonder jezelf te verliezen?</p>
+        <p>Hoe geef je leiding nu de manier van werken verandert, onder meer door AI? Waar stuur je op als taken, rollen en tempo verschuiven, en hoe neem je je team daarin mee?</p>
       </div>
       <div class="card">
         <span class="num">05</span>
-        <h3>Morele ambitie</h3>
-        <p>Hoe zet je design in voor dingen die er echt toe doen — en hoe verhoud je je tot keuzes van je organisatie waar je moeite mee hebt?</p>
+        <h3>Career framework</h3>
+        <p>Hoe bouw je een career framework dat designers laat groeien en houvast geeft, en dat ook standhoudt in gesprekken met HR en management?</p>
       </div>
       <div class="card">
         <span class="num">06</span>
@@ -357,7 +381,7 @@
   </div>
 </section>
 
-<section class="alt">
+<section>
   <div class="wrap">
     <div class="eyebrow">Wie zijn we</div>
     <h2>Anne en Joris</h2>
@@ -377,10 +401,10 @@
   </div>
 </section>
 
-<section>
+<section class="alt">
   <div class="wrap">
     <div class="eyebrow">Wie hebben zich al aangemeld?</div>
-    <h2>Je zit in goed gezelschap</h2>
+    <h2>De behoefte leeft bij meer organisaties</h2>
     <!-- PLACEHOLDER: chips vervangen door echte functietitels/bedrijven (of logo's) zodra bekend -->
     <div class="chips">
       <div class="chip">UX Manager — <span class="co">ING</span></div>
@@ -392,14 +416,14 @@
   </div>
 </section>
 
-<section class="alt">
+<section>
   <div class="wrap">
     <div class="eyebrow">Veelgestelde vragen</div>
     <h2>Goed om te weten</h2>
 
     <details>
       <summary>Is dit weer een conferentie of netwerkevent?</summary>
-      <div class="body">Nee. Geen sprekers, geen podium, geen willekeurige talks. Eén dag intensief in gesprek met een klein, gecureerd gezelschap van peers, aan tafels van maximaal vier personen.</div>
+      <div class="body">Nee. Geen sprekers, geen podium, geen willekeurige talks. Eén dag in gesprek met een kleine, zorgvuldig samengestelde groep vakgenoten, aan tafels van maximaal vier personen.</div>
     </details>
     <details>
       <summary>Word ik benaderd door recruiters of leveranciers?</summary>
@@ -411,33 +435,34 @@
     </details>
     <details>
       <summary>Wat als geen enkel thema bij mij past?</summary>
-      <div class="body">De thema's bepalen we aan het begin van de dag, op basis van wat er bij de deelnemers speelt. En in de middag vormen we custom tafels rond je eigen vraagstuk — jouw thema komt dus altijd aan bod.</div>
+      <div class="body">De thema's bepalen we aan het begin van de dag, op basis van wat er bij de deelnemers speelt. In de middag vormen we tafels rond je eigen vraagstuk, dus jouw thema komt altijd aan bod.</div>
     </details>
     <details>
       <summary>Hoe word ik gekoppeld aan andere deelnemers?</summary>
-      <div class="body">Je kiest zelf de tafel met het thema dat jou raakt, en wij bewaken de samenstelling: klein, op niveau, en met de juiste mix. Wil je wisselen, dan hop je gewoon naar een andere tafel.</div>
+      <div class="body">Je kiest zelf de tafel met het thema dat jou raakt, en wij letten op de samenstelling: klein, vergelijkbaar in ervaring, en met de juiste mix. Wisselen van tafel kan altijd.</div>
     </details>
     <details>
       <summary>Wat kost het en wat zit erin?</summary>
-      <div class="body">De prijs volgt binnenkort. Inbegrepen zijn in elk geval de locatie, lunch en borrel. Geen verborgen kosten, geen sponsors.</div>
+      <div class="body">Deelname kost €880. Daarvoor krijg je de hele dag op het landgoed, inclusief lunch, koffie en borrel. Geen verborgen kosten, geen sponsors.</div>
     </details>
     <details>
       <summary>Hoe meld ik me aan?</summary>
-      <div class="body">Begin bij de gratis online voorlichtingsbijeenkomst — daar vertellen we over de opzet, beantwoorden we al je vragen en kun je je meteen aanmelden voor 27 november.</div>
+      <div class="body">Begin bij de gratis online voorlichtingsbijeenkomst op 1&nbsp;december. Daar lichten we de opzet toe, beantwoorden we je vragen en kun je je aanmelden voor 29&nbsp;januari.</div>
     </details>
   </div>
 </section>
 
 <section class="cta" id="aanmelden">
   <div class="wrap">
-    <div class="eyebrow">Doe mee</div>
-    <h2>Eén dag die je maanden verder brengt</h2>
-    <p>Wil je erbij zijn, of eerst meer weten? Kom naar de gratis online voorlichtingsbijeenkomst — daar maak je kennis met ons en met de aanpak, krijg je antwoord op al je vragen en kun je je direct aanmelden.</p>
-    <!-- TODO: datum voorlichtingsbijeenkomst invullen + link naar aanmeldformulier -->
+    <div class="eyebrow">Gratis voorlichting</div>
+    <h2>Online voorlichting op 1&nbsp;december</h2>
+    <!-- TODO: tijdstip voorlichting op 1&nbsp;december toevoegen -->
+    <p>Op dinsdag 1 december houden we een gratis online voorlichtingsbijeenkomst. Anne en Joris vertellen hoe de dag in elkaar zit en voor wie hij bedoeld is, en iedereen kan vragen stellen.</p>
+    <!-- TODO: link naar aanmeldformulier voorlichtingsbijeenkomst -->
     <div class="btn-row">
-      <a class="btn" href="#">Gratis online voorlichtingsbijeenkomst op …</a>
+      <a class="btn" href="#">Schrijf je gratis in</a>
     </div>
-    <div class="cta-note">27 november 2026 · 10:00–16:00 · Landgoed Duin en Kruidberg, Santpoort-Noord · Beperkt aantal plaatsen</div>
+    <div class="cta-note">De Mastermind zelf: vrijdag 29&nbsp;januari 2027 · 9:30–16:00 · Landgoed Duin en Kruidberg, Santpoort-Noord · €880</div>
   </div>
 </section>
 
