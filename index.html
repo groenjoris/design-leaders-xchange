@@ -121,6 +121,9 @@
   .timeline .d strong{color:var(--ink);}
 
   /* FULL-WIDTH PHOTO BANDS */
+  section.photo-top{padding-top:0;}
+  section.photo-top > figure.band:first-child{margin:0 0 64px;}
+  .subhead{font-size:22px;margin:0 0 12px;}
   figure.band{position:relative;overflow:hidden;margin:44px 0;height:clamp(280px,48vw,600px);background:var(--paper-2);}
   figure.band img{
     position:absolute;left:0;top:-12%;width:100%;height:124%;object-fit:cover;will-change:transform;
@@ -334,15 +337,13 @@
   </div>
 </section>
 
-<section class="alt">
-  <div class="wrap">
-    <h2>Praktisch</h2>
-  </div>
+<section class="alt photo-top">
   <figure class="band">
     <img src="images/lounge.jpg" width="1600" height="870" loading="lazy" style="object-position:center 55%"
          alt="De lounge van Landgoed Duin en Kruidberg met houten schouw, chesterfields en kroonluchter">
   </figure>
   <div class="wrap">
+    <h2>Praktisch</h2>
     <div class="stack">
       <div class="item">
         <h3>De locatie</h3>
@@ -371,16 +372,14 @@
   </div>
 </section>
 
-<section>
-  <div class="wrap">
-    <div class="eyebrow">Over ons</div>
-    <h2>Hoe het begon</h2>
-  </div>
+<section class="photo-top">
   <figure class="band">
     <img src="images/mastermind-bangkok.jpg" width="1600" height="813" loading="lazy" style="object-position:center 40%"
          alt="Deelnemers van de eerste Mastermind in Bangkok in gesprek rond een flip-over vol post-its">
   </figure>
   <div class="wrap">
+    <h2>Over ons</h2>
+    <h3 class="subhead">Hoe het begon</h3>
     <p>Wij, Anne Vroegop en Joris Groen, werken sinds 2014 samen in de UX-wereld.</p>
     <p>Eind 2025 organiseerden we een eerste Mastermind over AI en UX, vooral om inspiratie op te doen voor onze trainingen. AI ontwikkelt zich zo snel dat sommige vraagstukken een paar maanden later al een ander antwoord hadden. Wat bleef, was de waarde van de dag zelf: een dag lang met senior UX'ers in een strak format ervaringen delen, leverde ongelofelijk veel meer inzichten en inspiratie op dan een gemiddelde conferentie.</p>
     <p>Daarna hebben we de werkvormen aangescherpt en ons netwerk gevraagd wat zij nodig hebben. Het resultaat is dit format.</p>
