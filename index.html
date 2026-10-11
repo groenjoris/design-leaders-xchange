@@ -3,10 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Design Managers Mastermind — één dag in gesprek met vakgenoten</title>
-<link rel="alternate" hreflang="nl" href="https://design-leaders-xchange.vercel.app/">
-<link rel="alternate" hreflang="en" href="https://design-leaders-xchange.vercel.app/en/">
-<link rel="alternate" hreflang="x-default" href="https://design-leaders-xchange.vercel.app/">
+<title>Design Managers Mastermind — 29 januari 2027, Landgoed Duin en Kruidberg</title>
+<meta name="description" content="Eén dag sparren met een kleine groep design managers, op Landgoed Duin en Kruidberg in Santpoort-Noord. Vrijdag 29 januari 2027.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -19,6 +17,7 @@
     --line:#ddd6ca;
     --accent:#8a6a45;
     --accent-deep:#6f5436;
+    --gold:#e3c99c;
     --card:#fffdf9;
     --radius:14px;
     --maxw:880px;
@@ -26,15 +25,11 @@
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
-    margin:0;
-    font-family:'Inter',sans-serif;
-    color:var(--ink);
-    background:var(--paper);
-    line-height:1.65;
-    font-size:17px;
-    -webkit-font-smoothing:antialiased;
+    margin:0;font-family:'Inter',sans-serif;color:var(--ink);background:var(--paper);
+    line-height:1.65;font-size:17px;-webkit-font-smoothing:antialiased;
   }
   h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:500;line-height:1.15;letter-spacing:-.01em;}
+  img{max-width:100%;display:block;}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
   .eyebrow{
     font-size:13px;letter-spacing:.18em;text-transform:uppercase;
@@ -44,45 +39,29 @@
 
   /* HERO */
   header.hero{
-    background:linear-gradient(180deg,#1a1c22 0%,#23262f 100%);
-    color:#f3efe8;
-    padding:120px 0 104px;
-    border-bottom:1px solid #2c2f39;
-    position:relative;
+    position:relative;overflow:hidden;color:var(--ink);background:#c9d2d8;
+    min-height:clamp(560px,88vh,820px);display:flex;align-items:flex-start;
   }
-  header.hero h1{
-    font-size:clamp(34px,5.2vw,58px);
-    margin:0 0 24px;
-    color:#fbf8f2;
-    max-width:14ch;
+  header.hero > img{
+    position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;
   }
-  header.hero p.lead{
-    font-size:clamp(18px,2.2vw,21px);
-    color:#cfcabf;max-width:60ch;margin:0 0 36px;
+  header.hero::after{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(246,243,238,.82) 0%,rgba(246,243,238,.6) 32%,rgba(246,243,238,0) 56%);
   }
+  header.hero .wrap{position:relative;z-index:1;width:100%;padding-top:clamp(64px,10vh,112px);}
+  header.hero .eyebrow{color:var(--accent-deep);margin-bottom:16px;}
+  header.hero h1{font-size:clamp(38px,6vw,66px);margin:0 0 18px;color:var(--ink);}
+  .hero-meta{margin:0;font-size:clamp(16px,1.9vw,18px);color:var(--ink-soft);max-width:62ch;font-weight:500;}
+  .hero-meta span{white-space:nowrap;}
+
+  /* BUTTONS */
   .btn{
     display:inline-block;background:var(--accent);color:#fff;
     padding:15px 30px;border-radius:999px;text-decoration:none;
     font-weight:600;font-size:16px;transition:background .2s,transform .2s;
-    border:none;cursor:pointer;
   }
   .btn:hover{background:#9a774d;transform:translateY(-1px);}
-  .btn.light{background:#fbf8f2;color:var(--ink);}
-  .btn.light:hover{background:#fff;}
-  .btn.ghost{background:transparent;color:#f3efe8;border:1px solid #4a4d57;}
-  .btn.ghost:hover{background:#2c2f39;transform:translateY(-1px);}
-  .btn-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;}
-  .hero-cta-label{margin:0 0 14px;font-size:16px;font-weight:600;color:#e3c99c;}
-
-  /* LANGUAGE SWITCH */
-  .lang-switch{
-    position:absolute;top:28px;right:28px;display:flex;
-    border:1px solid #4a4d57;border-radius:999px;overflow:hidden;
-    font-size:13px;font-weight:600;letter-spacing:.06em;
-  }
-  .lang-switch a,.lang-switch span{padding:7px 14px;text-decoration:none;color:#a49d90;}
-  .lang-switch a:hover{color:#f3efe8;background:#2c2f39;}
-  .lang-switch span[aria-current]{background:#f3efe8;color:var(--ink);}
 
   /* SECTIONS */
   section{padding:80px 0;border-bottom:1px solid var(--line);}
@@ -90,264 +69,158 @@
   section h2{font-size:clamp(26px,3.6vw,38px);margin:0 0 28px;max-width:22ch;}
   section p{color:var(--ink-soft);margin:0 0 20px;max-width:65ch;}
   section p strong{color:var(--ink);}
+  .intro p{font-size:19px;color:var(--ink);}
+  .intro p:last-child{margin-bottom:0;}
 
-  /* VENUE band */
-  section.venue{
-    position:relative;padding:0;overflow:hidden;
-    min-height:clamp(420px,52vw,600px);display:flex;align-items:flex-end;
-    background:#1a1c22;
+  .pull{
+    margin:8px 0 28px;font-family:'Fraunces',Georgia,serif;font-size:clamp(24px,3vw,30px);
+    color:var(--accent-deep);line-height:1.25;
   }
-  section.venue > img{
-    position:absolute;inset:0;width:100%;height:100%;
-    object-fit:cover;object-position:center 35%;display:block;
-  }
-  section.venue::after{
-    content:'';position:absolute;inset:0;
-    background:linear-gradient(180deg,rgba(26,28,34,.15) 0%,rgba(26,28,34,.35) 45%,rgba(26,28,34,.85) 100%);
-  }
-  section.venue .wrap{position:relative;z-index:1;width:100%;padding-bottom:56px;}
-  .venue-place{
-    font-size:13px;letter-spacing:.18em;text-transform:uppercase;
-    color:#e3c99c;font-weight:600;margin:0 0 12px;
-  }
-  .venue-name{
-    font-family:'Fraunces',Georgia,serif;font-size:clamp(32px,5vw,54px);
-    line-height:1.1;margin:0 0 18px;color:#fbf8f2;max-width:16ch;
-  }
-  .venue-meta{font-size:17px;color:#e6e0d5;margin:0;}
-  .venue-meta strong{color:#fbf8f2;font-weight:600;}
-
-  /* AUDIENCE callout */
-  .audience{
-    margin-top:32px;padding:24px 28px;background:var(--card);
-    border:1px solid var(--line);border-left:3px solid var(--accent);
-    border-radius:0 var(--radius) var(--radius) 0;
-  }
-  .audience p{margin:0;color:var(--ink);}
-  h2 + .audience{margin-top:0;}
-  .audience + p{margin-top:28px;}
-
-  /* OUTCOMES */
-  .outcomes .card h3{font-size:19px;margin-bottom:6px;}
 
   /* CARDS */
   .grid{display:grid;gap:18px;margin-top:14px;}
   .grid.two{grid-template-columns:repeat(2,1fr);}
   .grid.three{grid-template-columns:repeat(3,1fr);}
-  .card{
-    background:var(--card);border:1px solid var(--line);
-    border-radius:var(--radius);padding:26px;
-  }
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;}
   .card h3{font-size:20px;margin:0 0 10px;}
   .card p{font-size:15.5px;margin:0;}
   .card .num{
     font-family:'Fraunces',serif;font-size:15px;color:var(--accent-deep);
     font-weight:600;display:block;margin-bottom:10px;letter-spacing:.04em;
   }
-  .card .byline{font-family:'Inter',sans-serif;font-size:14px;font-weight:400;color:var(--ink-soft);}
-  .card .profile-link{
-    display:inline-block;margin-top:14px;font-size:15px;font-weight:600;
-    text-decoration:none;border-bottom:1px solid var(--line);
-  }
-  .card .profile-link:hover{border-bottom-color:var(--accent);}
 
-  /* STACK list */
-  .stack{margin-top:8px;}
+  /* INTERESSE */
+  .interest .card p{margin-bottom:16px;}
+  .interest dl{margin:0 0 22px;display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:15.5px;}
+  .interest dt{font-weight:600;color:var(--ink);}
+  .interest dd{margin:0;color:var(--ink-soft);}
+  .card.feature{border-color:var(--accent);box-shadow:0 1px 0 var(--accent);}
+
+  /* CALLOUT + LISTS */
+  .callout{
+    margin:0 0 28px;padding:24px 28px;background:var(--card);
+    border:1px solid var(--line);border-left:3px solid var(--accent);
+    border-radius:0 var(--radius) var(--radius) 0;
+  }
+  .callout p{margin:0;color:var(--ink);}
+  ul.ticks{list-style:none;padding:0;margin:0 0 8px;max-width:65ch;}
+  ul.ticks li{position:relative;padding-left:28px;margin-bottom:12px;color:var(--ink-soft);}
+  ul.ticks li::before{
+    content:'';position:absolute;left:4px;top:.6em;width:8px;height:8px;border-radius:50%;
+    background:var(--accent);
+  }
+
+  /* STACK */
   .stack .item{padding:22px 0;border-top:1px solid var(--line);}
-  .stack .item:first-child{border-top:none;}
-  .stack .item h3{font-size:19px;margin:0 0 6px;}
-  .stack .item p{margin:0 0 8px;font-size:16px;}
+  .stack .item:first-child{border-top:none;padding-top:0;}
+  .stack .item h3{font-size:21px;margin:0 0 8px;}
+  .stack .item p{margin:0 0 12px;font-size:16.5px;}
   .stack .item p:last-child{margin-bottom:0;}
+  .stack h4{font-family:'Inter',sans-serif;font-size:14px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-deep);margin:22px 0 4px;}
 
-  /* PROGRAMMA timeline */
-  .timeline{margin-top:28px;border-top:1px solid var(--line);}
-  .timeline .slot{
-    display:grid;grid-template-columns:150px 1fr;gap:18px;
-    padding:14px 0;border-bottom:1px solid var(--line);
-  }
-  .timeline .t{
-    font-family:'Fraunces',serif;font-weight:600;color:var(--accent-deep);
-    font-size:16px;white-space:nowrap;
-  }
+  /* TIMELINE */
+  .timeline{margin-top:12px;border-top:1px solid var(--line);}
+  .timeline .slot{display:grid;grid-template-columns:110px 1fr;gap:18px;padding:13px 0;border-bottom:1px solid var(--line);}
+  .timeline .t{font-family:'Fraunces',serif;font-weight:600;color:var(--accent-deep);font-size:16px;white-space:nowrap;}
   .timeline .d{color:var(--ink-soft);font-size:16px;}
   .timeline .d strong{color:var(--ink);}
 
-  /* PRAKTISCH figure */
-  figure.photo{margin:0 0 32px;}
-  figure.photo img{
-    width:100%;height:280px;object-fit:cover;object-position:center 60%;
-    display:block;border-radius:var(--radius);border:1px solid var(--line);
-  }
+  /* PHOTOS */
+  figure.photo{margin:0 0 36px;}
+  figure.photo img{width:100%;height:auto;border-radius:var(--radius);border:1px solid var(--line);}
+  figure.photo.spaced{margin-top:32px;}
+  .people{margin-top:36px;}
 
-  /* AANGEMELD chips */
-  .chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;}
-  .chip{
-    background:var(--card);border:1px solid var(--line);border-radius:999px;
-    padding:10px 20px;font-size:15px;color:var(--ink);
+  .price{font-family:'Fraunces',serif;font-size:28px;color:var(--ink);margin:4px 0 6px;}
+  .dates{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:6px 0 0;font-size:16.5px;}
+  .dates dt{font-weight:600;color:var(--ink);}
+  .dates dd{margin:0;color:var(--ink-soft);}
+
+  /* PEOPLE */
+  .person{display:flex;flex-direction:column;}
+  .portrait{
+    width:96px;height:96px;border-radius:50%;margin-bottom:18px;
+    display:flex;align-items:center;justify-content:center;
+    background:var(--paper-2);border:1px dashed var(--accent);
+    font-family:'Fraunces',serif;font-size:28px;color:var(--accent-deep);
   }
-  .chip .co{font-weight:600;color:var(--accent-deep);}
+  .person p{margin-bottom:16px !important;}
+  .person .profile-link{
+    margin-top:auto;font-size:15px;font-weight:600;text-decoration:none;
+    border-bottom:1px solid var(--line);align-self:flex-start;
+  }
+  .person .profile-link:hover{border-bottom-color:var(--accent);}
 
   /* FAQ */
-  details{
-    background:var(--card);border:1px solid var(--line);
-    border-radius:12px;margin-bottom:12px;padding:0 22px;
-  }
+  details{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:12px;padding:0 22px;}
   details summary{
-    cursor:pointer;list-style:none;padding:20px 0;font-weight:600;
-    font-size:17px;display:flex;justify-content:space-between;align-items:center;gap:16px;
+    cursor:pointer;list-style:none;padding:20px 0;font-weight:600;font-size:17px;
+    display:flex;justify-content:space-between;align-items:center;gap:16px;
   }
   details summary::-webkit-details-marker{display:none;}
   details summary::after{content:'+';font-size:24px;color:var(--accent);font-weight:400;transition:transform .2s;}
   details[open] summary::after{transform:rotate(45deg);}
   details .body{padding:0 0 22px;color:var(--ink-soft);font-size:16px;}
 
-  /* CTA */
-  section.cta{background:linear-gradient(180deg,#23262f 0%,#1a1c22 100%);color:#f3efe8;text-align:center;border-bottom:none;}
-  section.cta h2{color:#fbf8f2;margin:0 auto 22px;}
-  section.cta p{color:#cfcabf;margin:0 auto 32px;max-width:58ch;}
-  section.cta .eyebrow{color:#c7a878;}
-  section.cta .btn-row{justify-content:center;}
-  .cta-note{margin-top:24px;font-size:14px;color:#a49d90;max-width:60ch;margin-left:auto;margin-right:auto;}
-
-  /* SIGNUP form */
-  .signup{max-width:460px;margin:0 auto;text-align:left;display:grid;gap:16px;}
-  .signup[hidden]{display:none;}
-  .signup-done:focus{outline:none;}
-  .signup label{display:block;font-size:14px;font-weight:600;color:#e6e0d5;margin-bottom:6px;}
-  .signup .slots{border:0;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px;}
-  .signup .slots legend{font-size:14px;font-weight:600;color:#e6e0d5;margin-bottom:6px;padding:0;}
-  .signup .slot-option{
-    flex:1 1 140px;display:flex;align-items:center;gap:10px;margin:0;cursor:pointer;
-    font-size:16px;font-weight:500;color:#fbf8f2;
-    border:1px solid #4a4d57;border-radius:10px;padding:12px 16px;
+  @media(max-width:760px){
+    .grid.three{grid-template-columns:1fr 1fr;}
   }
-  .signup .slot-option:has(input:checked){border-color:#c7a878;background:#2c2f39;}
-  .signup .slot-option input{width:auto;margin:0;padding:0;accent-color:#c7a878;}
-  .signup input{
-    width:100%;font:inherit;font-size:16px;color:var(--ink);
-    background:#fbf8f2;border:1px solid #4a4d57;border-radius:10px;padding:13px 16px;
-  }
-  .signup input:focus{outline:2px solid #c7a878;outline-offset:2px;}
-  .signup .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;}
-  .signup .btn{width:100%;margin-top:6px;}
-  .signup .btn[disabled]{opacity:.6;cursor:wait;transform:none;}
-  .signup-msg{margin:0;font-size:15px;min-height:1.4em;text-align:center;}
-  .signup-msg.error{color:#f0a99a;}
-  .signup-done{
-    max-width:460px;margin:0 auto;padding:24px 26px;border:1px solid #4a4d57;
-    border-radius:var(--radius);background:#23262f;
-  }
-  .signup-done h3{margin:0 0 8px;color:#fbf8f2;font-size:22px;}
-  section.cta .signup-done p{margin:0;max-width:none;}
-  .privacy-note{font-size:13px;color:#a49d90;margin:4px 0 0;text-align:center;}
-
-  @media(max-width:680px){
+  @media(max-width:620px){
     body{font-size:16px;}
     .grid.two,.grid.three{grid-template-columns:1fr;}
-    .timeline .slot{grid-template-columns:110px 1fr;gap:12px;}
-    section.venue .wrap{padding-bottom:40px;}
-    figure.photo img{height:200px;}
+    .timeline .slot{grid-template-columns:72px 1fr;gap:12px;}
     section{padding:60px 0;}
-    header.hero{padding:88px 0 76px;}
-    .lang-switch{top:18px;right:18px;}
+    header.hero{min-height:560px;}
+    header.hero .wrap{padding-top:48px;}
+    .hero-meta span{white-space:normal;}
+    .intro p{font-size:17.5px;}
+    .interest .btn{display:block;text-align:center;padding:14px 18px;line-height:1.35;}
+    .card{padding:22px;}
   }
 </style>
 </head>
 <body>
 
 <header class="hero">
-  <nav class="lang-switch" aria-label="Taal">
-    <span aria-current="true">NL</span>
-    <a href="/en/" lang="en" hreflang="en">EN</a>
-  </nav>
+  <img src="images/hero-kasteel.jpg" width="1717" height="1145" fetchpriority="high"
+       alt="Luchtfoto van Landgoed Duin en Kruidberg: het kasteel tussen de bossen aan de rand van de duinen">
   <div class="wrap">
+    <div class="eyebrow">Invitation Only</div>
     <h1>Design Managers Mastermind</h1>
-    <p class="lead">Eén dag met een kleine groep design managers, op een prachtig landgoed aan de rand van de duinen. Je bespreekt de vraagstukken waar je in je eentje op vastloopt, met vakgenoten die er middenin zitten of er al doorheen zijn. Vertrouwelijk, en gericht op concrete oplossingen.</p>
-    <p class="hero-cta-label">Gratis voorlichtingsbijeenkomst op 1&nbsp;december.</p>
-    <div class="btn-row">
-      <a class="btn light" href="#aanmelden">Schrijf je in</a>
-    </div>
+    <p class="hero-meta">
+      <span>Vrijdag 29&nbsp;januari 2027</span> · <span>9:30–16:00</span> · <span>Maximaal 16 deelnemers</span> ·
+      <span>Landgoed Duin en Kruidberg, Santpoort-Noord</span>
+    </p>
   </div>
 </header>
 
-<section class="venue">
-  <img src="images/duin-en-kruidberg.jpg" width="515" height="388"
-       alt="Landgoed Duin en Kruidberg: een monumentaal kasteel aan de rand van het bos in Santpoort-Noord">
+<section class="intro">
   <div class="wrap">
-    <p class="venue-place">Santpoort-Noord</p>
-    <p class="venue-name">Landgoed Duin en Kruidberg</p>
-    <p class="venue-meta"><strong>Vrijdag 29&nbsp;januari 2027</strong> · 9:30–16:00 · Beperkt aantal plaatsen</p>
+    <h2>Wat is het?</h2>
+    <p>Eén dag sparren met een kleine groep design managers, in een prachtig kasteel aan de rand van de duinen.</p>
+    <p>Je bespreekt actuele vraagstukken waar je in je eentje op vastloopt, met vakgenoten die er ook middenin zitten of er al doorheen zijn.</p>
+    <p>Geen presentaties of case studies. Slimme werkvormen zorgen ervoor dat vraagstukken en oplossingen elkaar in no time vinden.</p>
   </div>
 </section>
 
-<section>
+<section class="alt interest" id="interesse">
   <div class="wrap">
-    <div class="eyebrow">Herkenbaar?</div>
-    <h2>De vragen die er echt toe doen, bespreek je nergens goed</h2>
-    <p>Je bent verantwoordelijk voor design in een grote organisatie. De vraagstukken op je bord zijn zelden eenduidig, en de juiste aanpak staat niet in een boek: ons vakgebied is volop in ontwikkeling. Je wilt het wiel niet opnieuw uitvinden, en vraagt je af: hoe lossen anderen dit op?</p>
-    <p>Op conferenties ontmoet je soms vakgenoten die je verder helpen, maar die momenten zijn schaars. De meeste tijd gaat op aan talks die niet over jouw werk gaan, aan aanbieders van diensten en aan mensen die een baan zoeken. En UX- en designcommunities gaan vooral over het vak zelf, niet over de vraagstukken die jij als manager moet oplossen.</p>
-  </div>
-</section>
-
-<section class="alt">
-  <div class="wrap">
-    <div class="eyebrow">Voor wie</div>
-    <h2>Wij stellen het gezelschap samen</h2>
-    <div class="audience">
-      <p>Voor design managers (UX, CX, product design) met serieuze projecten en verantwoordelijkheid, bij grote organisaties, sterke merken en internationale agencies.</p>
-    </div>
-    <p>Niet iedereen die zich aanmeldt, schuift aan. We kijken bij elke aanmelding wie er al bij is, zodat er een groep ontstaat die iets met elkaar gemeen heeft: vergelijkbare verantwoordelijkheid, herkenbare vraagstukken en genoeg verschil om van elkaar te leren.</p>
-    <p>Want wat er op zo'n dag echt toe doet, is het gezelschap: mensen met wie je iets deelt en bij wie het klikt.</p>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="eyebrow">Wat levert het op</div>
-    <h2>Wat je mee naar huis neemt</h2>
-    <div class="grid two outcomes">
-      <div class="card">
-        <h3>Relevantie</h3>
-        <p>Je praat over de onderwerpen waar je nu zelf mee bezig bent, niet over die van een spreker.</p>
+    <h2>Interesse?</h2>
+    <div class="grid two">
+      <div class="card feature">
+        <h3>Online voorlichting</h3>
+        <p>Bezoek de online voorlichtingsbijeenkomst voor een korte presentatie door de organisatoren, met ruimte voor vragen.</p>
+        <dl>
+          <dt>Wanneer</dt><dd>Woensdag 2&nbsp;december, 12:00–12:45</dd>
+          <dt>Waar</dt><dd>Online via Zoom</dd>
+        </dl>
+        <a class="btn" href="https://us06web.zoom.us/meeting/register/VfVPCECjTXOFO7ITMp7Y0g" target="_blank" rel="noopener">Meld je aan voor de voorlichting</a>
       </div>
       <div class="card">
-        <h3>Herkenning</h3>
-        <p>Je merkt dat anderen met dezelfde vragen worstelen. Dat alleen al geeft lucht.</p>
-      </div>
-      <div class="card">
-        <h3>Inspiratie</h3>
-        <p>Je ziet hoe het er in andere organisaties aan toegaat, en kijkt met een frissere blik naar je eigen situatie.</p>
-      </div>
-      <div class="card">
-        <h3>Oplossingen</h3>
-        <p>Je hoort hoe peers jouw vraagstuk al hebben aangepakt, en neemt concrete ideeën mee terug.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="alt">
-  <div class="wrap">
-    <div class="eyebrow">Programma</div>
-    <h2>Eén dag, zorgvuldig geregisseerd</h2>
-
-    <div class="stack">
-      <div class="item">
-        <h3>De werkvormen</h3>
-        <p>Geen sprekers, geen panels, geen podium. De dag draait om slimme werkvormen die Anne en Joris speciaal voor dit soort gesprekken hebben ontwikkeld en in de praktijk hebben beproefd. Ze zorgen dat een gesprek snel voorbij de beleefdheden komt en echt iets oplevert. Hoe ze precies werken, ervaar je op de dag zelf.</p>
-      </div>
-      <div class="item">
-        <h3>Het verloop van de dag</h3>
-        <p>Je zit aan kleine tafels van maximaal vier personen, rond thema's die je zelf kiest. Intensieve gesprekken wisselen af met momenten om even naar buiten te gaan.</p>
-        <div class="timeline">
-          <div class="slot"><div class="t">9:30</div><div class="d">Ontvangst</div></div>
-          <div class="slot"><div class="t">10:00</div><div class="d"><strong>Ochtend</strong> — kennismaken en scherp krijgen waar je zelf mee zit</div></div>
-          <div class="slot"><div class="t">12:00</div><div class="d">Lunch, met tijd voor een wandeling over het landgoed</div></div>
-          <div class="slot"><div class="t">13:30</div><div class="d"><strong>Middag</strong> — de diepte in, rond de vraagstukken van de groep</div></div>
-          <div class="slot"><div class="t">14:45</div><div class="d"><strong>Afronding</strong> — wat neem je mee?</div></div>
-          <div class="slot"><div class="t">15:15</div><div class="d">Borrel</div></div>
-          <div class="slot"><div class="t">16:00</div><div class="d">Einde</div></div>
-        </div>
+        <h3>Meedoen</h3>
+        <p>Wil je deelnemen aan de Mastermind, maar ben je (nog) niet persoonlijk benaderd?</p>
+        <!-- TODO: LinkedIn-URL's van Anne en Joris invullen -->
+        <p>Neem contact op met <a href="#">Anne</a> of <a href="#">Joris</a> via LinkedIn.</p>
       </div>
     </div>
   </div>
@@ -355,36 +228,46 @@
 
 <section>
   <div class="wrap">
-    <div class="eyebrow">Praktisch</div>
-    <h2>Locatie en vertrouwelijkheid</h2>
-    <figure class="photo">
-      <img src="images/duin-en-kruidberg-lounge.jpg" width="1000" height="1000" loading="lazy"
-           alt="De lounge van Landgoed Duin en Kruidberg met houten schouw, chesterfields en kroonluchter">
-    </figure>
-    <div class="stack">
-      <div class="item">
-        <h3>De locatie</h3>
-        <p>Landgoed Duin en Kruidberg in Santpoort-Noord: een kasteel aan de rand van Nationaal Park Zuid-Kennemerland, met ruimte voor een wandeling tussen de sessies door. Een plek om even afstand te nemen van de dagelijkse drukte.</p>
-        <p>Duin- en Kruidbergerweg 60, 2071&nbsp;LE Santpoort-Noord · <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Duin-+en+Kruidbergerweg+60,+2071+LE+Santpoort-Noord" target="_blank" rel="noopener">Route plannen</a></p>
-      </div>
-      <div class="item">
-        <h3>Vertrouwelijk</h3>
-        <p>Volledig off the record. We maken geen opnames en houden geen notulen. Voor de zekerheid tekent iedereen een non-disclosure, zodat iedereen vrijuit kan spreken.</p>
-      </div>
-    </div>
+    <h2>Herkenbaar?</h2>
+    <p>Je bent verantwoordelijk voor designers in een grote organisatie. De vraagstukken op je bord zijn meestal niet eenduidig, en de juiste aanpak staat niet in een boek: ons vakgebied is volop in ontwikkeling. Je wilt het wiel niet opnieuw uitvinden en vraagt je af:</p>
+    <p class="pull">Hoe lossen anderen dit op?</p>
+    <p>Op conferenties ontmoet je soms vakgenoten die je verder helpen, maar die momenten zijn helaas zeldzaam. Veel tijd gaat verloren aan talks die niet over jouw werk gaan, aan aanbieders van diensten of aan mensen die een baan zoeken. UX-communities gaan vooral over design, niet over de vraagstukken die jij als manager moet oplossen.</p>
   </div>
 </section>
 
 <section class="alt">
   <div class="wrap">
-    <div class="eyebrow">Voorbeelden van thema's</div>
-    <h2>Thema's die op dit moment leven</h2>
-    <p>Dit zijn voorbeelden van onderwerpen die design managers ons aandragen. Welke thema's er op de dag zelf aan bod komen, bepaalt de groep aan het begin van de dag.</p>
+    <h2>Wat levert het op?</h2>
+    <div class="grid two">
+      <div class="card">
+        <h3>Inspiratie voor jouw oplossing</h3>
+        <p>Je leert welke uitdagingen andere organisaties op jouw vakgebied hebben, hoort hoe vakgenoten jouw vraagstuk al hebben aangepakt en neemt concrete ideeën mee terug.</p>
+      </div>
+      <div class="card">
+        <h3>Een eerlijke blik van buiten</h3>
+        <p>Vakgenoten van buiten je organisatie kijken naar jouw aanpak zonder belang, politiek of voorgeschiedenis. Ze kennen het probleem uit eigen ervaring en zeggen wat ze zien. Dat zet je vaak op een nieuw spoor.</p>
+      </div>
+      <div class="card">
+        <h3>Een netwerk van vakgenoten</h3>
+        <p>De Mastermind vindt twee keer per jaar plaats. Wie een klik heeft, blijft elkaar zien, en met elke editie komen er nieuwe vakgenoten en invalshoeken bij.</p>
+      </div>
+      <div class="card">
+        <h3>Je eigen aanpak scherper</h3>
+        <p>Je denkt mee over de vraagstukken van anderen en deelt wat bij jou werkte. Door je ervaring onder woorden te brengen, zie je zelf scherper wat je aanpak sterk maakt, en wat niet.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Voorbeelden van thema's</h2>
+    <p>Dit zijn uitdagingen van UX-managers die we dit jaar hebben gesproken. De thema's van de dag bepalen we op basis van de intakes; op de dag zelf kies je waar je de meeste aandacht aan geeft.</p>
     <div class="grid three">
       <div class="card">
         <span class="num">01</span>
         <h3>AI in het designproces</h3>
-        <p>Hoe verandert AI je proces, en hoe doen anderen dat? Hoe ga je om met weerstand, met voorlopers, en met beperkingen vanuit legal en compliance?</p>
+        <p>Hoe verandert AI je proces, en hoe doen anderen dat? Hoe ga je om met weerstand, met voorlopers en met beperkingen vanuit legal en compliance?</p>
       </div>
       <div class="card">
         <span class="num">02</span>
@@ -404,32 +287,12 @@
       <div class="card">
         <span class="num">05</span>
         <h3>Career framework</h3>
-        <p>Hoe bouw je een career framework dat designers laat groeien en houvast geeft, en dat ook standhoudt in gesprekken met HR en management?</p>
+        <p>Volwassen UX-organisaties hebben een career framework. Die komen in allerlei soorten en maten, met hun eigen voor- en nadelen. Waar loop je tegenaan in jouw situatie, en wat kun je leren van andere systemen?</p>
       </div>
       <div class="card">
         <span class="num">06</span>
         <h3>Change management</h3>
-        <p>Hoe krijg je je organisatie mee in verandering — nieuwe werkwijzen, nieuwe structuren, een andere rol voor design?</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="eyebrow">Wie zijn we</div>
-    <h2>Anne en Joris</h2>
-    <div class="grid two">
-      <div class="card">
-        <h3>Anne Vroegop <span class="byline">(1980)</span></h3>
-        <p>Anne is designleider en facilitator met jarenlange ervaring in het begeleiden van teams en leiders in de designwereld vanuit haar UX Academy en Human AI Academy. Ze is op haar best als ze een groep professionals in korte tijd tot de kern laat komen, met werkvormen die scherpte en openheid combineren.</p>
-        <a class="profile-link" href="https://www.linkedin.com/in/annevroegop/" target="_blank" rel="noopener">LinkedIn →</a>
-      </div>
-      <div class="card">
-        <!-- CONCEPT-BIO: aanscherpen — Joris' tekst, geboortejaar en LinkedIn-URL nog invullen -->
-        <h3>Joris Groen</h3>
-        <p>Joris is UX-veteraan, auteur en oprichter van meerdere designpraktijken. Hij ontwerpt al decennia digitale producten én de sessies waarin mensen daarover de goede gesprekken voeren. Zijn specialiteit: werkvormen die diepgang afdwingen zonder dat het geforceerd voelt.</p>
-        <a class="profile-link" href="#">LinkedIn →</a>
+        <p>Reorganisaties, fusies, nieuwe werkwijzen: het hoort erbij. Hoe krijg je je teams mee in nieuwe structuren en werkwijzen, en misschien in een andere rol voor design?</p>
       </div>
     </div>
   </div>
@@ -437,15 +300,126 @@
 
 <section class="alt">
   <div class="wrap">
-    <div class="eyebrow">Wie hebben zich al aangemeld?</div>
-    <h2>De behoefte leeft bij meer organisaties</h2>
-    <!-- PLACEHOLDER: chips vervangen door echte functietitels/bedrijven (of logo's) zodra bekend -->
-    <div class="chips">
-      <div class="chip">UX Manager — <span class="co">ING</span></div>
-      <div class="chip">VP of Design — <span class="co">Eneco</span></div>
-      <div class="chip">Head of Design — <span class="co">…</span></div>
-      <div class="chip">Design Director — <span class="co">…</span></div>
-      <div class="chip">Product Design Lead — <span class="co">…</span></div>
+    <h2>Voor wie</h2>
+    <div class="callout">
+      <p>Voor design managers (UX, CX, product design) met serieuze projecten en verantwoordelijkheid, bij grote organisaties, sterke merken en internationale agencies. Per bijeenkomst werken we met een groep van 12 tot 16 deelnemers.</p>
+    </div>
+    <p>Op een Mastermind-bijeenkomst draait het 100% om het gezelschap. Daarom stellen we de groep van tevoren zorgvuldig samen. Dat betekent ook dat niet iedereen kan meedoen.</p>
+    <ul class="ticks">
+      <li>De Mastermind is voor managers die niet zelf ontwerpen, maar designers aansturen.</li>
+      <li>We stellen de groep samen met UX-managers uit verschillende branches, zodat er geen concurrenten aan tafel zitten.</li>
+      <li>We zorgen ervoor dat er genoeg gedeelde vraagstukken zijn, zodat we maximaal van elkaar leren.</li>
+      <li>De komende editie is Nederlandstalig.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Programma</h2>
+    <div class="stack">
+      <div class="item">
+        <h3>Intake</h3>
+        <p>Van tevoren word je persoonlijk door ons gebeld. We stellen je vragen, zodat we een goed beeld hebben van de uitdagingen waar jij tegenaan loopt: wat voor jou relevant is, en wat absoluut niet.</p>
+      </div>
+      <div class="item">
+        <h3>Mastermind</h3>
+        <p>De dag draait om slimme werkvormen die we speciaal voor deze Mastermind hebben ontwikkeld en in de praktijk hebben beproefd. Ze zorgen ervoor dat het gesprek snel voorbij de beleefdheden komt en echt iets oplevert.</p>
+        <h4>Dagschema</h4>
+        <div class="timeline">
+          <div class="slot"><div class="t">9:30</div><div class="d">Ontvangst</div></div>
+          <div class="slot"><div class="t">10:00</div><div class="d"><strong>Ochtend</strong> — kennismaken en scherp krijgen waar je zelf mee zit</div></div>
+          <div class="slot"><div class="t">12:00</div><div class="d">Lunch, met tijd voor een wandeling over het landgoed</div></div>
+          <div class="slot"><div class="t">13:30</div><div class="d"><strong>Middag</strong> — de diepte in, rond de vraagstukken van de groep</div></div>
+          <div class="slot"><div class="t">14:45</div><div class="d"><strong>Afronding</strong> — wat neem je mee?</div></div>
+          <div class="slot"><div class="t">15:15</div><div class="d">Borrel</div></div>
+          <div class="slot"><div class="t">16:00</div><div class="d">Einde</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>Vertrouwelijkheid</h2>
+    <p>We maken geen opnames en houden geen notulen. Voor de zekerheid tekenen alle deelnemers een geheimhoudingsverklaring (NDA), zodat iedereen vrijuit kan spreken.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Praktisch</h2>
+    <figure class="photo">
+      <img src="images/lounge.jpg" width="1600" height="870" loading="lazy"
+           alt="De lounge van Landgoed Duin en Kruidberg met houten schouw, chesterfields en kroonluchter">
+    </figure>
+    <div class="stack">
+      <div class="item">
+        <h3>De locatie</h3>
+        <p>Landgoed Duin en Kruidberg in Santpoort-Noord: een kasteel aan de rand van Nationaal Park Zuid-Kennemerland, met ruimte voor een wandeling tussen de sessies door. Een plek om even afstand te nemen van de dagelijkse drukte.</p>
+        <p>Duin- en Kruidbergerweg 60, 2071&nbsp;LE Santpoort-Noord · <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Duin-+en+Kruidbergerweg+60,+2071+LE+Santpoort-Noord" target="_blank" rel="noopener">Route plannen</a></p>
+      </div>
+      <div class="item">
+        <h3>Kosten</h3>
+        <p>De kosten voor de Mastermind zijn €880 per persoon, exclusief btw.</p>
+        <p>Wat krijg je hiervoor:</p>
+        <ul class="ticks">
+          <li>Persoonlijke intake</li>
+          <li>Mastermind-bijeenkomst waarin jouw thema aan bod komt</li>
+          <li>Overheerlijke lunch, dranken en hapjes</li>
+        </ul>
+        <p>Betaling gaat via factuur.</p>
+      </div>
+      <div class="item">
+        <h3>Data</h3>
+        <dl class="dates">
+          <dt>Mastermind 2027-1</dt><dd>29 januari</dd>
+          <dt>Mastermind 2027-2</dt><dd>24 september</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="eyebrow">Over ons</div>
+    <h2>Hoe het begon</h2>
+    <p>Wij, Anne Vroegop en Joris Groen, werken sinds 2014 samen in de UX-wereld.</p>
+    <p>Eind 2025 organiseerden we een eerste Mastermind over AI en UX, vooral om inspiratie op te doen voor onze trainingen. AI ontwikkelt zich zo snel dat sommige vraagstukken een paar maanden later al een ander antwoord hadden. Wat bleef, was de waarde van de dag zelf: een dag lang met senior UX'ers in een strak format ervaringen delen, leverde ongelofelijk veel meer inzichten en inspiratie op dan een gemiddelde conferentie.</p>
+    <p>Daarna hebben we de werkvormen aangescherpt en ons netwerk gevraagd wat zij nodig hebben. Het resultaat is dit format, waarin de thema's voortkomen uit de gesprekken met de deelnemers, niet uit een vooraf bedacht programma.</p>
+
+    <figure class="photo spaced">
+      <img src="images/mastermind-bangkok.jpg" width="1600" height="813" loading="lazy"
+           alt="Deelnemers van de eerste Mastermind in Bangkok in gesprek rond een flip-over vol post-its">
+    </figure>
+
+    <p><strong>Belangrijkste uitgangspunten:</strong></p>
+    <ul class="ticks">
+      <li>Niemand heeft de juiste oplossing op de plank liggen.</li>
+      <li>Case studies zijn zelden relevant.</li>
+      <li>Het Mastermind-format is bij uitstek geschikt in tijden van verandering.</li>
+      <li>Iedereen aan tafel heeft iets unieks dat anderen kan helpen of inspireren, indien zorgvuldig geselecteerd.</li>
+    </ul>
+
+    <div class="grid two people">
+      <div class="card person">
+        <!-- TODO: portretfoto Anne -->
+        <div class="portrait" aria-hidden="true">AV</div>
+        <h3>Anne Vroegop</h3>
+        <p>Anne is designleider en facilitator, met jarenlange ervaring in het begeleiden van teams en leiders in de designwereld vanuit haar UX Academy en Human AI Academy. Ze is op haar best als ze een groep professionals in korte tijd tot de kern laat komen, met werkvormen die scherpte en openheid combineren.</p>
+        <!-- TODO: LinkedIn-URL Anne -->
+        <a class="profile-link" href="#">LinkedIn →</a>
+      </div>
+      <div class="card person">
+        <!-- TODO: portretfoto Joris -->
+        <div class="portrait" aria-hidden="true">JG</div>
+        <h3>Joris Groen</h3>
+        <p>Joris is psycholoog en werkt al ruim 25 jaar in UX. Hij gaf talloze workshops en trainingen, en leerde daar wat een groep nodig heeft om echt open te praten: de juiste vragen, een strakke regie en ruimte voor iedereen. Hij leidde UX-teams van designers, researchers, writers en developers, werkte tot voor kort bij Booking.com en is nu interim UX Lead bij verschillende organisaties. Daarnaast is hij auteur van de bestseller <em>Online Influence</em>.</p>
+        <!-- TODO: LinkedIn-URL Joris -->
+        <a class="profile-link" href="#">LinkedIn →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -453,15 +427,15 @@
 <section>
   <div class="wrap">
     <div class="eyebrow">Veelgestelde vragen</div>
-    <h2>Goed om te weten</h2>
+    <h2>Vragen die je misschien hebt</h2>
 
     <details>
       <summary>Is dit weer een conferentie of netwerkevent?</summary>
-      <div class="body">Nee. Geen sprekers, geen podium, geen willekeurige talks. Eén dag in gesprek met een kleine, zorgvuldig samengestelde groep vakgenoten, aan tafels van maximaal vier personen.</div>
+      <div class="body">Nee. Geen sprekers, geen podium, geen willekeurige talks. Eén dag in gesprek met een kleine, zorgvuldig samengestelde groep vakgenoten.</div>
     </details>
     <details>
       <summary>Word ik benaderd door recruiters of leveranciers?</summary>
-      <div class="body">Nee. Dat is precies wat we uitsluiten. Geen sponsors, geen verkoop, geen baanaanbiedingen — een veilige omgeving onder gelijken.</div>
+      <div class="body">Nee. Dat is precies wat we uitsluiten. Geen sponsors, geen verkoop, geen baanaanbiedingen, maar een veilige omgeving onder gelijken.</div>
     </details>
     <details>
       <summary>Hoe vertrouwelijk is het echt?</summary>
@@ -469,123 +443,14 @@
     </details>
     <details>
       <summary>Wat als geen enkel thema bij mij past?</summary>
-      <div class="body">De thema's bepalen we aan het begin van de dag, op basis van wat er bij de deelnemers speelt. In de middag vormen we tafels rond je eigen vraagstuk, dus jouw thema komt altijd aan bod.</div>
+      <div class="body">We bepalen de thema's op basis van een persoonlijke intake met elke deelnemer. Gedurende de dag kies je zelf aan welke thema's je de meeste aandacht geeft, en in de middag vormen we tafels rond je eigen vraagstuk. Jouw thema komt dus altijd aan bod.</div>
     </details>
     <details>
-      <summary>Hoe word ik gekoppeld aan andere deelnemers?</summary>
-      <div class="body">Je kiest zelf de tafel met het thema dat jou raakt, en wij letten op de samenstelling: klein, vergelijkbaar in ervaring, en met de juiste mix. Wisselen van tafel kan altijd.</div>
-    </details>
-    <details>
-      <summary>Wat kost het en wat zit erin?</summary>
-      <div class="body">Deelname kost €880. Daarvoor krijg je de hele dag op het landgoed, inclusief lunch, koffie en borrel. Geen verborgen kosten, geen sponsors.</div>
-    </details>
-    <details>
-      <summary>Hoe meld ik me aan?</summary>
-      <div class="body">Begin bij de gratis online voorlichtingsbijeenkomst op 1&nbsp;december. Daar lichten we de opzet toe, beantwoorden we je vragen en kun je je aanmelden voor 29&nbsp;januari.</div>
+      <summary>Wat als ik toch niet kan?</summary>
+      <div class="body">Annuleren is in sommige gevallen mogelijk. Kun je onverwacht toch niet? Neem dan zo snel mogelijk contact met ons op. Dan zoeken we samen naar een oplossing.</div>
     </details>
   </div>
 </section>
-
-<section class="cta" id="aanmelden">
-  <div class="wrap">
-    <div class="eyebrow">Gratis voorlichting</div>
-    <h2>Online voorlichting op 1&nbsp;december</h2>
-    <p>Op dinsdag 1&nbsp;december houden we twee keer een gratis online voorlichtingsbijeenkomst: van 12:00 tot 13:00 en van 17:00 tot 18:00. Anne en Joris vertellen hoe de dag in elkaar zit en voor wie hij bedoeld is, en iedereen kan vragen stellen.</p>
-
-    <form class="signup" id="signup" novalidate>
-      <div>
-        <label for="su-naam">Naam</label>
-        <input id="su-naam" name="naam" type="text" autocomplete="name" maxlength="200" required>
-      </div>
-      <div>
-        <label for="su-organisatie">Organisatie</label>
-        <input id="su-organisatie" name="organisatie" type="text" autocomplete="organization" maxlength="200" required>
-      </div>
-      <div>
-        <label for="su-email">E-mailadres</label>
-        <input id="su-email" name="email" type="email" autocomplete="email" maxlength="200" required>
-      </div>
-      <fieldset class="slots">
-        <legend>Tijdstip op 1&nbsp;december</legend>
-        <label class="slot-option"><input type="radio" name="tijdstip" value="12:00–13:00" required> 12:00–13:00</label>
-        <label class="slot-option"><input type="radio" name="tijdstip" value="17:00–18:00"> 17:00–18:00</label>
-      </fieldset>
-      <div class="hp" aria-hidden="true">
-        <label for="su-website">Website</label>
-        <input id="su-website" name="website" type="text" tabindex="-1" autocomplete="off">
-      </div>
-      <button class="btn" type="submit">Schrijf je gratis in</button>
-      <p class="signup-msg" role="status" aria-live="polite"></p>
-      <p class="privacy-note">We gebruiken je gegevens alleen voor de voorlichting en de Mastermind.</p>
-    </form>
-
-    <div class="signup-done" id="signup-done" hidden tabindex="-1">
-      <h3>Je staat ingeschreven</h3>
-      <p>Dank je wel. Je bent welkom op dinsdag 1&nbsp;december, <span id="signup-slot"></span>. Vóór die dag ontvang je van ons de link naar de online bijeenkomst.</p>
-    </div>
-
-    <div class="cta-note">De Mastermind zelf: vrijdag 29&nbsp;januari 2027 · 9:30–16:00 · Landgoed Duin en Kruidberg, Santpoort-Noord · €880</div>
-  </div>
-</section>
-
-<script>
-  (function () {
-    var form = document.getElementById('signup');
-    var done = document.getElementById('signup-done');
-    var msg = form.querySelector('.signup-msg');
-    var button = form.querySelector('button');
-
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
-      msg.textContent = '';
-      msg.className = 'signup-msg';
-
-      if (!form.checkValidity()) {
-        var invalid = form.querySelector('input:invalid');
-        msg.textContent = invalid.type === 'radio'
-          ? 'Kies een tijdstip.'
-          : invalid.type === 'email' && invalid.value
-            ? 'Vul een geldig e-mailadres in.'
-            : 'Vul je naam, organisatie en e-mailadres in.';
-        msg.classList.add('error');
-        invalid.focus();
-        return;
-      }
-
-      var data = Object.fromEntries(new FormData(form));
-      data.taal = 'nl';
-      button.disabled = true;
-      button.textContent = 'Bezig met inschrijven…';
-
-      fetch('/api/inschrijven', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      })
-        .then(function (res) {
-          return res.json().catch(function () { return {}; }).then(function (body) {
-            if (!res.ok) throw new Error(body.error || 'Inschrijven is niet gelukt.');
-          });
-        }, function () {
-          throw new Error('Inschrijven is niet gelukt.');
-        })
-        .then(function () {
-          document.getElementById('signup-slot').textContent = data.tijdstip;
-          form.hidden = true;
-          done.hidden = false;
-          done.focus();
-        })
-        .catch(function (err) {
-          msg.textContent = err.message === 'Inschrijven is niet gelukt.'
-            ? 'Inschrijven is niet gelukt. Probeer het nog eens.'
-            : err.message;
-          msg.classList.add('error');
-          button.disabled = false;
-          button.textContent = 'Schrijf je gratis in';
-        });
-    });
-  })();
-</script>
 
 </body>
 </html>
