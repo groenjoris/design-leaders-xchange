@@ -56,6 +56,9 @@
   header.hero h1{font-size:clamp(38px,6vw,66px);margin:0 0 18px;color:#fbf8f2;}
   .hero-meta{margin:0;font-size:clamp(16px,1.9vw,18px);color:#e6e0d5;max-width:62ch;font-weight:500;}
   .hero-meta span{white-space:nowrap;}
+  .hero-meta .meta-line{display:flex;align-items:center;gap:10px;}
+  .hero-meta .meta-line + .meta-line{margin-top:4px;}
+  .hero-meta svg{flex:none;width:18px;height:18px;color:#fff;}
 
   /* LANGUAGE SWITCH (desktop: box with full names; phones: subtle NL | EN) */
   .lang-switch{
@@ -207,6 +210,7 @@
     header.hero .eyebrow{color:var(--accent-deep);}
     header.hero h1{color:var(--ink);}
     .hero-meta{color:var(--ink-soft);}
+    .hero-meta svg{color:var(--accent-deep);}
     header.hero .wrap{order:1;padding-top:52px;padding-bottom:28px;}
     header.hero > img{order:2;position:relative;inset:auto;height:clamp(300px,82vw,420px);transform:none !important;}
     .hero-meta span{white-space:normal;}
@@ -228,8 +232,8 @@
     <div class="eyebrow">Invitation Only</div>
     <h1>Design Managers Mastermind</h1>
     <p class="hero-meta">
-      <span>Vrijdag 29&nbsp;januari 2027</span> · <span>9:30–16:00</span><br>
-      <span>Landgoed Duin en Kruidberg, Santpoort-Noord</span>
+      <span class="meta-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" aria-hidden="true"><path d="M3.5 5.5h17v15h-17z"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span><span>Vrijdag 29&nbsp;januari 2027</span> · <span>9:30–16:00</span></span></span>
+      <span class="meta-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span>Landgoed Duin en Kruidberg, Santpoort-Noord</span></span>
     </p>
   </div>
 </header>
