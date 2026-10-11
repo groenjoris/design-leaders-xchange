@@ -59,13 +59,14 @@
 
   /* LANGUAGE SWITCH */
   .lang-switch{
-    position:absolute;top:18px;right:18px;z-index:2;display:flex;
-    background:rgba(255,253,249,.72);border:1px solid rgba(26,28,34,.1);
-    backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+    position:absolute;top:16px;right:18px;z-index:2;display:flex;align-items:center;gap:7px;
+    padding:6px 11px;font-size:13px;font-weight:600;letter-spacing:.04em;
+    background:rgba(255,253,249,.72);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
   }
-  .lang-switch a{padding:7px 12px;font-size:13px;font-weight:600;color:var(--ink-soft);text-decoration:none;}
-  .lang-switch a:hover{color:var(--ink);background:rgba(26,28,34,.06);}
-  .lang-switch a[aria-current="page"]{background:var(--ink);color:#fbf8f2;}
+  .lang-switch [aria-current]{color:var(--ink-soft);opacity:.5;cursor:default;}
+  .lang-switch .sep{color:var(--ink-soft);opacity:.35;font-weight:400;}
+  .lang-switch a{color:var(--ink);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;}
+  .lang-switch a:hover{color:var(--accent-deep);text-decoration-thickness:2px;}
 
   /* BUTTONS */
   .btn{
@@ -144,9 +145,21 @@
   .people{margin-top:36px;}
 
   .price{font-family:'Fraunces',serif;font-size:28px;color:var(--ink);margin:4px 0 6px;}
-  .dates{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:6px 0 0;font-size:16.5px;}
-  .dates dt{font-weight:600;color:var(--ink);}
-  .dates dd{margin:0;color:var(--ink-soft);}
+  /* FACTS (location + dates with icons) */
+  .facts{display:grid;gap:14px;margin-top:4px;}
+  .fact{display:flex;align-items:center;gap:16px;}
+  .fact-icon{
+    flex:none;width:58px;height:58px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    background:var(--card);border:1px solid var(--line);color:var(--accent-deep);
+  }
+  .fact-icon.date{justify-content:flex-start;}
+  .fact-icon .mon{
+    width:100%;padding:3px 0;text-align:center;font-size:10.5px;font-weight:600;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--accent-deep);background:var(--paper-2);border-bottom:1px solid var(--line);
+  }
+  .fact-icon .day{font-family:'Fraunces',Georgia,serif;font-size:23px;line-height:1;margin-top:7px;color:var(--ink);}
+  .fact-title{font-family:'Fraunces',Georgia,serif;font-size:19px;line-height:1.25;color:var(--ink);}
+  .fact-sub{font-size:15px;color:var(--ink-soft);margin-top:3px;}
 
   /* PEOPLE */
   .person{display:flex;flex-direction:column;}
@@ -182,6 +195,7 @@
     section{padding:60px 0;}
     header.hero{min-height:0;flex-direction:column;align-items:stretch;background:var(--paper);}
     header.hero::after{display:none;}
+    .lang-switch{top:20px;right:24px;padding:0;background:none;backdrop-filter:none;-webkit-backdrop-filter:none;}
     header.hero .eyebrow{color:var(--accent-deep);}
     header.hero h1{color:var(--ink);}
     .hero-meta{color:var(--ink-soft);}
@@ -198,8 +212,7 @@
 
 <header class="hero">
   <nav class="lang-switch" aria-label="Taal / Language">
-    <a href="./" lang="nl" hreflang="nl" aria-current="page">Nederlands</a>
-    <a href="en/" lang="en" hreflang="en">English</a>
+    <span lang="nl" aria-current="page">NL</span><span class="sep" aria-hidden="true">|</span><a href="en/" lang="en" hreflang="en">EN</a>
   </nav>
   <img src="images/hero-kasteel.jpg" width="2400" height="996" fetchpriority="high"
        alt="Luchtfoto van Landgoed Duin en Kruidberg: het kasteel met de vijver, omringd door bossen">
@@ -369,7 +382,12 @@
       <div class="item">
         <h3>De locatie</h3>
         <p>Landgoed Duin en Kruidberg in Santpoort-Noord: een kasteel aan de rand van Nationaal Park Zuid-Kennemerland, met ruimte voor een wandeling tussen de sessies door. Een plek om even afstand te nemen van de dagelijkse drukte.</p>
-        <p>Duin- en Kruidbergerweg 60, 2071&nbsp;LE Santpoort-Noord · <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Duin-+en+Kruidbergerweg+60,+2071+LE+Santpoort-Noord" target="_blank" rel="noopener">Route plannen</a></p>
+        <div class="facts">
+          <div class="fact">
+            <div class="fact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></div>
+            <div><div class="fact-title">Landgoed Duin en Kruidberg</div><div class="fact-sub">Duin- en Kruidbergerweg 60, 2071&nbsp;LE Santpoort-Noord · <a href="https://www.google.com/maps/dir/?api=1&amp;destination=Duin-+en+Kruidbergerweg+60,+2071+LE+Santpoort-Noord" target="_blank" rel="noopener">Route plannen</a></div></div>
+          </div>
+        </div>
       </div>
       <div class="item">
         <h3>Kosten</h3>
@@ -384,10 +402,16 @@
       </div>
       <div class="item">
         <h3>Data</h3>
-        <dl class="dates">
-          <dt>Mastermind 2027-1</dt><dd>29 januari</dd>
-          <dt>Mastermind 2027-2</dt><dd>24 september</dd>
-        </dl>
+        <div class="facts">
+          <div class="fact">
+            <div class="fact-icon date" aria-hidden="true"><span class="mon">jan</span><span class="day">29</span></div>
+            <div><div class="fact-title">Vrijdag 29 januari 2027</div><div class="fact-sub">Mastermind 2027-1 · 9:30–16:00</div></div>
+          </div>
+          <div class="fact">
+            <div class="fact-icon date" aria-hidden="true"><span class="mon">sep</span><span class="day">24</span></div>
+            <div><div class="fact-title">Vrijdag 24 september 2027</div><div class="fact-sub">Mastermind 2027-2</div></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
