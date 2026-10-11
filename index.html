@@ -19,7 +19,6 @@
     --accent-deep:#6f5436;
     --gold:#e3c99c;
     --card:#fffdf9;
-    --radius:14px;
     --maxw:880px;
   }
   *{box-sizing:border-box;}
@@ -55,10 +54,24 @@
   .hero-meta{margin:0;font-size:clamp(16px,1.9vw,18px);color:var(--ink-soft);max-width:62ch;font-weight:500;}
   .hero-meta span{white-space:nowrap;}
 
+  /* HERO PHOTO SWITCHER */
+  .hero-switch{
+    position:absolute;top:18px;right:18px;z-index:2;display:flex;gap:2px;padding:3px;
+    background:rgba(255,253,249,.55);border:1px solid rgba(26,28,34,.08);
+    backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:.7;transition:opacity .2s;
+  }
+  .hero-switch:hover,.hero-switch:focus-within{opacity:1;}
+  .hero-switch button{
+    width:24px;height:24px;border:0;background:transparent;cursor:pointer;
+    font:600 11px/1 'Inter',sans-serif;color:var(--ink-soft);padding:0;
+  }
+  .hero-switch button:hover{background:rgba(26,28,34,.08);}
+  .hero-switch button[aria-pressed="true"]{background:var(--ink);color:#fbf8f2;}
+
   /* BUTTONS */
   .btn{
     display:inline-block;background:var(--accent);color:#fff;
-    padding:15px 30px;border-radius:999px;text-decoration:none;
+    padding:15px 30px;text-decoration:none;
     font-weight:600;font-size:16px;transition:background .2s,transform .2s;
   }
   .btn:hover{background:#9a774d;transform:translateY(-1px);}
@@ -81,7 +94,7 @@
   .grid{display:grid;gap:18px;margin-top:14px;}
   .grid.two{grid-template-columns:repeat(2,1fr);}
   .grid.three{grid-template-columns:repeat(3,1fr);}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;}
+  .card{background:var(--card);border:1px solid var(--line);padding:26px;}
   .card h3{font-size:20px;margin:0 0 10px;}
   .card p{font-size:15.5px;margin:0;}
   .card .num{
@@ -100,13 +113,13 @@
   .callout{
     margin:0 0 28px;padding:24px 28px;background:var(--card);
     border:1px solid var(--line);border-left:3px solid var(--accent);
-    border-radius:0 var(--radius) var(--radius) 0;
+    
   }
   .callout p{margin:0;color:var(--ink);}
   ul.ticks{list-style:none;padding:0;margin:0 0 8px;max-width:65ch;}
   ul.ticks li{position:relative;padding-left:28px;margin-bottom:12px;color:var(--ink-soft);}
   ul.ticks li::before{
-    content:'';position:absolute;left:4px;top:.6em;width:8px;height:8px;border-radius:50%;
+    content:'';position:absolute;left:4px;top:.6em;width:8px;height:8px;
     background:var(--accent);
   }
 
@@ -127,7 +140,7 @@
 
   /* PHOTOS */
   figure.photo{margin:0 0 36px;}
-  figure.photo img{width:100%;height:auto;border-radius:var(--radius);border:1px solid var(--line);}
+  figure.photo img{width:100%;height:auto;border:1px solid var(--line);}
   figure.photo.spaced{margin-top:32px;}
   .people{margin-top:36px;}
 
@@ -139,7 +152,7 @@
   /* PEOPLE */
   .person{display:flex;flex-direction:column;}
   .portrait{
-    width:112px;height:112px;border-radius:50%;margin-bottom:18px;
+    width:112px;height:112px;margin-bottom:18px;
     object-fit:cover;object-position:center 30%;border:1px solid var(--line);
   }
   .person p{margin-bottom:16px !important;}
@@ -150,7 +163,7 @@
   .person .profile-link:hover{border-bottom-color:var(--accent);}
 
   /* FAQ */
-  details{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:12px;padding:0 22px;}
+  details{background:var(--card);border:1px solid var(--line);margin-bottom:12px;padding:0 22px;}
   details summary{
     cursor:pointer;list-style:none;padding:20px 0;font-weight:600;font-size:17px;
     display:flex;justify-content:space-between;align-items:center;gap:16px;
@@ -180,8 +193,20 @@
 <body>
 
 <header class="hero">
-  <img src="images/hero-kasteel.jpg" width="1717" height="1145" fetchpriority="high"
+  <img id="hero-img" src="images/hero-kasteel.jpg" width="1717" height="1145" fetchpriority="high"
        alt="Luchtfoto van Landgoed Duin en Kruidberg: het kasteel tussen de bossen aan de rand van de duinen">
+  <nav class="hero-switch" aria-label="Kies een hero-foto">
+    <button type="button" data-hero="1" data-src="images/hero-kasteel.jpg" data-pos="center 30%" aria-pressed="true"
+            data-alt="Luchtfoto van Landgoed Duin en Kruidberg: het kasteel tussen de bossen aan de rand van de duinen">1</button>
+    <button type="button" data-hero="2" data-src="images/hero-1.jpg" data-pos="center 33%" aria-pressed="false"
+            data-alt="Luchtfoto van Landgoed Duin en Kruidberg bij zonsondergang, met het kasteel weerspiegeld in de vijver">2</button>
+    <button type="button" data-hero="3" data-src="images/hero-2.jpg" data-pos="center 0%" aria-pressed="false"
+            data-alt="Het kasteel van Landgoed Duin en Kruidberg van dichtbij, met toren en trapgevels">3</button>
+    <button type="button" data-hero="4" data-src="images/hero-3.jpg" data-pos="center 50%" aria-pressed="false"
+            data-alt="Landgoed Duin en Kruidberg in de herfst, gezien over de vijver">4</button>
+    <button type="button" data-hero="5" data-src="images/hero-winter.jpg" data-pos="center 20%" aria-pressed="false"
+            data-alt="Landgoed Duin en Kruidberg in de sneeuw">5</button>
+  </nav>
   <div class="wrap">
     <div class="eyebrow">Invitation Only</div>
     <h1>Design Managers Mastermind</h1>
@@ -444,6 +469,34 @@
     </details>
   </div>
 </section>
+
+<script>
+  (function () {
+    var img = document.getElementById('hero-img');
+    var buttons = document.querySelectorAll('.hero-switch button');
+
+    function show(button, updateUrl) {
+      img.src = button.dataset.src;
+      img.alt = button.dataset.alt;
+      img.style.objectPosition = button.dataset.pos;
+      buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b === button)); });
+      if (updateUrl) {
+        var url = new URL(location.href);
+        if (button.dataset.hero === '1') url.searchParams.delete('hero');
+        else url.searchParams.set('hero', button.dataset.hero);
+        history.replaceState(null, '', url);
+      }
+    }
+
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () { show(b, true); });
+    });
+
+    var chosen = new URLSearchParams(location.search).get('hero');
+    var match = chosen && document.querySelector('.hero-switch button[data-hero="' + CSS.escape(chosen) + '"]');
+    if (match) show(match, false);
+  })();
+</script>
 
 </body>
 </html>
