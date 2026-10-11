@@ -112,6 +112,9 @@
 
   /* TIMELINE */
   .timeline{margin-top:12px;border-top:1px solid var(--line);}
+  .stack .item.schedule,.stack .item.schedule + .item{border-top:none;}
+  .item.schedule .timeline{border-top:none;}
+  .item.schedule .timeline .slot:last-child{border-bottom:none;}
   .timeline .slot{display:grid;grid-template-columns:110px 1fr;gap:18px;padding:13px 0;border-bottom:1px solid var(--line);}
   .timeline .t{font-family:'Fraunces',serif;font-weight:600;color:var(--accent-deep);font-size:16px;white-space:nowrap;}
   .timeline .d{color:var(--ink-soft);font-size:16px;}
@@ -311,7 +314,7 @@
         <h3>Intake</h3>
         <p>Van tevoren word je persoonlijk door ons gebeld. We stellen je vragen, zodat we een goed beeld hebben van de uitdagingen waar jij tegenaan loopt: wat voor jou relevant is, en wat absoluut niet.</p>
       </div>
-      <div class="item">
+      <div class="item schedule">
         <h3>Dagschema</h3>
         <div class="timeline">
           <div class="slot"><div class="t">9:30</div><div class="d">Ontvangst</div></div>
