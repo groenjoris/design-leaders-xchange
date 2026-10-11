@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Design Managers Mastermind — 29 januari 2027, Landgoed Duin en Kruidberg</title>
 <meta name="description" content="Eén dag sparren met een kleine groep design managers, op Landgoed Duin en Kruidberg in Santpoort-Noord. Vrijdag 29 januari 2027.">
+<link rel="alternate" hreflang="nl" href="https://design-leaders-xchange.vercel.app/">
+<link rel="alternate" hreflang="en" href="https://design-leaders-xchange.vercel.app/en/">
+<link rel="alternate" hreflang="x-default" href="https://design-leaders-xchange.vercel.app/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -53,6 +56,16 @@
   header.hero h1{font-size:clamp(38px,6vw,66px);margin:0 0 18px;color:#fbf8f2;}
   .hero-meta{margin:0;font-size:clamp(16px,1.9vw,18px);color:#e6e0d5;max-width:62ch;font-weight:500;}
   .hero-meta span{white-space:nowrap;}
+
+  /* LANGUAGE SWITCH */
+  .lang-switch{
+    position:absolute;top:18px;right:18px;z-index:2;display:flex;
+    background:rgba(255,253,249,.72);border:1px solid rgba(26,28,34,.1);
+    backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  }
+  .lang-switch a{padding:7px 12px;font-size:13px;font-weight:600;color:var(--ink-soft);text-decoration:none;}
+  .lang-switch a:hover{color:var(--ink);background:rgba(26,28,34,.06);}
+  .lang-switch a[aria-current="page"]{background:var(--ink);color:#fbf8f2;}
 
   /* BUTTONS */
   .btn{
@@ -184,6 +197,10 @@
 <body>
 
 <header class="hero">
+  <nav class="lang-switch" aria-label="Taal / Language">
+    <a href="./" lang="nl" hreflang="nl" aria-current="page">Nederlands</a>
+    <a href="en/" lang="en" hreflang="en">English</a>
+  </nav>
   <img src="images/hero-kasteel.jpg" width="2400" height="996" fetchpriority="high"
        alt="Luchtfoto van Landgoed Duin en Kruidberg: het kasteel met de vijver, omringd door bossen">
   <div class="wrap">
@@ -304,7 +321,7 @@
       <li>De Mastermind is voor managers die niet zelf ontwerpen, maar designers aansturen.</li>
       <li>We stellen de groep samen met UX-managers uit verschillende branches, zodat er geen concurrenten aan tafel zitten.</li>
       <li>We zorgen ervoor dat er genoeg gedeelde vraagstukken zijn, zodat we maximaal van elkaar leren.</li>
-      <li>De komende editie is Nederlandstalig.</li>
+      <li>Deze bijeenkomst is Nederlandstalig. Spreek je geen Nederlands? Op 5&nbsp;februari is er een <a href="en/">Engelstalige bijeenkomst</a>.</li>
     </ul>
   </div>
 </section>
