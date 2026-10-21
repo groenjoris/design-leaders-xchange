@@ -105,14 +105,6 @@
   .interest dl{margin:0 0 22px;display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:15.5px;}
   .interest dt{font-weight:600;color:var(--ink);}
   .interest dd{margin:0;color:var(--ink-soft);}
-  /* Interest cards overlap the hero photo on desktop (--overlap = 1/3 of the card height, set by script) */
-  :root{--overlap:90px;}
-  @media(min-width:621px){
-    section.interest{padding-top:0;}
-    section.interest .grid{position:relative;z-index:2;margin-top:calc(-1 * var(--overlap));}
-    section.interest .card{box-shadow:0 12px 32px rgba(18,22,16,.16);}
-    header.hero .wrap{padding-bottom:calc(clamp(48px,8vh,80px) + var(--overlap));}
-  }
 
   /* CALLOUT + LISTS */
   .callout{
@@ -516,20 +508,6 @@
     addEventListener('scroll', schedule, { passive: true });
     addEventListener('resize', schedule);
     update();
-  })();
-</script>
-
-<script>
-  (function () {
-    var grid = document.querySelector('section.interest .grid');
-    if (!grid) return;
-    function setOverlap() {
-      var h = innerWidth > 620 ? Math.round(grid.offsetHeight / 3) : 0;
-      document.documentElement.style.setProperty('--overlap', h + 'px');
-    }
-    setOverlap();
-    addEventListener('resize', setOverlap);
-    addEventListener('load', setOverlap);
   })();
 </script>
 
