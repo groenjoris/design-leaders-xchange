@@ -9,11 +9,30 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/styles.css">
+<style>
+  /* TEMP: hero photo switcher */
+  .photo-switch{
+    position:absolute;top:16px;left:18px;z-index:2;display:flex;align-items:center;gap:2px;
+    background:rgba(255,253,249,.72);border:1px solid rgba(26,28,34,.1);font-size:12px;color:var(--ink-soft);
+    backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:.75;transition:opacity .2s;
+  }
+  .photo-switch:hover{opacity:1;}
+  .photo-switch button{border:0;background:none;cursor:pointer;font-size:18px;line-height:1;padding:4px 9px;color:var(--ink);}
+  .photo-switch button:hover{background:rgba(26,28,34,.06);}
+  .photo-switch-count{min-width:26px;text-align:center;font-variant-numeric:tabular-nums;}
+</style>
 </head>
 <body>
 
 <header class="hero">
-  <img src="/images/hero-bangkok.jpg" width="2400" height="1200" fetchpriority="high"
+  <nav class="lang-switch" aria-label="Region">
+    <span aria-current="page"><span class="long">South East Asia</span><span class="short">South East Asia</span></span><span class="sep" aria-hidden="true">|</span><a href="/netherlands/"><span class="long">Europe</span><span class="short">Europe</span></a>
+  </nav>
+  <!-- TEMP: hero photo switcher for trying photos; remove once a photo is chosen -->
+  <div class="photo-switch">
+    <button type="button" data-step="-1" aria-label="Previous photo">&#8249;</button><span class="photo-switch-count" aria-live="polite">1/4</span><button type="button" data-step="1" aria-label="Next photo">&#8250;</button>
+  </div>
+  <img id="hero-img" src="/images/hero-bangkok.jpg" width="2400" height="1200" fetchpriority="high"
        alt="The Bangkok skyline with the roofs of the Grand Palace in the foreground">
   <div class="wrap">
     <div class="eyebrow">Invitation Only</div>
@@ -41,7 +60,7 @@
       <div class="card">
         <h3>Taking part</h3>
         <p>Would you like to join the Mastermind, but haven't been invited personally (yet)?</p>
-        <p>Get in touch with <a href="https://www.linkedin.com/in/annevroegop/" target="_blank" rel="noopener">Anne</a> or <a href="https://www.linkedin.com/in/jorisgroen/" target="_blank" rel="noopener">Joris</a> on LinkedIn.</p>
+        <p>Get in touch with <a href="https://www.linkedin.com/in/annevroegop/" target="_blank" rel="noopener">Anne</a>, <a href="https://www.linkedin.com/in/jorisgroen/" target="_blank" rel="noopener">Joris</a> or <a href="https://www.linkedin.com/in/jeremietisseau/" target="_blank" rel="noopener">Jeremie</a> on LinkedIn.</p>
       </div>
     </div>
   </div>
@@ -132,7 +151,6 @@
       <li>We bring together UX managers from different industries, so there are no competitors at the table.</li>
       <li>We make sure there is enough common ground in the challenges, so everyone learns as much as possible from each other.</li>
       <li>We keep the group small enough for depth and large enough for variety: 12 to 16 participants.</li>
-      <li>This Mastermind is held in English. Based in the Netherlands? There is also an <a href="/netherlands/">international edition near Amsterdam</a> on 5&nbsp;February 2027.</li>
     </ul>
   </div>
 </section>
@@ -261,6 +279,37 @@
 </section>
 
 <script src="/assets/site.js"></script>
+<script>
+  // TEMP: hero photo switcher (?hero=N); remove once a photo is chosen
+  (function () {
+    var photos = [
+      { src: '/images/hero-bangkok.jpg', pos: 'center 30%', alt: 'The Bangkok skyline with the roofs of the Grand Palace in the foreground' },
+      { src: '/images/hero-bangkok-2.jpg', pos: 'center 50%', alt: 'A white facade in Bangkok with rows of arched windows' },
+      { src: '/images/hero-bangkok-3.jpg', pos: 'center 40%', alt: 'The Bangkok skyline at sunset' },
+      { src: '/images/hero-bangkok-4.jpg', pos: 'center 40%', alt: 'Glass towers and a white canopy walkway in Bangkok' }
+    ];
+    var img = document.getElementById('hero-img');
+    var count = document.querySelector('.photo-switch-count');
+    var current = 0;
+    function show(i, updateUrl) {
+      current = (i + photos.length) % photos.length;
+      img.src = photos[current].src;
+      img.alt = photos[current].alt;
+      img.style.objectPosition = photos[current].pos;
+      count.textContent = (current + 1) + '/' + photos.length;
+      if (updateUrl) {
+        var url = new URL(location.href);
+        if (current === 0) url.searchParams.delete('hero'); else url.searchParams.set('hero', current + 1);
+        history.replaceState(null, '', url);
+      }
+    }
+    document.querySelectorAll('.photo-switch button').forEach(function (b) {
+      b.addEventListener('click', function () { show(current + Number(b.dataset.step), true); });
+    });
+    var n = parseInt(new URLSearchParams(location.search).get('hero'), 10);
+    if (n >= 1 && n <= photos.length) show(n - 1, false);
+  })();
+</script>
 
 </body>
 </html>

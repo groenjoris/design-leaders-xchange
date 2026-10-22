@@ -17,7 +17,11 @@ if (edition === 'nl') {
   cpSync('site/bangkok', 'dist', { recursive: true });
   const expat = readFileSync('site/nl/en/index.html', 'utf8')
     .replace(/\s*<!--nl-only-->[\s\S]*?<!--\/nl-only-->/g, '')
-    .replace('<meta charset="UTF-8">', '<meta charset="UTF-8">\n<meta name="robots" content="noindex">');
+    .replace('<meta charset="UTF-8">', '<meta charset="UTF-8">\n<meta name="robots" content="noindex">')
+    .replace('<header class="hero">', `<header class="hero">
+  <nav class="lang-switch" aria-label="Region">
+    <a href="/"><span class="long">South East Asia</span><span class="short">South East Asia</span></a><span class="sep" aria-hidden="true">|</span><span aria-current="page"><span class="long">Europe</span><span class="short">Europe</span></span>
+  </nav>`);
   mkdirSync('dist/netherlands', { recursive: true });
   writeFileSync('dist/netherlands/index.html', expat);
 } else {
