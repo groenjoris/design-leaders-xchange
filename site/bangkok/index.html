@@ -10,13 +10,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/styles.css">
 <style>
-  /* TEMP: hero photo switcher */
+  /* Hero photo switcher (hidden; see the markup) */
   .photo-switch{
     position:absolute;top:16px;left:18px;z-index:2;display:flex;align-items:center;gap:2px;
     background:rgba(255,253,249,.72);border:1px solid rgba(26,28,34,.1);font-size:12px;color:var(--ink-soft);
     backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);opacity:.75;transition:opacity .2s;
   }
   .photo-switch:hover{opacity:1;}
+  .photo-switch[hidden]{display:none;}
   .photo-switch button{border:0;background:none;cursor:pointer;font-size:18px;line-height:1;padding:4px 9px;color:var(--ink);}
   .photo-switch button:hover{background:rgba(26,28,34,.06);}
   .photo-switch-count{min-width:26px;text-align:center;font-variant-numeric:tabular-nums;}
@@ -28,8 +29,8 @@
   <nav class="lang-switch" aria-label="Region">
     <span aria-current="page"><span class="long">South East Asia</span><span class="short">South East Asia</span></span><span class="sep" aria-hidden="true">|</span><a href="/netherlands/"><span class="long">Europe</span><span class="short">Europe</span></a>
   </nav>
-  <!-- TEMP: hero photo switcher for trying photos; remove once a photo is chosen -->
-  <div class="photo-switch">
+  <!-- Hero photo switcher, hidden for now. Remove the hidden attribute to show it again; ?hero=N still works. -->
+  <div class="photo-switch" hidden>
     <button type="button" data-step="-1" aria-label="Previous photo">&#8249;</button><span class="photo-switch-count" aria-live="polite">1/4</span><button type="button" data-step="1" aria-label="Next photo">&#8250;</button>
   </div>
   <img id="hero-img" src="/images/hero-bangkok.jpg" width="2400" height="1200" fetchpriority="high"
@@ -260,7 +261,7 @@
 
 <script src="/assets/site.js"></script>
 <script>
-  // TEMP: hero photo switcher (?hero=N); remove once a photo is chosen
+  // Hero photo switcher: the widget is hidden, but ?hero=N still picks a photo
   (function () {
     var photos = [
       { src: '/images/hero-bangkok.jpg', pos: 'center 30%', alt: 'The Bangkok skyline with the roofs of the Grand Palace in the foreground' },
