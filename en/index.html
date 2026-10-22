@@ -95,10 +95,8 @@
   .card{background:var(--card);border:1px solid var(--line);padding:26px;}
   .card h3{font-size:20px;margin:0 0 10px;}
   .card p{font-size:15.5px;margin:0;}
-  .card .num{
-    font-family:'Fraunces',serif;font-size:15px;color:var(--accent-deep);
-    font-weight:600;display:block;margin-bottom:10px;letter-spacing:.04em;
-  }
+  .card-icon{display:block;width:30px;height:30px;margin-bottom:14px;color:var(--accent-deep);}
+  .card-icon svg{width:100%;height:100%;display:block;}
 
   /* INTERESSE */
   .interest .card p{margin-bottom:16px;}
@@ -281,18 +279,22 @@
     <h2>What you get out of it</h2>
     <div class="grid two">
       <div class="card">
+        <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.1V16h5v-.1c0-.8.4-1.6 1.1-2.1A6 6 0 0 0 12 3z"/></svg></span>
         <h3>Inspiration</h3>
         <p>What challenges are other organisations and design managers facing? Bring your own case, get inspired by how peers have already tackled your challenge, and take concrete ideas back with you.</p>
       </div>
       <div class="card">
+        <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></svg></span>
         <h3>An honest outside view</h3>
         <p>Peers from outside your organisation look at your approach without stakes, politics or history. They know the problem first-hand and tell you what they see. That often puts you on a new track.</p>
       </div>
       <div class="card">
+        <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="6" r="2.5"/><circle cx="18.5" cy="6" r="2.5"/><circle cx="12" cy="18.5" r="2.5"/><path d="M8 6h8M6.8 8.2l4 8M17.2 8.2l-4 8"/></svg></span>
         <h3>Broaden your network</h3>
         <p>The Mastermind takes place twice a year. People who click stay in touch, and every edition brings new peers and fresh perspectives.</p>
       </div>
       <div class="card">
+        <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 20.5h17"/><path d="M6 20.5v-6h3v6M10.5 20.5V8h3v12.5M15 20.5v-9h3v9"/></svg></span>
         <h3>See where you stand</h3>
         <p>How far along are other organisations? Putting your approach next to that of your peers shows you where you're ahead and where you can still learn. That gives you confidence in your choices.</p>
       </div>
@@ -306,22 +308,22 @@
     <p>The themes of the day are based on your input; on the day itself, you decide where to focus your attention.</p>
     <div class="grid two">
       <div class="card">
-        <span class="num">01</span>
+        <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3.5l1.9 4.7 4.6 1.8-4.6 1.9L11 16.5l-1.9-4.6L4.5 10l4.6-1.8z"/><path d="M18.5 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg></span>
         <h3>AI in the design process</h3>
         <p>How is AI changing your process, and how are others approaching it? How do you deal with resistance, with early adopters, and with constraints from legal and compliance?</p>
       </div>
       <div class="card">
-        <span class="num">02</span>
+        <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 4.5h17v15h-17z"/><path d="M3.5 8.5h17"/><path d="M12 11l1 2.3 2.3 1-2.3 1L12 17.6l-1-2.3-2.3-1 2.3-1z"/></svg></span>
         <h3>AI in your product</h3>
         <p>How do you bring AI into your products, as a feature or as a foundation? Which framework fits, and what are the pitfalls along the way?</p>
       </div>
       <div class="card">
-        <span class="num">03</span>
+        <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 21V3.5"/><path d="M5.5 4h12l-2.5 4.5 2.5 4.5h-12"/></svg></span>
         <h3>Leadership</h3>
         <p>How do you lead now that the way we work is changing, not least because of AI? What do you steer on when tasks, roles and pace are shifting, and how do you bring your team along?</p>
       </div>
       <div class="card">
-        <span class="num">04</span>
+        <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 12a7.5 7.5 0 0 1-13 5.1"/><path d="M4.5 12a7.5 7.5 0 0 1 13-5.1"/><path d="M17.8 3.2v3.9h-3.9"/><path d="M6.2 20.8v-3.9h3.9"/></svg></span>
         <h3>Change management</h3>
         <p>Reorganisations, mergers, new ways of working: UX is always on the move. How do you bring your teams along into new structures and processes, and perhaps into a different role for design?</p>
       </div>
@@ -362,9 +364,9 @@
         <h3>Schedule</h3>
         <div class="timeline">
           <div class="slot"><div class="t">9:30</div><div class="d">Arrival</div></div>
-          <div class="slot"><div class="t">10:00</div><div class="d"><strong>Morning</strong> — getting to know each other, sharpening your own question, and then into the most pressing themes. You join in wherever it's interesting for you, and move on once you've heard enough.</div></div>
-          <div class="slot"><div class="t">12:00</div><div class="d">Lunch, with time for a walk around the estate</div></div>
-          <div class="slot"><div class="t">13:30</div><div class="d"><strong>Afternoon</strong> — going deeper into the group's challenges</div></div>
+          <div class="slot"><div class="t">10:30</div><div class="d">Getting to know each other and sharpening your own question</div></div>
+          <div class="slot"><div class="t">12:00</div><div class="d">The theme tables open: you join in wherever it's interesting for you, and move on once you've heard enough.</div></div>
+          <div class="slot"><div class="t">13:30</div><div class="d">Going deeper into your own theme</div></div>
           <div class="slot"><div class="t">14:45</div><div class="d"><strong>Wrap-up</strong> — what will you take away?</div></div>
           <div class="slot"><div class="t">15:15</div><div class="d">Drinks</div></div>
           <div class="slot"><div class="t">16:00</div><div class="d">Close</div></div>
@@ -372,7 +374,7 @@
       </div>
       <div class="item">
         <h3>Confidentiality</h3>
-        <p>Nothing is recorded and no minutes are taken.</p>
+        <p>Nothing that's discussed is recorded.</p>
       </div>
     </div>
   </div>
@@ -389,6 +391,9 @@
       <div class="item">
         <h3>When and how often?</h3>
         <p>We run the Mastermind twice a year. The next one is on Friday 5&nbsp;February 2027, and a second edition follows after the summer.</p>
+      </div>
+      <div class="item">
+        <h3>Dates</h3>
         <div class="facts">
           <div class="fact">
             <div class="fact-icon date" aria-hidden="true"><span class="mon">dec</span><span class="day">9</span></div>

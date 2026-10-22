@@ -95,10 +95,8 @@
   .card{background:var(--card);border:1px solid var(--line);padding:26px;}
   .card h3{font-size:20px;margin:0 0 10px;}
   .card p{font-size:15.5px;margin:0;}
-  .card .num{
-    font-family:'Fraunces',serif;font-size:15px;color:var(--accent-deep);
-    font-weight:600;display:block;margin-bottom:10px;letter-spacing:.04em;
-  }
+  .card-icon{display:block;width:30px;height:30px;margin-bottom:14px;color:var(--accent-deep);}
+  .card-icon svg{width:100%;height:100%;display:block;}
 
   /* INTERESSE */
   .interest .card p{margin-bottom:16px;}
@@ -280,18 +278,22 @@
     <h2>Wat levert het op?</h2>
     <div class="grid two">
       <div class="card">
+        <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.7.5 1.1 1.3 1.1 2.1V16h5v-.1c0-.8.4-1.6 1.1-2.1A6 6 0 0 0 12 3z"/></svg></span>
         <h3>Inspiratie</h3>
         <p>Welke uitdagingen hebben andere organisaties en design managers? Neem je eigen case mee, laat je inspireren door hoe vakgenoten jouw vraagstuk al hebben aangepakt en neem concrete ideeën mee terug.</p>
       </div>
       <div class="card">
+        <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></svg></span>
         <h3>Een eerlijke blik van buiten</h3>
         <p>Vakgenoten van buiten je organisatie kijken naar jouw aanpak zonder belang, politiek of voorgeschiedenis. Ze kennen het probleem uit eigen ervaring en zeggen wat ze zien. Dat zet je vaak op een nieuw spoor.</p>
       </div>
       <div class="card">
+        <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="6" r="2.5"/><circle cx="18.5" cy="6" r="2.5"/><circle cx="12" cy="18.5" r="2.5"/><path d="M8 6h8M6.8 8.2l4 8M17.2 8.2l-4 8"/></svg></span>
         <h3>Netwerk verbreden</h3>
         <p>De Mastermind vindt twee keer per jaar plaats. Wie een klik heeft, blijft elkaar zien, en met elke editie komen er nieuwe vakgenoten en invalshoeken bij.</p>
       </div>
       <div class="card">
+        <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 20.5h17"/><path d="M6 20.5v-6h3v6M10.5 20.5V8h3v12.5M15 20.5v-9h3v9"/></svg></span>
         <h3>Zien waar je staat</h3>
         <p>Hoe ver zijn andere organisaties? Door je aanpak naast die van vakgenoten te leggen, zie je waar je voorloopt en waar je nog kunt leren. Dat geeft vertrouwen in je keuzes.</p>
       </div>
@@ -305,22 +307,22 @@
     <p>De thema's van de dag bepalen we op basis van jouw input; op de dag zelf kies je waar je de meeste aandacht aan geeft.</p>
     <div class="grid two">
       <div class="card">
-        <span class="num">01</span>
+        <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 3.5l1.9 4.7 4.6 1.8-4.6 1.9L11 16.5l-1.9-4.6L4.5 10l4.6-1.8z"/><path d="M18.5 15l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z"/></svg></span>
         <h3>AI in het designproces</h3>
         <p>Hoe verandert AI je proces, en hoe doen anderen dat? Hoe ga je om met weerstand, met voorlopers en met beperkingen vanuit legal en compliance?</p>
       </div>
       <div class="card">
-        <span class="num">02</span>
+        <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 4.5h17v15h-17z"/><path d="M3.5 8.5h17"/><path d="M12 11l1 2.3 2.3 1-2.3 1L12 17.6l-1-2.3-2.3-1 2.3-1z"/></svg></span>
         <h3>AI in je product</h3>
         <p>Hoe voeg je AI toe aan je producten, als feature of als fundament? Welk framework past, en wat zijn de valkuilen onderweg?</p>
       </div>
       <div class="card">
-        <span class="num">03</span>
+        <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 21V3.5"/><path d="M5.5 4h12l-2.5 4.5 2.5 4.5h-12"/></svg></span>
         <h3>Leiderschap</h3>
         <p>Hoe geef je leiding nu de manier van werken verandert, onder meer door AI? Waar stuur je op als taken, rollen en tempo verschuiven, en hoe neem je je team daarin mee?</p>
       </div>
       <div class="card">
-        <span class="num">04</span>
+        <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 12a7.5 7.5 0 0 1-13 5.1"/><path d="M4.5 12a7.5 7.5 0 0 1 13-5.1"/><path d="M17.8 3.2v3.9h-3.9"/><path d="M6.2 20.8v-3.9h3.9"/></svg></span>
         <h3>Change management</h3>
         <p>Reorganisaties, fusies, nieuwe werkwijzen: UX is altijd in beweging. Hoe krijg je je teams mee in nieuwe structuren en processen, en misschien in een andere rol voor design?</p>
       </div>
@@ -361,9 +363,9 @@
         <h3>Dagschema</h3>
         <div class="timeline">
           <div class="slot"><div class="t">9:30</div><div class="d">Ontvangst</div></div>
-          <div class="slot"><div class="t">10:00</div><div class="d"><strong>Ochtend</strong> — kennismaken, je eigen vraag scherp krijgen, en dan de meest prangende thema's in. Je schuift aan waar het voor jou interessant is, en loopt door als je genoeg hebt gehoord.</div></div>
-          <div class="slot"><div class="t">12:00</div><div class="d">Lunch, met tijd voor een wandeling over het landgoed</div></div>
-          <div class="slot"><div class="t">13:30</div><div class="d"><strong>Middag</strong> — de diepte in, rond de vraagstukken van de groep</div></div>
+          <div class="slot"><div class="t">10:30</div><div class="d">Kennismaken en je eigen vraag scherp krijgen</div></div>
+          <div class="slot"><div class="t">12:00</div><div class="d">De thematafels gaan open: je schuift aan waar het voor jou interessant is, en loopt door als je genoeg hebt gehoord.</div></div>
+          <div class="slot"><div class="t">13:30</div><div class="d">De diepte in rond jouw eigen thema</div></div>
           <div class="slot"><div class="t">14:45</div><div class="d"><strong>Afronding</strong> — wat neem je mee?</div></div>
           <div class="slot"><div class="t">15:15</div><div class="d">Borrel</div></div>
           <div class="slot"><div class="t">16:00</div><div class="d">Einde</div></div>
@@ -371,7 +373,7 @@
       </div>
       <div class="item">
         <h3>Vertrouwelijkheid</h3>
-        <p>We maken geen opnames en geen notulen.</p>
+        <p>We maken geen opnames van wat besproken wordt.</p>
       </div>
     </div>
   </div>
@@ -388,6 +390,9 @@
       <div class="item">
         <h3>Wanneer en hoe vaak?</h3>
         <p>We organiseren de Mastermind twee keer per jaar. De eerstvolgende is op vrijdag 29&nbsp;januari 2027; na de zomer volgt een tweede editie.</p>
+      </div>
+      <div class="item">
+        <h3>Datums</h3>
         <div class="facts">
           <div class="fact">
             <div class="fact-icon date" aria-hidden="true"><span class="mon">dec</span><span class="day">2</span></div>
